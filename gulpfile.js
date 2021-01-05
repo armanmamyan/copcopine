@@ -42,7 +42,7 @@ const watchFiles = () => {
 // You can remove tags by passing {removeTags: true} to injectPartials() method
 
 const concatPartials = () => {
-  return src("./src/index.html")
+  return src("./src/*.html")
     .pipe(
       injectPartials()
     )
