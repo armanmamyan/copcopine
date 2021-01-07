@@ -8,3 +8,35 @@
         text-decoration: none;
     }
 }
+
+.tooltip{
+    margin-block-start: 4px;
+}
+
+.tooltip-inner{
+    background-color: white;
+    color: #000;
+    border: 1px solid #A8977A;
+    letter-spacing: 0;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.tooltip .arrow{
+    &::after{
+        position: absolute;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
+        bottom: -1px;
+        left: -2.5px;
+        border-width: 0 .55rem .55rem;
+        border-bottom-color: #A8977A;
+    }
+    &::before{
+        border-bottom-color: #fff;
+        bottom: -1px;
+        z-index: 1;
+    }
+}

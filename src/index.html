@@ -1,125 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- partial:partials/_headLinks.html -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="./styles/main.css" />
 
     <!-- partial -->
-  </head>
+</head>
 
-  <body style="background: #e5e5e5">
+<body style="background: #e5e5e5">
     <header class="project--header background--opacity">
-      <div
-        class="project--header-primary d-flex align-items-center justify-content-between"
-      >
-        <a href="tel:+74957852333" class="project--tel">+7 495 785 23 33</a>
-        <a href="/" class="project--logo">
-          <img src="" alt="Logo" class="converted--image" />
-        </a>
-        <div class="project--primary-links d-flex align-items-center">
-          <a href="" class="primary--link-item">
-            <img src="" alt="" class="converted--image" />
-          </a>
-          <a href="" class="primary--link-item">
-            <img src="" alt="" class="converted--image" />
-          </a>
-          <a href="" class="primary--link-item">
-            <img src="" alt="" class="converted--image" />
-          </a>
-          <a href="" class="primary--link-item">
-            <img src="" alt="" class="converted--image" />
-          </a>
+        <div class="project--header-primary d-flex align-items-center justify-content-between">
+            <a href="tel:+74957852333" class="project--tel">+7 495 785 23 33</a>
+            <a href="/" class="project--logo">
+                <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
+            </a>
+            <div class="project--primary-links d-flex align-items-center">
+                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Профиль">
+                    <img src="./assets/Login.svg" alt="" class="converted--image" />
+                </a>
+                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Поиск">
+                    <img src="./assets/search.svg" alt="" class="converted--image" />
+                </a>
+                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Избранное">
+                    <img src="./assets/wishlist.svg" alt="" class="converted--image" />
+                </a>
+                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="корзина">
+                    <img src="./assets/Cart.svg" alt="" class="converted--image" />
+                </a>
+            </div>
         </div>
-      </div>
-      <hr class="project--header-line" />
-      <div class="container project--header-secondary">
-          <div class="row justify-content-center">
-              <nav class="navbar navbar-expand-lg p-0">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                      <li class="nav-item pr-0 active">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
-                      </li>
-                      <li class="nav-item pr-0">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
-                      </li>
-                      <li class="nav-item pr-0">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
-                      </li>
-                      <li class="nav-item pr-0">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">История бренда</a>
-                      </li>
-                      <li class="nav-item pr-0">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Новости</a>
-                      </li>
-                      <li class="nav-item pr-0 dropdown">
-                        <a class="nav-link text-uppercase pr-0 pl-0 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            OUTLET
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-              </nav>
-          </div>
-      </div>
+        <hr class="project--header-line" />
+        <div class="container project--header-secondary">
+            <div class="row justify-content-center">
+                <nav class="navbar navbar-expand-lg p-0">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item pr-0 active">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">История бренда</a>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Новости</a>
+                            </li>
+                            <li class="nav-item pr-0 dropdown">
+                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    OUTLET
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </header>
     <!-- partial:partials/_footerLinks.html -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="./js/svg-injector.min.js"></script>
     <script>
-      // Elements to inject
-      var mySVGsToInject = document.querySelectorAll("img.converted--image");
+        $('.primary--link-item').tooltip({
+            boundary: 'window'
+        })
+    </script>
+    <script>
+        // Elements to inject
+        var mySVGsToInject = document.querySelectorAll('img.converted--image');
 
-      // Do the injection
-      SVGInjector(mySVGsToInject);
+        // Do the injection
+        SVGInjector(mySVGsToInject);
     </script>
     <!-- partial -->
-  </body>
+</body>
+
 </html>
