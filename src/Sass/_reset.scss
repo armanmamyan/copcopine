@@ -59,3 +59,42 @@ summary {
 *:after {
   box-sizing: border-box;
 }
+
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: none;
+  background: transparent;
+}
+input[type='radio'] {
+  vertical-align: text-bottom;
+  -webkit-appearance: radio;
+}
+input[type='checkbox'] {
+  vertical-align: bottom;
+  -webkit-appearance: checkbox;
+}
+
+.ie7 input[type='checkbox'] {
+  vertical-align: baseline;
+}
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+/* number type inupt spinners hiding */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}

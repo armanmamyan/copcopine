@@ -1,103 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- partial:partials/_headLinks.html -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
+    />
     <link rel="stylesheet" href="./styles/main.css" />
-
+    <style>
+      @font-face {
+        font-family: 'Circe';
+        src: url('./fonts/Circe.eot');
+        src: local('☺'), url('./fonts/Circe.woff') format('woff'),
+          url('./fonts/Circe.ttf') format('truetype'),
+          url('./fonts/Circe.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
     <!-- partial -->
-</head>
+  </head>
 
-<body style="background: #e5e5e5">
+  <body style="background: #e5e5e5">
     <header class="project--header background--opacity">
-        <div class="project--header-primary d-flex align-items-center justify-content-between">
-            <a href="tel:+74957852333" class="project--tel">+7 495 785 23 33</a>
-            <a href="/" class="project--logo">
-                <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
-            </a>
-            <div class="project--primary-links d-flex align-items-center">
-                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Профиль">
-                    <img src="./assets/Login.svg" alt="" class="converted--image" />
-                </a>
-                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Поиск">
-                    <img src="./assets/search.svg" alt="" class="converted--image" />
-                </a>
-                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="Избранное">
-                    <img src="./assets/wishlist.svg" alt="" class="converted--image" />
-                </a>
-                <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="корзина">
-                    <img src="./assets/Cart.svg" alt="" class="converted--image" />
-                </a>
-            </div>
+      <div
+        class="project--header-primary d-flex align-items-center justify-content-between"
+      >
+        <a href="tel:+74957852333" class="project--tel">+7 495 785 23 33</a>
+        <a href="/" class="project--logo">
+          <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
+        </a>
+        <div class="project--primary-links d-flex align-items-center">
+          <a
+            href=""
+            class="primary--link-item"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Профиль"
+          >
+            <img src="./assets/Login.svg" alt="" class="converted--image" />
+          </a>
+          <a
+            href=""
+            class="primary--link-item"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Поиск"
+          >
+            <img src="./assets/search.svg" alt="" class="converted--image" />
+          </a>
+          <a
+            href=""
+            class="primary--link-item"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Избранное"
+          >
+            <img src="./assets/wishlist.svg" alt="" class="converted--image" />
+          </a>
+          <a
+            href=""
+            class="primary--link-item"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="корзина"
+          >
+            <img src="./assets/Cart.svg" alt="" class="converted--image" />
+          </a>
         </div>
-        <hr class="project--header-line" />
-        <div class="container project--header-secondary">
-            <div class="row justify-content-center">
-                <nav class="navbar navbar-expand-lg p-0">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item pr-0 active">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">История бренда</a>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark" href="#">Новости</a>
-                            </li>
-                            <li class="nav-item pr-0 dropdown">
-                                <a class="nav-link text-uppercase pr-0 pl-0 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    OUTLET
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+      </div>
+      <hr class="project--header-line" />
+      <div class="container project--header-secondary">
+        <div class="row justify-content-center">
+          <nav class="navbar navbar-expand-lg p-0">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item pr-0 active">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark"
+                    href="#"
+                    >Осень/Зима 20</a
+                  >
+                </li>
+                <li class="nav-item pr-0">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark"
+                    href="#"
+                    >SUPER SALE</a
+                  >
+                </li>
+                <li class="nav-item pr-0">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark"
+                    href="#"
+                    >LOOKBOOK</a
+                  >
+                </li>
+                <li class="nav-item pr-0">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark"
+                    href="#"
+                    >История бренда</a
+                  >
+                </li>
+                <li class="nav-item pr-0">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark"
+                    href="#"
+                    >Новости</a
+                  >
+                </li>
+                <li class="nav-item pr-0 dropdown">
+                  <a
+                    class="nav-link text-uppercase pr-0 pl-0 text-dark dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    OUTLET
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </nav>
         </div>
+      </div>
     </header>
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4>ПРОФИЛЬ</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4 class="text-uppercase mt-0 mb-2">АВТОРИЗАЦИЯ</h4>
+        <div class="project--input-wrapper">
+          <input name="email" type="email" class="project--input" />
+          <label class="project--input-label" for="email">Email</label>
+        </div>
+        <div class="project--input-wrapper">
+          <input type="password" name="password" class="project--input" />
+          <label class="project--input-label" for="password">Пароль</label>
+        </div>
+        <button type="submit" name="loginSubmit" class="project--form-btn">
+          Войти
+        </button>
+        <hr class="project--form-divider" />
+        <h4 class="text-uppercase">Новый пользователь?</h4>
+        <p>
+          Зарегистрируйтесь и получите персонализированный контент, доступ к
+          эксклюзивным событиям и наши частные распродажи.
+        </p>
+        <button type="button" class="project--form-btn">Создать аккаунт</button>
+      </form>
+    </div>
+
+    <hr class="m-5" />
+
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4>СОЗДАТЬ АККАУНТ</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <button class="project--popup-goback mb-3">
+          <img src="./assets/chevron.svg" alt="" class="project--goback-icon converted--image" />
+          Назад
+        </button>
+        <div class="project--input-wrapper">
+          <input name="email" type="email" class="project--input" />
+          <label class="project--input-label" for="email">Email</label>
+        </div>
+        <div class="project--input-wrapper">
+          <input name="repeat email" type="email" class="project--input" />
+          <label class="project--input-label" for="repeat email">Повторите email</label>
+        </div>
+        <div class="project--input-wrapper">
+          <input type="password" class="project--input" name="password" />
+          <label class="project--input-label" for="password">Пароль</label>
+        </div>
+        <button type="submit" name="loginSubmit" class="project--form-btn">
+          Зарегистрироваться
+        </button>
+      </form>
+    </div>
+
+    <hr class="m-5" />
+
+    <div class="project--popup-container project--popup-links d-flex flex-wrap align-items-center justify-content-center">
+      <div class="project--popup-header">
+        <h4>ЗДРАВСТВУЙТЕ NAREC!</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">Заказы</span>
+        <img src="./assets/Cart.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">Профиль</span>
+        <img src="./assets/Login.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">отслеживание</span>
+        <img src="./assets/Delivery.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">Адресная книга</span>
+        <img src="./assets/Location.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">Бонусы</span>
+        <img src="./assets/Gift.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="" class="project--popup-link">
+        <span class="popup--link-name">Пароль</span>
+        <img src="./assets/Lock.svg" alt="" class="converted--image popup--link-icon" />
+      </a>
+      <a href="/" class="project--popup-logout">Выйти</a>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4>Восстановить пароль</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <button class="project--popup-goback mb-3">
+          <img src="./assets/chevron.svg" alt="" class="project--goback-icon converted--image" />
+          Назад
+        </button>
+        <p>
+          Введите в поле адрес электронной почты. Мы отправим вам сообщение по
+          электронной почте с инструкциями по созданию нового пароля.
+        </p>
+        <div class="project--input-wrapper">
+          <input name="email" type="email" class="project--input" />
+          <label class="project--input-label" for="email"> Email</label>
+        </div>
+        <button type="submit" name="Reset password" class="project--form-btn">
+          Восстановить пароль
+        </button>
+      </form>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4>Восстановить пароль</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4>Narec@hotmail.fr</h4>
+        <p>
+          Мы отправили вам электронное письмо для изменения пароля. Чтобы
+          создать новый пароль, нажми на ссылку в электронном письме и введи
+          новый пароль. Электронное письмо не пришло? Проверь папку “Спам”, а
+          также другие электронные адреса, привязанные к личному кабинету
+          CopCopine. Нажми ниже, чтобы отправить письмо повторно
+        </p>
+        <button type="submit" name="reset password" class="project--form-btn">
+          Восстановить пароль
+        </button>
+        <a href="/" class="project--form-btn">Войти</a>
+      </form>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4 class="text-uppercase">корзина</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4 class="text-uppercase">Ваша корзина пуста</h4>
+        <p>Войдите, чтобы просмотреть Вашу корзину и совершать покупки!</p>
+        <a href="/" class="project--form-btn">Войти</a>
+        <a href="/" class="project--form-btn">Создать аккаунт</a>
+      </form>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4 class="text-uppercase">корзина</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4 class="text-uppercase">Ваша корзина пуста</h4>
+        <p>Корзина ждет, что ее наполнят. Желаем приятных покупок!</p>
+        <a href="/" class="project--form-btn">Начать вбирку</a>
+      </form>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4 class="text-uppercase">избранное</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4 class="text-uppercase">Нет сохраненных товаров</h4>
+        <p>
+          Войдите, чтобы мы смогли выполнить синхронизацию сохраненных товаров
+          со всех ваших устройств.
+        </p>
+        <a href="/" class="project--form-btn">Войти</a>
+        <a href="/" class="project--form-btn">Создать аккаунт</a>
+      </form>
+    </div>
+    <hr class="m-5" />
+    <div class="project--popup-container">
+      <div class="project--popup-header">
+        <h4 class="text-uppercase">избранное</h4>
+        <button type="close" name="close" class="project--popup-close">
+          <img src="./assets/cancel.svg" alt="close" class="converted--image">
+        </button>
+      </div>
+      <form action="" class="project--popup-form">
+        <h4 class="text-uppercase">Нет сохраненных товаров</h4>
+        <p>
+          Сохраняйте понравившиеся товары в избранное простым нажатием на
+          сердечко. Мы выполним синхронизацию сохраненных товаров со всех ваших
+          устройств. Все просто.
+        </p>
+        <a href="/" class="project--form-btn">Начать вбирку</a>
+      </form>
+    </div>
     <!-- partial:partials/_footerLinks.html -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="./js/svg-injector.min.js"></script>
     <script>
-        $('.primary--link-item').tooltip({
-            boundary: 'window'
-        })
+      $('.primary--link-item').tooltip({
+        boundary: 'window',
+      });
     </script>
     <script>
-        // Elements to inject
-        var mySVGsToInject = document.querySelectorAll('img.converted--image');
+      // Elements to inject
+      var mySVGsToInject = document.querySelectorAll('img.converted--image');
 
-        // Do the injection
-        SVGInjector(mySVGsToInject);
+      // Do the injection
+      SVGInjector(mySVGsToInject);
     </script>
     <!-- partial -->
-</body>
-
+  </body>
 </html>
