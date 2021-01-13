@@ -6,7 +6,6 @@
     min-height: 120px;
     padding: 16px 40px;
     background-color: #fff;
-    transition: height .5s ease;
     &.background--transparent{
         background-color: transparent;
     }
@@ -16,6 +15,16 @@
     }
     &.background--opacity{
         background-color: rgba($color: #fff, $alpha: 0.7);
+    }
+    .project--popup-container{
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        overflow: hidden;
+        &.active{
+            display: block;
+        }
     }
 }
 
@@ -70,7 +79,6 @@
         font-size: 16px;
         line-height: 16px;
         letter-spacing: 0;
-        transition: font-weight .7s;
         &::before{
             content: '';
             display: block;
@@ -84,7 +92,6 @@
             transition: transform .5s ease;
         }
         &:hover{
-            // font-weight: bold;
             &::before{
                 transform: scale(1);
             }
@@ -154,6 +161,9 @@
 }
 
 .project--subheader-bg{
+    position: relative;
+    top: -10px;
+    z-index: 20;
     width: 100%;
 }
 

@@ -14,77 +14,177 @@ function isParent(refNode, otherNode) {
   return false;
 }
 
-
-const isRowElement = (e) => {
-    console.log(e.relatedTarget);
-    if(e.relatedTarget.classList.contains('row')) return true;
-    return false;
+function handleOutsideClick() {
+  window.addEventListener("click", (e) => {
+    if (e.target == modalOverlay) {
+      getPopup.classList.contains("active") &&
+        getPopup.classList.remove("active");
+      getPopup2.classList.contains("active") &&
+        getPopup2.classList.remove("active");
+      modalOverlay.classList.remove("active");
+      return;
+    }
+  });
 }
 
+const isRowElement = (e) => {
+  if (
+    e.relatedTarget.classList.contains("row") ||
+    e.relatedTarget.classList.contains("project--subheader-bg")
+  )
+    return true;
+  return false;
+};
+
 const handleMouseOut = () => {
-    const completeFunc = () => {
-      getSubheaderContainer?.setAttribute("style", `visibility: hidden`);
-      gsap.to(getHeaderInitiate, { height: 0 });
-      getSubheaderContainer = null;
-    };
-    var tl = gsap.timeline({ onComplete: completeFunc });
-    tl.fromTo(".nav-sublink", { duration: 1, y: 0 }, { y: -100 })
-    .fromTo(
-        ".nav--banner-link",
-        { x: 0},
-        { x: 500, duration: 1  }
-      )
-  };
+  getSubheaderContainer?.setAttribute("style", `visibility: hidden`);
+  gsap.to(getHeaderInitiate, { height: 0 });
+  getSubheaderContainer = null;
+};
 
-  
-
-const handleMouseOver = (e) => {
+const menuItemOver = (e) => {
   const target = e.currentTarget.parentElement;
-  getSubheaderContainer = target.querySelector(".dropdown--content");
-  if (getSubheaderContainer) {
-    getSubheaderContainer.addEventListener('mouseleave', e => {
-        if(isRowElement(e)) return;
-        handleMouseOut();
-    });
+  target.animation?.play();
+};
 
-    const getHeight = getSubheaderContainer.offsetHeight;
-    const height = getHeight + 30;
-    const createAsyncCall = new Promise((resolve) => {
-      gsap.fromTo(
-        getHeaderInitiate,
-        { height: 0 },
-        { duration: 0.9, height: height }
-      );
-      setTimeout(() => {
-        return resolve(1);
-      }, 900);
-    });
-    createAsyncCall.then((resolve) => {
-      if (resolve) {
-        var tl = gsap.timeline();
-        getSubheaderContainer.setAttribute("style", `visibility: visible`);
-        tl.fromTo(".nav-sublink", { y: 100 }, { duration: 1, y: 0 }).fromTo(
-          ".nav--banner-link",
-          { scale: 0 },
-          { transformOrigin: "center right", scale: 1 }
-        );
-        return 1;
-      }
-    });
-  }
+const menuItemOut = (e) => {
+  const target = e.currentTarget.parentElement;
+  if (isRowElement(e)) return;
+  target.animation?.reverse();
 };
 
 getHeaderLinks.forEach((item) => {
-  item.addEventListener("mouseover", handleMouseOver);
-  item.addEventListener("mouseleave", function onMouseOut(e) {
-    //this is the original element the event handler was assigned to
-    const target = e.toElement || e.relatedTarget;
-    const classNames = ['dropdown--content', 'project--subheader-bg']; 
-    while(classNames.some(classes => target.classList.contains(classes))){
-        return false;
+  const target = item.parentElement;
+  const subContainer = target.querySelector(".dropdown--content");
+  let tl;
+  if (!!subContainer?.children.length) {
+    tl = new TimelineLite({ paused: true });
+    const getHeight = subContainer.offsetHeight;
+    let height = getHeight + 40;
+    tl.to(getHeaderInitiate, { duration: 0.9, height: height }).to(
+      subContainer,
+      { visibility: "visible" }
+    );
+    target.animation = tl;
+  }
+
+  item.addEventListener("mouseover", menuItemOver);
+  item.addEventListener("mouseleave", menuItemOut);
+  getHeaderInitiate.addEventListener("mouseleave", menuItemOut);
+});
+
+let cartPopupIsOpen = false;
+let userPopupIsOpen = false;
+const forgotPassword = document.querySelector(".forgot--pasword");
+const loginForm = document.querySelector("#login1");
+const loginStep2 = document.querySelector(".login--btn-step2");
+const resetPassForm = document.querySelector("#forgotPassword");
+const resetPassForm2 = document.querySelector("#forgotPassword2");
+const loginPopupContainer = document.querySelector(".project--popup-multistep");
+const userIcon = document.querySelector(
+  '.primary--link-item[data-nav-name="login"]'
+);
+const navigationIcons = document.querySelectorAll('.primary--link-item');
+const createAccount = document.querySelector("#createAccountBtn");
+const modalOverlay = document.querySelector(".modalOverlay");
+const loginGoBackBtn = document.querySelectorAll(".project--popup-goback");
+const loginCloseButton = document.querySelector("#login .project--popup-close");
+const createAccModal = document.querySelector("#createAccount");
+const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
+
+forgotPassword &&
+  forgotPassword.addEventListener("click", (e) => {
+    e.preventDefault();
+    loginForm.classList.remove("active");
+    resetPassForm.classList.add("active");
+  });
+
+userIcon &&
+  userIcon.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (userPopupIsOpen) {
+      loginPopupContainer.classList.remove("active");
+      modalOverlay?.classList.remove("active");
+      userPopupIsOpen = !userPopupIsOpen;
+      return;
     }
 
-    handleMouseOut(e);
+    if (resetPassForm && resetPassForm.classList.contains("active")) {
+      resetPassForm.classList.remove("active");
+      loginForm.classList.add("active");
+    }
+
+    if (resetPassForm2 && resetPassForm2.classList.contains("active")) {
+      resetPassForm2.classList.remove("active");
+      loginForm.classList.add("active");
+    }
+
+    if (cartPopupIsOpen) {
+      cartPopup.classList.remove("active");
+      cartPopupIsOpen = !cartPopupIsOpen;
+      if (resetPassForm.classList.contains("active")) {
+        resetPassForm.classList.remove("active");
+        loginForm.classList.add("active");
+      }
+      if (resetPassForm2.classList.contains("active")) {
+        resetPassForm2.classList.remove("active");
+        loginForm.classList.add("active");
+      }
+    }
+    const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
+    alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
+    loginPopupContainer.classList.add("active");
+    modalOverlay?.classList.add("active");
+    userPopupIsOpen = !userPopupIsOpen;
+    handleOutsideClick();
   });
-  item.addEventListener("touchstart", handleMouseOver);
-});
+
+resetPassStep2Btn &&
+  resetPassStep2Btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    resetPassForm.classList.remove("active");
+    resetPassForm2.classList.add("active");
+  });
+
+loginGoBackBtn &&
+  loginGoBackBtn.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.currentTarget.parentElement.parentElement.classList.remove("active");
+      loginForm.classList.add("active");
+    });
+  });
+
+loginCloseButton &&
+  loginCloseButton.addEventListener("click", () => {
+    loginPopupContainer.classList.remove("active");
+    userPopupIsOpen = !userPopupIsOpen;
+  });
+
+createAccountBtn &&
+  createAccountBtn.addEventListener("click", () => {
+    loginForm.classList.remove("active");
+    createAccModal.classList.add("active");
+  });
+
+loginStep2 &&
+  loginStep2.addEventListener("click", (e) => {
+    e.preventDefault();
+    loginForm.classList.add("active");
+    resetPassForm2?.classList.remove("active");
+  });
+
+
+  navigationIcons.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dataAttrName = e.currentTarget.dataset.navName;
+        if(dataAttrName === 'login') return;
+        const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
+        const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
+
+        alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
+        findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
+        
+    });
+  })
