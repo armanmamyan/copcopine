@@ -22,6 +22,7 @@
         top: 30px;
         right: 10px;
         overflow: hidden;
+        z-index: 100;
         &.active{
             display: block;
         }
@@ -39,6 +40,10 @@
 }
 
 .project--primary-links{
+    position: relative;
+    @media screen and (max-width: 1200px){
+        position: static;
+    }
     & > a + a{
         margin-inline-start: 12px;
         &::before{

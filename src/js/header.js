@@ -29,8 +29,8 @@ function handleOutsideClick() {
 
 const isRowElement = (e) => {
   if (
-    e.relatedTarget.classList.contains("row") ||
-    e.relatedTarget.classList.contains("project--subheader-bg")
+    e.relatedTarget?.classList.contains("row") ||
+    e.relatedTarget?.classList.contains("project--subheader-bg")
   )
     return true;
   return false;
@@ -88,7 +88,7 @@ const navigationIcons = document.querySelectorAll('.primary--link-item');
 const createAccount = document.querySelector("#createAccountBtn");
 const modalOverlay = document.querySelector(".modalOverlay");
 const loginGoBackBtn = document.querySelectorAll(".project--popup-goback");
-const loginCloseButton = document.querySelector("#login .project--popup-close");
+const loginCloseButton = document.querySelectorAll(".project--popup-close");
 const createAccModal = document.querySelector("#createAccount");
 const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
 
@@ -155,10 +155,15 @@ loginGoBackBtn &&
     });
   });
 
-loginCloseButton &&
-  loginCloseButton.addEventListener("click", () => {
-    loginPopupContainer.classList.remove("active");
-    userPopupIsOpen = !userPopupIsOpen;
+  loginCloseButton.forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
+      e.currentTarget.parentElement.parentElement?.classList.remove("active");
+      if(userPopupIsOpen){
+        userPopupIsOpen = !userPopupIsOpen;
+      }
+    });
   });
 
 createAccountBtn &&
@@ -187,4 +192,27 @@ loginStep2 &&
         findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
         
     });
-  })
+  });
+
+
+
+  const checkWishlist = (wishlistContainer,wishlistContainerElements) => {
+    if(wishlistContainerElements?.length > 3){
+      wishlistContainer.setAttribute('style', 'justify-content: flex-start;');
+    }else{
+      wishlistContainer.removeAttribute('style');
+    }
+  };
+
+
+
+  window.onload = function(){
+    const wishlistContainer = document.querySelector('.project--wishlist-modal');
+    const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
+    wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    window.addEventListener('resize', () => {
+      const wishlistContainer = document.querySelector('.project--wishlist-modal');
+      const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
+      wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    })
+  }

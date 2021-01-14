@@ -6,6 +6,7 @@ const browserSync = require("browser-sync").create();
 const livereload = require("gulp-livereload");
 const injectPartials = require("gulp-inject-partials");
 const htmlbeautify = require("gulp-html-beautify");
+const gcmq = require('gulp-group-css-media-queries');
 var beautifyOptions = {
   indentSize: 2,
 };
@@ -27,6 +28,7 @@ const sassCompiler = () => {
         "android 4"
       )
     )
+    .pipe(gcmq())
     .pipe(dest("src/styles"))
     .pipe(livereload());
 };
