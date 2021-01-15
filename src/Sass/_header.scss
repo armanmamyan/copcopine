@@ -106,12 +106,22 @@
         & > .navbar-nav{
             & > .nav-item{
                 position: static;
+                &.active{
+                    .dropdown--content{
+                        display: flex;
+                    }
+                }
             }
         }
     }
-    ul.navbar-nav:not(.project--nav-secondary){
-        & > li + li{
-            margin-inline-start: 60px;
+    @media screen and (min-width: 1201px){
+        .navbar.navbar-expand-xl{
+            position: static !important;
+        }
+        ul.navbar-nav:not(.project--nav-secondary){
+            & > li + li{
+                margin-inline-start: 60px;
+            }
         }
     }
 }
@@ -119,11 +129,15 @@
 .dropdown--content{
     position: absolute;
     left: 0;
+    display: none;
     width: 100%;
     height: auto;
     padding: 30px 0;
-    visibility: hidden;
     overflow: hidden;
+    background-color: #fff;
+    &:empty{
+        display: none !important;
+    }
     .project--nav-secondary{
         flex-direction: column;
         overflow: hidden;
@@ -192,5 +206,11 @@
         width: auto;
         height: auto;
         object-fit: contain;
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .project--header-secondary{
+        position: static !important;
     }
 }

@@ -36,41 +36,51 @@ const isRowElement = (e) => {
   return false;
 };
 
-const handleMouseOut = () => {
-  getSubheaderContainer?.setAttribute("style", `visibility: hidden`);
-  gsap.to(getHeaderInitiate, { height: 0 });
-  getSubheaderContainer = null;
-};
+// const handleMouseOut = () => {
+//   getSubheaderContainer?.setAttribute("style", `visibility: hidden`);
+//   gsap.to(getHeaderInitiate, { height: 0 });
+//   getSubheaderContainer = null;
+// };
 
 const menuItemOver = (e) => {
-  const target = e.currentTarget.parentElement;
-  target.animation?.play();
+  // const target = e.currentTarget.parentElement;
+  // target.animation?.play();
+  const target = e.currentTarget;
+  const lastChild = target.lastElementChild;
+  const lastChildRow = lastChild.querySelector('.container');
+  lastChildRow?.setAttribute('style',`margin-inline-start: ${target.parentElement.offsetLeft}px`);
+  target.classList.add('active');
 };
 
 const menuItemOut = (e) => {
-  const target = e.currentTarget.parentElement;
-  if (isRowElement(e)) return;
-  target.animation?.reverse();
+  // const target = e.currentTarget.parentElement;
+  // if (isRowElement(e)) return;
+  // target.animation?.reverse();
+  const target = e.currentTarget;
+  const lastChild = target.lastElementChild;
+  const lastChildRow = lastChild.querySelector('.container');
+  lastChildRow?.removeAttribute('style');
+  e.currentTarget.classList.remove('active');
 };
 
 getHeaderLinks.forEach((item) => {
-  const target = item.parentElement;
-  const subContainer = target.querySelector(".dropdown--content");
-  let tl;
-  if (!!subContainer?.children.length) {
-    tl = new TimelineLite({ paused: true });
-    const getHeight = subContainer.offsetHeight;
-    let height = getHeight + 40;
-    tl.to(getHeaderInitiate, { duration: 0.9, height: height }).to(
-      subContainer,
-      { visibility: "visible" }
-    );
-    target.animation = tl;
-  }
+  // const target = item.parentElement;
+  // const subContainer = target.querySelector(".dropdown--content");
+  // let tl;
+  // if (!!subContainer?.children.length) {
+  //   tl = new TimelineLite({ paused: true });
+  //   const getHeight = subContainer.offsetHeight;
+  //   let height = getHeight + 40;
+  //   tl.to(getHeaderInitiate, { duration: 0.9, height: height }).to(
+  //     subContainer,
+  //     { visibility: "visible" }
+  //   );
+  //   target.animation = tl;
+  // }
 
-  item.addEventListener("mouseover", menuItemOver);
-  item.addEventListener("mouseleave", menuItemOut);
-  getHeaderInitiate.addEventListener("mouseleave", menuItemOut);
+  item.parentElement.addEventListener("mouseover", menuItemOver);
+  item.parentElement.addEventListener("mouseleave", menuItemOut);
+  // getHeaderInitiate.addEventListener("mouseleave", menuItemOut);
 });
 
 let cartPopupIsOpen = false;
@@ -158,7 +168,13 @@ loginGoBackBtn &&
   loginCloseButton.forEach(item => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
-      e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
+      if(e.currentTarget.parentElement.parentElement.id === 'login1'){
+        e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
+        if(userPopupIsOpen){
+          userPopupIsOpen = !userPopupIsOpen;
+        }
+        return;
+      }
       e.currentTarget.parentElement.parentElement?.classList.remove("active");
       if(userPopupIsOpen){
         userPopupIsOpen = !userPopupIsOpen;
@@ -180,18 +196,24 @@ loginStep2 &&
   });
 
 
-  navigationIcons.forEach(item => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const dataAttrName = e.currentTarget.dataset.navName;
-        if(dataAttrName === 'login') return;
-        const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
-        const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
+  const handleNavigationClick = (e) => {
+    console.log(e.currentTarget.dataset.navName);
+    if(window.innerWidth > 1200 || e.currentTarget.dataset.navName === 'search'){
+      e.preventDefault();
+      const dataAttrName = e.currentTarget.dataset.navName;
+      if(dataAttrName === 'login') return;
+      const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
+      const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
 
-        alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
-        findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
-        
-    });
+      alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
+      findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
+      return;
+  }
+  }
+
+
+  navigationIcons.forEach(item => {
+    item.addEventListener('click', handleNavigationClick);
   });
 
 
@@ -210,9 +232,10 @@ loginStep2 &&
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
-    window.addEventListener('resize', () => {
-      const wishlistContainer = document.querySelector('.project--wishlist-modal');
-      const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
-      wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
-    })
   }
+
+  window.addEventListener('resize', () => {
+    const wishlistContainer = document.querySelector('.project--wishlist-modal');
+    const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
+    wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+  });
