@@ -36,26 +36,23 @@ const isRowElement = (e) => {
   return false;
 };
 
-// const handleMouseOut = () => {
-//   getSubheaderContainer?.setAttribute("style", `visibility: hidden`);
-//   gsap.to(getHeaderInitiate, { height: 0 });
-//   getSubheaderContainer = null;
-// };
 
 const menuItemOver = (e) => {
-  // const target = e.currentTarget.parentElement;
-  // target.animation?.play();
   const target = e.currentTarget;
+  const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
-  const lastChildRow = lastChild.querySelector('.container');
-  lastChildRow?.setAttribute('style',`margin-inline-start: ${target.parentElement.offsetLeft}px`);
   target.classList.add('active');
+  console.log('mtnuma');
+  if(hoveredElement.dataset?.section !== 'brand'){
+    if(target.parentElement.lastElementChild == target){
+      lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth}px`);
+    }else{
+      lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left}px`);
+    }
+  }
 };
 
 const menuItemOut = (e) => {
-  // const target = e.currentTarget.parentElement;
-  // if (isRowElement(e)) return;
-  // target.animation?.reverse();
   const target = e.currentTarget;
   const lastChild = target.lastElementChild;
   const lastChildRow = lastChild.querySelector('.container');
@@ -64,23 +61,8 @@ const menuItemOut = (e) => {
 };
 
 getHeaderLinks.forEach((item) => {
-  // const target = item.parentElement;
-  // const subContainer = target.querySelector(".dropdown--content");
-  // let tl;
-  // if (!!subContainer?.children.length) {
-  //   tl = new TimelineLite({ paused: true });
-  //   const getHeight = subContainer.offsetHeight;
-  //   let height = getHeight + 40;
-  //   tl.to(getHeaderInitiate, { duration: 0.9, height: height }).to(
-  //     subContainer,
-  //     { visibility: "visible" }
-  //   );
-  //   target.animation = tl;
-  // }
-
   item.parentElement.addEventListener("mouseover", menuItemOver);
   item.parentElement.addEventListener("mouseleave", menuItemOut);
-  // getHeaderInitiate.addEventListener("mouseleave", menuItemOut);
 });
 
 let cartPopupIsOpen = false;

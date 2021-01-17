@@ -159,6 +159,11 @@ p {
   margin-block-end: 20px;
 }
 
+.mb-20-important {
+  -webkit-margin-after: 20px !important;
+  margin-block-end: 20px !important;
+}
+
 .ml-20 {
   -webkit-margin-end: 20px;
   margin-inline-end: 20px;
@@ -169,9 +174,11 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 120px;
+  height: 120px;
   padding: 16px 40px;
   background-color: #fff;
+  -webkit-transition: height 0.3s ease, padding 0.3s ease;
+  transition: height 0.3s ease, padding 0.3s ease;
 }
 
 .project--header.background--transparent {
@@ -217,8 +224,8 @@ p {
 }
 
 .project--primary-links > a + a {
-  -webkit-margin-start: 12px;
-  margin-inline-start: 12px;
+  -webkit-margin-start: 24px;
+  margin-inline-start: 24px;
 }
 
 .project--primary-links > a + a::before {
@@ -230,11 +237,6 @@ p {
   width: 1px;
   height: 20px;
   background-color: #A8977A;
-}
-
-.project--primary-links > a:not(:last-child) {
-  -webkit-margin-end: 12px;
-  margin-inline-end: 12px;
 }
 
 .project--primary-links .primary--link-item {
@@ -300,6 +302,39 @@ p {
   display: flex;
 }
 
+.project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content,
+.project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content .project--nav-secondary,
+.project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed .project--nav-secondary {
+  text-align: right;
+}
+
+.project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content .project--nav-banner-container,
+.project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed .project--nav-banner-container {
+  position: relative;
+}
+
+.project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content .project--nav-banner-container .project--secondary-divider,
+.project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed .project--nav-banner-container .project--secondary-divider {
+  display: none;
+}
+
+.project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content .project--nav-banner-container::after,
+.project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed .project--nav-banner-container::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #A8977A;
+  margin: 0 30px;
+}
+
 .dropdown--content {
   position: absolute;
   left: 0;
@@ -313,6 +348,15 @@ p {
 
 .dropdown--content:empty {
   display: none !important;
+}
+
+.dropdown--content > .container {
+  position: relative;
+}
+
+.dropdown--content > .container > .row {
+  height: 100%;
+  width: 100%;
 }
 
 .dropdown--content .project--nav-secondary {
@@ -387,6 +431,12 @@ p {
   -ms-flex-item-align: start;
   align-self: flex-start;
   overflow: hidden;
+  height: 100%;
+}
+
+.nav--banner-wrapper > a:first-child:not(:last-child) {
+  -webkit-margin-after: 30px;
+  margin-block-end: 30px;
 }
 
 .nav--banner-link {
@@ -400,6 +450,53 @@ p {
   height: auto;
   -o-object-fit: contain;
   object-fit: contain;
+}
+
+.nav--item-heading {
+  font-size: 16px;
+  line-height: 16px;
+  color: #000;
+  letter-spacing: 0;
+  font-weight: bold;
+}
+
+.project--brand-history-container > a + a {
+  -webkit-margin-start: 30px;
+  margin-inline-start: 30px;
+}
+
+.project--brand-history-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 192px;
+  width: 100%;
+}
+
+.project--brand-history-item .brand--history-title {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  -webkit-margin-before: 11px;
+  margin-block-start: 11px;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+.project--brand-history-item:hover > .brand--history-title {
+  border-color: #A8977A;
+}
+
+.project--brand-history-container {
+  width: 100%;
 }
 
 .project--tel {
@@ -424,8 +521,8 @@ p {
   color: #000;
   border: 1px solid #A8977A;
   letter-spacing: 0;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 17px;
   font-weight: bold;
 }
 
@@ -635,6 +732,21 @@ del {
 .button--chocolate:hover {
   color: #fff;
   background-color: #897047;
+}
+
+.project--section {
+  height: 100vh;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
 
 .project--popup-container {
@@ -922,8 +1034,8 @@ del {
   max-width: 150px;
   height: 224px;
   width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .product--modal-price {
@@ -1126,11 +1238,12 @@ del {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
+  height: 0;
   background-color: #fff;
-  -webkit-transition: -webkit-transform 0.4s ease;
-  transition: -webkit-transform 0.4s ease;
-  transition: transform 0.4s ease;
-  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transition: height 0.3s ease, -webkit-transform 0.4s ease;
+  transition: height 0.3s ease, -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease, height 0.3s ease;
+  transition: transform 0.4s ease, height 0.3s ease, -webkit-transform 0.4s ease;
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
@@ -1138,11 +1251,13 @@ del {
 .project--popup-multistep #forgotPassword.active {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
+  height: auto;
 }
 
 .project--popup-multistep #forgotPassword2.active {
   -webkit-transform: translateX(-200%);
   transform: translateX(-200%);
+  height: auto;
 }
 
 .project--popup-multistep #login1 {
@@ -1153,11 +1268,13 @@ del {
 .project--popup-multistep #login1.active {
   -webkit-transform: translate(0);
   transform: translate(0);
+  height: auto;
 }
 
 .project--popup-multistep #createAccount.active {
   -webkit-transform: translate(-300%);
   transform: translate(-300%);
+  height: auto;
 }
 
 .popup-form-search-btn {
@@ -1229,20 +1346,21 @@ del {
     position: static !important;
   }
 
-  .project--product-modal > div:first-child,
-  .project--wishlist-modal > div:first-child {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .project--product-modal > div:first-child {
     -webkit-padding-after: 141px;
     padding-block-end: 141px;
   }
 
-  .project--product-modal > div:last-child:not(:first-child):first-child,
-  .project--wishlist-modal > div:last-child:not(:first-child):first-child {
+  .project--product-modal > div:last-child:not(:first-child):first-child {
     -webkit-padding-after: 0;
     padding-block-end: 0;
   }
 
-  .project--product-modal > div:last-child:not(:first-child),
-  .project--wishlist-modal > div:last-child:not(:first-child) {
+  .project--product-modal > div:last-child:not(:first-child) {
     -webkit-padding-after: 188px;
     padding-block-end: 188px;
   }
@@ -1251,6 +1369,78 @@ del {
 @media screen and (max-width: 1200px) {
   .project--primary-links {
     position: static;
+  }
+
+  .project--header-line {
+    display: none;
+  }
+
+  .project--header {
+    height: 50px;
+    padding: 0;
+  }
+
+  .project--header-primary {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+  }
+
+  .project--header-primary .project--tel {
+    -webkit-margin-start: 38px;
+    margin-inline-start: 38px;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: none;
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    background-size: 150%;
+  }
+
+  .project--header-secondary {
+    background-color: #fff;
+    max-width: 100%;
+  }
+
+  .project--header-secondary > .row {
+    margin: 0;
+  }
+
+  .project--header-secondary > .row > .navbar {
+    width: 100%;
+    position: static;
+  }
+
+  .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav {
+    padding: 12px 0 22px 38px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav > li + li {
+    -webkit-margin-start: 40px;
+    margin-inline-start: 40px;
+  }
+
+  .nav-item .dropdown--content {
+    -webkit-padding-start: 40px;
+    padding-inline-start: 40px;
   }
 
   .project--popup-container {
@@ -1501,10 +1691,6 @@ del {
     padding-block-start: 0;
     -webkit-padding-after: 20px;
     padding-block-end: 20px;
-  }
-
-  .project--popup-multistep .project--popup-steps {
-    height: 100%;
   }
 
   .project--product-modal > div + div {

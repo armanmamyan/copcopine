@@ -327,7 +327,7 @@
   max-width: 150px;
   height: 224px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .product--modal-price {
   max-width: 120px;
@@ -336,18 +336,7 @@
 .product--modal-details {
   margin-inline-start: 20px;
 }
-
-.project--product-modal,
-.project--wishlist-modal {
-  position: relative;
-  max-height: 472px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-track,
-  &::-webkit-scrollbar-thumb {
-    width: 0;
-  }
+.project--product-modal{
   @media screen and (min-width: 1201px){
     & > div:first-child {
       padding-block-end: 141px;
@@ -361,6 +350,19 @@
       padding-block-end: 188px;
     }
   }
+}
+.project--product-modal,
+.project--wishlist-modal {
+  position: relative;
+  max-height: 472px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    width: 0;
+  }
+
   @media screen and (max-width: 1200px){
     .project--product-modal-item{
       margin-block-end: 0 !important;
@@ -566,27 +568,29 @@
   .project--popup-steps{
     flex-shrink: 0;
     width: 100%;
+    height: 0;
     background-color: #fff;
-    transition: transform .4s ease;
+    transition: transform .4s ease, height .3s ease;
     transform: translateX(100%);
-    @media screen and (max-width: 1200px){
-      height: 100%;
-    }
   }
   #forgotPassword.active{
     transform: translateX(-100%);
+    height: auto;
   }
   #forgotPassword2.active{
     transform: translateX(-200%);
+    height: auto;
   }
   #login1{
     transform: translate(-120%);
     &.active{
       transform: translate(0);
+      height: auto;
     }
   }
   #createAccount.active{
     transform: translate(-300%);
+    height: auto;
   }
 }
 

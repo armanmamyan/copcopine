@@ -3,9 +3,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 120px;
+    height: 120px;
     padding: 16px 40px;
     background-color: #fff;
+    transition: height .3s ease, padding .3s ease;
     &.background--transparent{
         background-color: transparent;
     }
@@ -45,7 +46,7 @@
         position: static;
     }
     & > a + a{
-        margin-inline-start: 12px;
+        margin-inline-start: 24px;
         &::before{
             content: '';
             position: absolute;
@@ -56,9 +57,6 @@
             height: 20px;
             background-color: #A8977A;
         }
-    }
-    & > a:not(:last-child){
-        margin-inline-end: 12px;
     }
     .primary--link-item{
         position: relative;
@@ -112,6 +110,26 @@
                     }
                 }
             }
+            & > li:last-child .dropdown--content, .secondary--nav-reversed{
+                    flex-direction: row-reverse;
+                    .project--nav-secondary{
+                        text-align: right;
+                    }
+                    .project--nav-banner-container{
+                        position: relative;
+                        .project--secondary-divider{
+                            display: none;
+                        }
+                        &::after{
+                            content: '';
+                            display: block;
+                            width: 1px;
+                            height: 100%;
+                            background-color: #A8977A;
+                            margin: 0 30px;
+                        }
+                    }
+            }
         }
     }
     @media screen and (min-width: 1201px){
@@ -137,6 +155,13 @@
     background-color: #fff;
     &:empty{
         display: none !important;
+    }
+    & > .container {
+        position: relative;
+        & > .row{
+            height: 100%;
+            width: 100%;
+        }
     }
     .project--nav-secondary{
         flex-direction: column;
@@ -196,8 +221,13 @@
 .project--nav-banner-container{
     align-self: flex-start;
     overflow: hidden;
+    height: 100%;
 }
-
+.nav--banner-wrapper{
+    & > a:first-child:not(:last-child){
+        margin-block-end: 30px;
+    }
+}
 .nav--banner-link{
     display: block;
     line-height: 0;
@@ -209,8 +239,106 @@
     }
 }
 
+.nav--item-heading{
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+.project--brand-history-container{
+    & > a + a{
+        margin-inline-start: 30px;
+    }
+}
+
+.project--brand-history-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 192px;
+    width: 100%;
+    .brand--history-title{
+        display: inline-block;
+        color: #000;
+        text-align: center;
+        margin-block-start: 11px;
+        border-bottom: 1px solid transparent;
+        transition: border-color .3s ease;
+    }
+    &:hover > .brand--history-title{
+        border-color: #A8977A;
+    }
+}
+.project--brand-history-container{
+    width: 100%;
+}
+
 @media screen and (min-width: 1201px){
     .project--header-secondary{
         position: static !important;
     }
+    .navbar-toggler{
+        display: none;
+    }
+}
+@media screen and (max-width: 1200px){
+    .project--header-line{
+        display: none;
+    }
+    .project--header{
+        height: 50px;
+        padding: 0;
+    }
+    .project--header-primary{
+        position: relative;
+        padding: 0 20px;
+        height: 100%;
+        .project--tel{
+            margin-inline-start: 38px;
+        }
+    }
+   .navbar-toggler{
+       position: absolute;
+       top: 17px;
+       left: 20px;
+       width: 18px;
+       height: 18px;
+       padding: 0;
+       border: none;
+       .navbar-toggler-icon{
+           width: 100%;
+           height: 100%;
+           vertical-align: top;
+           background-size: 150%;
+       }
+   }
+   .project--header-secondary{
+       background-color: #fff;
+       max-width: 100%;
+       & > .row{
+           margin: 0;
+           & > .navbar {
+            width: 100%;
+            position: static;
+            .header--secondary-nav{
+                & > .navbar-nav{
+                     padding: 12px 0 22px 38px;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    & > li + li{
+                        margin-inline-start: 40px;
+                    }
+                }
+
+            }
+        }
+       }
+   }
+   .nav-item{
+       .dropdown--content{
+           padding-inline-start: 40px;
+       }
+   }
 }

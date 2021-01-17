@@ -27,6 +27,9 @@
 <body style="background: #e5e5e5">
     <header class="project--header">
         <div class="project--header-primary d-flex align-items-center justify-content-between">
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a href="tel:+74957852333" class="project--tel">+7 495 785 23 33</a>
             <a href="/" class="project--logo">
                 <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
@@ -704,62 +707,200 @@
         <div class="container project--header-secondary">
             <div class="row justify-content-center">
                 <nav class="navbar navbar-expand-xl p-0 flex-wrap">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                     <div class="collapse navbar-collapse header--secondary-nav" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item pr-0">
                                 <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
-                                <div class="dropdown--content"></div>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
-                                <div class="dropdown--content"></div>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
-                                <div class="dropdown--content"></div>
-                            </li>
-                            <li class="nav-item pr-0">
-                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">История бренда</a>
                                 <div class="dropdown--content">
-                                  <div class="container">
-                                      <div class="row">
-                                        <ul class="project--nav-secondary navbar-nav">
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
-                                            </li>
-                                        </ul>
-                                        <div class="project--nav-banner-container d-flex">
-                                            <div class="project--secondary-divider"></div>
+                                    <ul class="project--nav-secondary navbar-nav">
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="project--nav-banner-container d-flex">
+                                        <div class="project--secondary-divider"></div>
+                                        <div class="nav--banner-wrapper">
                                             <a href="/" class="nav--banner-link">
                                                 <img src="./assets/banner.png" alt="" class="project--banner-image" />
                                             </a>
+                                            <a href="/" class="nav--banner-link">
+                                                <img src="./assets/bannerImage2.png" alt="" class="project--banner-image" />
+                                            </a>
                                         </div>
-                                      </div>
-                                  </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
+                                <div class="dropdown--content">
+                                    <ul class="project--nav-secondary navbar-nav">
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="project--nav-banner-container d-flex">
+                                        <div class="project--secondary-divider"></div>
+                                        <div class="nav--banner-wrapper">
+                                            <a href="/" class="nav--banner-link">
+                                                <img src="./assets/banner.png" alt="" class="project--banner-image" />
+                                            </a>
+                                            <a href="/" class="nav--banner-link">
+                                                <img src="./assets/bannerImage1.png" alt="" class="project--banner-image" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
+                                <div class="dropdown--content">
+                                    <div class="container">
+                                        <div class="row">
+                                            <ul class="project--nav-secondary navbar-nav">
+                                                <li class="nav-item pr-0 nav--item-heading">ОСЕНЬ / ЗИМА 20</li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
+                                                </li>
+                                                <li class="nav-item pr-0 mb-20-important">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                                </li>
+                                                <li class="nav-item pr-0 nav--item-heading">ВЕСНА / ЛЕТО 20</li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                                </li>
+                                            </ul>
+                                            <div class="project--nav-banner-container d-flex">
+                                                <div class="project--secondary-divider"></div>
+                                                <div class="nav--banner-wrapper">
+                                                    <a href="/" class="nav--banner-link">
+                                                        <img src="./assets/bannerImage4.png" alt="" class="project--banner-image" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item pr-0">
+                                <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#" data-section='brand'>История бренда</a>
+                                <div class="dropdown--content">
+                                    <div class="d-flex justify-content-center project--brand-history-container">
+                                        <a href="/" class="project--brand-history-item">
+                                           <img src="./assets/brand2.png" alt="">
+                                           <h5 class="brand--history-title">MANIFESTO</h5>
+                                       </a>
+                                       <a href="/" class="project--brand-history-item">
+                                           <img src="./assets/brand3.png" alt="">
+                                           <h5 class="brand--history-title">LA CRÉATION</h5>
+                                       </a>
+                                       <a href="/" class="project--brand-history-item">
+                                           <img src="./assets/brand4.png" alt="">
+                                           <h5 class="brand--history-title">L’ATELIER</h5>
+                                       </a>
+                                       <a href="/" class="project--brand-history-item">
+                                           <img src="./assets/brand.png" alt="">
+                                           <h5 class="brand--history-title">EQUIPE & RÉSEAU</h5>
+                                       </a>
+                                    </div>
                                 </div>
                             </li>
                             <li class="nav-item pr-0">
@@ -770,64 +911,61 @@
                                     OUTLET
                                 </a>
                                 <div class="dropdown--content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <ul class="project--nav-secondary navbar-nav">
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КОМБИНЕЗОНЫ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КУРТКИ И ПАЛЬТО</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ОБУВЬ</a>
-                                                </li>
-                                                <li class="nav-item pr-0">
-                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ПЛАТЬЯ</a>
-                                                </li>
-                                            </ul>
-                                            <div class="project--nav-banner-container d-flex">
-                                                <div class="project--secondary-divider"></div>
-                                                <a href="/" class="nav--banner-link">
-                                                    <img src="./assets/banner.png" alt="" class="project--banner-image" />
-                                                </a>
-                                            </div>
-                                        </div>
+                                    <ul class="project--nav-secondary navbar-nav">
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КОМБИНЕЗОНЫ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КУРТКИ И ПАЛЬТО</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ОБУВЬ</a>
+                                        </li>
+                                        <li class="nav-item pr-0">
+                                            <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ПЛАТЬЯ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="project--nav-banner-container d-flex">
+                                        <div class="project--secondary-divider"></div>
+                                        <a href="/" class="nav--banner-link">
+                                            <img src="./assets/banner.png" alt="" class="project--banner-image" />
+                                        </a>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="project--subheader-bg"></div>
                 </nav>
             </div>
         </div>
     </header>
-
+    <section class="project--section">
+        <img src="./assets/section.png" class="image">
+    </section>
     <!-- <div style="margin-top: 350px">
         <div class="project--popup-container project--popup-links">
             <div class="project--popup-header">
