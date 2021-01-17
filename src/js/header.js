@@ -1,6 +1,7 @@
 const getHeaderInitiate = document.querySelector(".project--subheader-bg");
 const getHeaderLinks = document.querySelectorAll(".project--link");
 let getSubheaderContainer = null;
+let previousElement = null;
 
 function isParent(refNode, otherNode) {
   var parent = otherNode.parentNode;
@@ -38,6 +39,7 @@ const isRowElement = (e) => {
 
 
 const menuItemOver = (e) => {
+  console.log(e);
   const target = e.currentTarget;
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
@@ -56,8 +58,16 @@ const menuItemOver = (e) => {
     }
     getHeaderLinks.forEach(item => !item.parentElement.classList.contains('active') && item.parentElement.classList.add('hover--opacity'));
   }
-
 };
+
+const handleMenuClick = e => {
+  const target = e.currentTarget;
+  if(previousElement){
+    previousElement.classList.remove('active');
+  }
+  target.classList.add('active');
+  previousElement = target;
+}
 
 const menuItemOut = (e) => {
   const target = e.currentTarget;
@@ -69,8 +79,10 @@ const menuItemOut = (e) => {
 };
 
 getHeaderLinks.forEach((item) => {
-  item.parentElement.addEventListener("mouseover", menuItemOver);
-  item.parentElement.addEventListener("mouseleave", menuItemOut);
+  if(window.innerWidth > 1200){
+    item.parentElement.addEventListener("mouseover", menuItemOver);
+    item.parentElement.addEventListener("mouseleave", menuItemOut);
+  }
 });
 
 let cartPopupIsOpen = false;
@@ -187,7 +199,6 @@ loginStep2 &&
 
 
   const handleNavigationClick = (e) => {
-    console.log(e.currentTarget.dataset.navName);
     if(window.innerWidth > 1200 || e.currentTarget.dataset.navName === 'search'){
       e.preventDefault();
       const dataAttrName = e.currentTarget.dataset.navName;
@@ -216,7 +227,11 @@ loginStep2 &&
     }
   };
 
-
+  if(window.innerWidth < 1200){
+    getHeaderLinks.forEach((item) => {
+      item.parentElement.addEventListener("click", menuItemOver);
+    });
+  }
 
   window.onload = function(){
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
@@ -228,4 +243,9 @@ loginStep2 &&
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    if(window.innerWidth < 1200){
+      getHeaderLinks.forEach((item) => {
+        item.parentElement.addEventListener("click", menuItemOver);
+      });
+    }
   });

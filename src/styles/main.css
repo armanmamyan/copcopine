@@ -2385,6 +2385,18 @@ del {
     width: 162px;
     height: 112px;
   }
+
+  .header--secondary-nav > .navbar-nav {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -2393,7 +2405,8 @@ del {
     display: none;
   }
 
-  .nav--banner-wrapper {
+  .nav--banner-wrapper,
+  .project--nav-banner-container {
     display: none !important;
   }
 
