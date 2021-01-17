@@ -285,11 +285,12 @@
     .footer_links_heading{
         margin-bottom: 10px;
     }
-
-    .collapse:not(.show),
-    .collapsing {
-        display: block !important;
-        height:  auto !important;
+    footer{
+        .collapse:not(.show),
+        .collapsing {
+            display: block !important;
+            height:  auto !important;
+        }
     }
     .soc_icons_wrapper.collapse:not(.show),
     .soc_icons_wrapper.collapsing {

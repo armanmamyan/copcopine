@@ -41,8 +41,11 @@ const menuItemOver = (e) => {
   const target = e.currentTarget;
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
+  const findPreviousElem = document.querySelector('.nav-item.active');
+  if(window.innerWidth < 1200 && findPreviousElem){
+    findPreviousElem.classList.remove('active');
+  }
   target.classList.add('active');
-  console.log('mtnuma');
   if(hoveredElement.dataset?.section !== 'brand'){
     if(target.parentElement.lastElementChild == target){
       lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth}px`);

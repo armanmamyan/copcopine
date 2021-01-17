@@ -117,16 +117,14 @@
                     }
                     .project--nav-banner-container{
                         position: relative;
+                        margin-inline-start: 0;
+                        margin-inline-end: 60px;
                         .project--secondary-divider{
                             display: none;
                         }
-                        &::after{
-                            content: '';
-                            display: block;
-                            width: 1px;
-                            height: 100%;
-                            background-color: #A8977A;
-                            margin: 0 30px;
+                        &::before{
+                            left: auto;
+                            right: -30px;
                         }
                     }
             }
@@ -166,6 +164,7 @@
     .project--nav-secondary{
         flex-direction: column;
         overflow: hidden;
+        flex-shrink: 0;
         & > li:last-child{
             margin-block-end: 0;
         }
@@ -178,7 +177,7 @@
     }
    
     .nav-sublink{
-        display: block;
+        display: inline-block;
         position: relative;
         font-size: 16px;
         line-height: 1;
@@ -197,7 +196,7 @@
             background-color: #A8977A;
         }
         &:hover{
-            ::before{
+            &::before{
                 transform: scale(1);
             }
         }
@@ -219,11 +218,36 @@
 }
 
 .project--nav-banner-container{
+    position: relative;
     align-self: flex-start;
-    overflow: hidden;
     height: 100%;
+    margin-inline-start: 60px;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        background-color: #A8977A;
+        width: 1px;
+        height: 100%;
+    }
 }
 .nav--banner-wrapper{
+    &.nav--banner-horizontal{
+        display: flex;
+        flex-wrap: wrap;
+        .nav--banner-link{
+            max-width: 313px;   
+        }
+        & > a:nth-child(2){
+            margin-inline-end: 37px;
+        }
+        & > a:not(:last-child){
+            margin-inline-end: 30px;
+            margin-block-end: 30px;
+        }
+    }
     & > a:first-child:not(:last-child){
         margin-block-end: 30px;
     }
@@ -317,6 +341,7 @@
    .project--header-secondary{
        background-color: #fff;
        max-width: 100%;
+       padding: 0 20px;
        & > .row{
            margin: 0;
            & > .navbar {
