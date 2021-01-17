@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- partial:partials/_headLinks.html -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <style>
+        @font-face {
+            font-family: 'Circe';
+            src: url('./fonts/Circe.eot');
+            src: local('☺'), url('./fonts/Circe.woff') format('woff'),
+                url('./fonts/Circe.ttf') format('truetype'),
+                url('./fonts/Circe.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <!-- partial -->
+</head>
+
+<body style="background: #e5e5e5">
+
+
+    <footer class="footer">
+        <div class="footer_separator-x my-40"></div>
+
+        <h6 class="footer_heading">Подпишитесь и получите скидку 10%</h6>
+
+        <div class="footer_email_container mx-auto">
+            <input class="input_mail" type="text">
+            <span class="footer_email_placeholder">Email</span>
+            <button class="button_mail">ok</button>
+        </div>
+
+        <div class="footer_separator-x my-20"></div>
+
+        <div class="container">
+            <div class="row mb-20">
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <div class="footer_icon_service_wrapper">
+                        <i class="footer_icon_service service-telephone"></i>
+                    </div>
+                    <div class="service_text_wrapper">
+                        <div>Заказ по телефону</div>
+                        <div>+7 495 785 23 33</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <div class="footer_icon_service_wrapper">
+                        <i class="footer_icon_service service-delivery"></i>
+                    </div>
+                    <div class="service_text_wrapper">
+                        <div>Бесплатная доставка</div>
+                        <div>по России</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <div class="footer_icon_service_wrapper">
+                        <i class="footer_icon_service service-return"></i>
+                    </div>
+                    <div class="service_text_wrapper">
+                        <div>Возврат в</div>
+                        <div>течение 14 дней</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <div class="footer_icon_service_wrapper">
+                        <i class="footer_icon_service service-secure"></i>
+                    </div>
+                    <div class="service_text_wrapper">
+                        <div>Безопасная</div>
+                        <div>оплата картами</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_links_container">
+            <div class="container">
+                <div class="row mb-20">
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_buyers"
+                                data-toggle="collapse">Покупателям</button>
+                            <div class="collapse" id="js_footer_buyers">
+                                <a class="footer_link" href="#">Доставка</a>
+                                <a class="footer_link" href="#">Возврат</a>
+                                <a class="footer_link" href="#">Бонусная программа</a>
+                                <a class="footer_link" href="#">Способы оплаты</a>
+                                <a class="footer_link" href="#">Как создать заказ</a>
+                                <a class="footer_link" href="#">Карта сайта</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_company"
+                                data-toggle="collapse">Компания</button>
+                            <div class="collapse" id="js_footer_company">
+                                <a class="footer_link" href="#">О бранде</a>
+                                <a class="footer_link" href="#">Контакты</a>
+                                <a class="footer_link" href="#">Магазины</a>
+                                <a class="footer_link" href="#">Работа у нас</a>
+                                <a class="footer_link" href="#">Франчайзинг</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 footer_links">
+
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_socials"
+                                data-toggle="collapse">Мы в соцсетях</button>
+                            <div  class="soc_icons_wrapper collapse" id="js_footer_socials">
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                            </div>
+                        </div>
+
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_contact"
+                                data-toggle="collapse">СВЯЗЬ С НАМИ</button>
+                            <div class="soc_icons_wrapper collapse" id="js_footer_contact">
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_payments"
+                                data-toggle="collapse">Способы оплаты</button>
+                            <div class="soc_icons_wrapper collapse" id="js_footer_payments">
+                                <a class="payment payment-visa" href="#"></a>
+                                <a class="payment payment-master" href="#"></a>
+                                <a class="payment payment-mir" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_copy">
+            © 2021 Cop.Copine
+        </div>
+    </footer>
+
+
+
+
+    <!-- partial:partials/_footerLinks.html -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="./js/svg-injector.min.js"></script>
+    <script src="./js/header.js"></script>
+    <script>
+        $('.primary--link-item').tooltip({
+            boundary: 'window'
+        })
+    </script>
+    <script>
+        // Elements to inject
+        var mySVGsToInject = document.querySelectorAll('img.converted--image');
+
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    </script>
+    <script>
+        var footer_email_wrapper = document.querySelector('.footer_email_container ');
+        var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
+        var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
+        var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
+
+
+        var footer_email_input_active =
+
+            footer_email_input.addEventListener('focus', function () {
+                focusInput(footer_email_placeholder);
+            });
+        footer_email_input.addEventListener('blur', function () {
+            var value = footer_email_input.value.trim();
+            if (!value) {
+                blurInput(footer_email_placeholder, footer_email_button);
+            }
+
+        });
+        footer_email_input.addEventListener('input', function (e) {
+            var value = footer_email_input.value.trim();
+            if (value) {
+                focusInput(footer_email_placeholder, footer_email_button);
+            } else {
+                blurInput(footer_email_placeholder, footer_email_button);
+            }
+        });
+
+
+        function focusInput(placeholder, button) {
+            placeholder.style.top = '-10px';
+            placeholder.style.transform = 'scale(0.7)';
+            button.style.backgroundColor = '#A8977A';
+            button.style.color = '#fff';
+        };
+
+        function blurInput(placeholder, button) {
+            placeholder.style.top = '';
+            placeholder.style.transform = '';
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        };
+    </script>
+    <!-- partial -->
+</body>
+
+</html>
