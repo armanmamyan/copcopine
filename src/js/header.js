@@ -39,7 +39,6 @@ const isRowElement = (e) => {
 
 
 const menuItemOver = (e) => {
-  console.log(e);
   const target = e.currentTarget;
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
