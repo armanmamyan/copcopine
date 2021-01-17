@@ -7,3 +7,9 @@
   - Transparent (background- -transparent)
   - Blur(background- -blur)
   - With Opacity (background- -opacity)
+
+# Top/Bottom Ad header variablers
+  - --header-top-bg: #000;
+  - --header-top-color: #fff;
+  - --header-bottom-bg: #CDC3B3;
+  - --header-bottom-color: #000;

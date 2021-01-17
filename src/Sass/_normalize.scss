@@ -1,3 +1,9 @@
+:root{
+    --header-top-bg: #000;
+    --header-top-color: #fff;
+    --header-bottom-bg: #CDC3B3;
+    --header-bottom-color: #000;
+}
 h1{
     font-size: 28px;
     font-weight: bold;
@@ -51,4 +57,8 @@ p{
 
 .ml-20{
     margin-inline-end: 20px;
+}
+
+.hover--opacity{
+    opacity: .6;
 }
