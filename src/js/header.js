@@ -48,12 +48,14 @@ const menuItemOver = (e) => {
   }
   target.classList.add('active');
   if(window.innerWidth > 1200){
-    if(hoveredElement.dataset?.section !== 'brand'){
+    if(hoveredElement.dataset.section !== 'brand'){
       if(target.parentElement.lastElementChild == target){
-        lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth}px`);
+        lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth - 104}px`);
       }else{
         lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left}px`);
       }
+    }else{
+      console.log('mti hambal');
     }
     getHeaderLinks.forEach(item => !item.parentElement.classList.contains('active') && item.parentElement.classList.add('hover--opacity'));
   }
