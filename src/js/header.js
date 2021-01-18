@@ -40,6 +40,7 @@ const isRowElement = (e) => {
 
 const menuItemOver = (e) => {
   const target = e.currentTarget;
+  const targetPaddingLeft = parseInt(window.getComputedStyle(target, null).getPropertyValue('padding-left'), 10);
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
   const findPreviousElem = document.querySelector('.nav-item.active');
@@ -52,7 +53,7 @@ const menuItemOver = (e) => {
       if(target.parentElement.lastElementChild == target){
         lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth - 104}px`);
       }else{
-        lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left}px`);
+        lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left + targetPaddingLeft}px`);
       }
     }else{
       console.log('mti hambal');

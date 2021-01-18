@@ -24,11 +24,12 @@
     <!-- partial -->
 </head>
 
-<body style="background: #e5e5e5">
+<body>
+    <!-- Header Start -->
+    <div class="project--header-top">
+        <h6 class="project--header-top-title">Бесплатная доставка по россии</h6>
+    </div>
     <header class="project--header">
-        <div class="project--header-top">
-            <h6 class="project--header-top-title">Бесплатная доставка по россии</h6>
-        </div>
         <div class="project--header-wrapepr">
             <div class="project--header-primary d-flex align-items-center justify-content-between">
                 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,16 +40,16 @@
                     <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
                 </a>
                 <div class="project--primary-links d-flex align-items-center">
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" data-nav-name="login" title="Профиль">
+                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="login" title="Профиль">
                         <img src="./assets/Login.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" data-nav-name="search" title="Поиск">
+                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="search" title="Поиск">
                         <img src="./assets/search.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" data-nav-name="wishlist" title="Избранное">
+                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="wishlist" title="Избранное">
                         <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="top" title="корзина" data-nav-name="cart">
+                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
                     <div class="project--popup-container project--popup-multistep" id="login">
@@ -103,11 +104,20 @@
                                         <input name="email" type="email" class="project--input" />
                                         <label class="project--input-label" for="email">Email</label>
                                     </div>
-                                    <div class="project--input-wrapper m-0">
+                                    <!-- <div class="project--input-wrapper m-0">
                                         <input type="password" name="password" class="project--input" />
                                         <label class="project--input-label" for="password">Пароль</label>
+                                    </div> -->
+                                    <div class="input-group">
+                                        <div class="project--input-wrapper w-100 m-0">
+                                            <input type="password" name="password" class="project--input" />
+                                            <label class="project--input-label" for="password">Пароль</label>
+                                        </div>
+                                        <button type="button" class="popup-form-search-btn show-hide-password">
+                                            <img src="./assets/search.svg" alt="" class="converted--image" />
+                                        </button>
                                     </div>
-                                    <button type="button" name="forgot password" class="button-reset text-right text-dark font-weight-normal mb-2 forgot--pasword">
+                                    <button type="button" name="forgot password" class="button-reset text-right text-dark font-weight-normal forgot--pasword">
                                         Забыли пароль?
                                     </button>
                                     <button type="submit" name="loginSubmit" class="project--form-btn">
@@ -195,10 +205,16 @@
                                     <input name="repeat email" type="email" class="project--input" />
                                     <label class="project--input-label" for="repeat email">Повторите email</label>
                                 </div>
-                                <div class="project--input-wrapper">
-                                    <input type="password" class="project--input" name="password" />
-                                    <label class="project--input-label" for="password">Пароль</label>
+                                <div class="input-group">
+                                    <div class="project--input-wrapper w-100">
+                                        <input type="password" name="password" class="project--input" />
+                                        <label class="project--input-label" for="password">Пароль</label>
+                                    </div>
+                                    <button type="button" class="popup-form-search-btn show-hide-password">
+                                        <img src="./assets/search.svg" alt="" class="converted--image" />
+                                    </button>
                                 </div>
+                                
                                 <button type="submit" name="loginSubmit" class="project--form-btn">
                                     Зарегистрироваться
                                 </button>
@@ -215,7 +231,7 @@
                         <form action="" class="project--popup-form d-flex align-items-center mb-20">
                             <div class="project--input-wrapper w-100">
                                 <input type="text" name="search" class="project--input" />
-                                <label class="project--input-label" for="password">Пароль</label>
+                                <label class="project--input-label" for="password">Поиск</label>
                             </div>
                             <button type="submit" name="search button" class="popup-form-search-btn">
                                 <img src="./assets/search.svg" alt="" class="converted--image" />
@@ -287,10 +303,10 @@
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn">
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
                                             <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                                         </button>
                                     </div>
@@ -328,10 +344,10 @@
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn">
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
                                             <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                                         </button>
                                     </div>
@@ -369,10 +385,10 @@
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn">
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
                                             <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                                         </button>
                                     </div>
@@ -410,10 +426,10 @@
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn">
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
                                             <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                                         </button>
                                     </div>
@@ -487,10 +503,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -529,10 +545,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -571,10 +587,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -613,10 +629,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -655,10 +671,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -697,10 +713,10 @@
                             <div class="project--wishlist-modal-item mb-3">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
                                             <img src="./assets/cancel.svg" alt="" class="converted--image" />
                                         </button>
-                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                                        <a href="/" class="button--chocolate button--full-width wishlist-modal-redirect-btn">Выберите размер</a>
                                     </div>
                                     <img src="https://picsum.photos/290/435" alt="" class="wishlist--modal-image" />
                                 </div>
@@ -739,7 +755,7 @@
                         </div>
                         <div class="project--product-modal-iterations d-flex flex-column align-items-center">
                             <hr class="project--iteration-divider" />
-                            <a href="/" class="button--transparent-border button--full-width wishlist-modal-redirect-btn">перейти в избранное</a>
+                            <a href="/" class="button--transparent-border button--full-width wishlist-modal-redirect-btn">Перейти в избранное</a>
                         </div>
                     </div>
                 </div>
@@ -750,12 +766,12 @@
                     <nav class="navbar navbar-expand-xl p-0 flex-wrap">
                         <div class="collapse navbar-collapse header--secondary-nav" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item pr-0">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
                                     <div class="dropdown--content">
                                         <ul class="project--nav-secondary navbar-nav">
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Новое поступление</a>
                                             </li>
                                             <li class="nav-item pr-0">
                                                 <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
@@ -773,46 +789,34 @@
                                                 <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
                                                 <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КОМБИНЕЗОНЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КУРТКИ И ПАЛЬТО</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ОБУВЬ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ПЛАТЬЯ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ПУЛОВЕРЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ТОПЫ И ТУНИКИ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ШОРТЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЮБКИ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Смотреть все</a>
                                             </li>
                                         </ul>
                                         <div class="project--nav-banner-container d-flex">
@@ -827,7 +831,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item pr-0">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">SUPER SALE</a>
                                     <div class="dropdown--content">
                                         <ul class="project--nav-secondary navbar-nav">
@@ -850,10 +854,23 @@
                                                 <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
                                             </li>
                                             <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАРДИГАНЫ</a>
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КОМБИНЕЗОНЫ</a>
+                                            </li>
+                                            <li class="nav-item pr-0">
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КУРТКИ И ПАЛЬТО</a>
+                                            </li>
+
+                                            <li class="nav-item pr-0">
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ОБУВЬ</a>
+                                            </li>
+                                            <li class="nav-item pr-0">
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ПЛАТЬЯ</a>
+                                            </li>
+                                            <li class="nav-item pr-0">
+                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Смотреть все</a>
                                             </li>
                                         </ul>
                                         <div class="project--nav-banner-container d-flex">
@@ -875,30 +892,34 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item pr-0">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">LOOKBOOK</a>
                                     <div class="dropdown--content">
                                         <ul class="project--nav-secondary navbar-nav">
-                                            <li class="nav-item pr-0 nav--item-heading">ОСЕНЬ / ЗИМА 20</li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">Хиты Продаж</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">АКСЕССУАРЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0 mb-20-important">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БЛУЗКИ И РУБАШКИ</a>
-                                            </li>
-                                            <li class="nav-item pr-0 nav--item-heading">ВЕСНА / ЛЕТО 20</li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">БРЮКИ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ДЖИНСЫ</a>
-                                            </li>
-                                            <li class="nav-item pr-0">
-                                                <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ЖАКЕТЫ</a>
-                                            </li>
+                                            <ul class="project--nav-secondary navbar-nav">
+                                                <li class="nav-item pr-0 nav--item-heading">ОСЕНЬ / ЗИМА 20</li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАТАЛОГ</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ВИДЕО</a>
+                                                </li>
+                                                <li class="nav-item pr-0 mb-20-important">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">LOOK</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="project--nav-secondary navbar-nav">
+                                                <li class="nav-item pr-0 nav--item-heading">ВЕСНА / ЛЕТО 20</li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">КАТАЛОГ</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">ВИДЕО</a>
+                                                </li>
+                                                <li class="nav-item pr-0">
+                                                    <a class="nav-sublink text-uppercase pr-0 pl-0 text-dark" href="#">LOOK</a>
+                                                </li>
+                                            </ul>
                                         </ul>
                                         <div class="project--nav-banner-container d-flex">
                                             
@@ -910,7 +931,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item pr-0">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#" data-section='brand'>История бренда</a>
                                     <div class="dropdown--content">
                                         <div class="d-flex justify-content-center project--brand-history-container">
@@ -955,10 +976,10 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item pr-0">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">Новости</a>
                                 </li>
-                                <li class="nav-item pr-0 dropdown">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">
                                         OUTLET
                                     </a>
@@ -1019,9 +1040,152 @@
             <h6 class="project--header-bottom-title">Бесплатная доставка по россии</h6>
         </div>
     </header>
+    <!-- Header END -->
+    
+    <!-- Body Start -->
     <section class="project--section">
         <img src="./assets/section.png" class="image">
     </section>
+    <!-- Body END -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="footer_separator-x my-40"></div>
+
+        <h6 class="footer_heading">Подпишитесь и получите скидку 10%</h6>   
+
+        <div class="footer_email_container mx-auto">
+            <input class="input_mail" type="text">
+            <span class="footer_email_placeholder">Email</span>
+            <button class="button_mail">ok</button>
+        </div>
+
+        <div class="footer_separator-x my-40"></div>
+
+        <div class="container">
+            <div class="row mb-20">
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <a href="#" class="text-inherit">
+                        <div class="footer_icon_service_wrapper">
+                            <i class="footer_icon_service service-telephone"></i>
+                        </div>
+                        <div class="service_text_wrapper">
+                            <div>Заказ по телефону</div>
+                            <div>+7 495 785 23 33</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <a href="#" class="text-inherit">
+                        <div class="footer_icon_service_wrapper">
+                            <i class="footer_icon_service service-delivery"></i>
+                        </div>
+                        <div class="service_text_wrapper">
+                            <div>Бесплатная доставка</div>
+                            <div>по России</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <a href="#" class="text-inherit">
+                        <div class="footer_icon_service_wrapper">
+                            <i class="footer_icon_service service-return"></i>
+                        </div>
+                        <div class="service_text_wrapper">
+                            <div>Возврат в</div>
+                            <div>течение 14 дней</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                    <a href="#" class="text-inherit">
+                        <div class="footer_icon_service_wrapper">
+                            <i class="footer_icon_service service-secure"></i>
+                        </div>
+                        <div class="service_text_wrapper">
+                            <div>Безопасная</div>
+                            <div>оплата картами</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_links_container">
+            <div class="container">
+                <div class="row mb-20">
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_buyers"
+                                data-toggle="collapse">Покупателям</button>
+                            <ul class="collapse p-0" id="js_footer_buyers">
+                                <li class="footer_link"><a href="#" class="text-inherit">Доставка</a> </li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Возврат</a> </li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Бонусная программа</a> </li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Способы оплаты</a> </li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Как создать заказ</a> </li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Карта сайта</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_company"
+                                data-toggle="collapse">Компания</button>
+                            <ul class="collapse p-0" id="js_footer_company">
+                                <li class="footer_link"><a href="#" class="text-inherit">О бранде</a></li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Контакты</a></li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Магазины</a></li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Работа у нас</a></li>
+                                <li class="footer_link"><a href="#" class="text-inherit">Франчайзинг</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 footer_links">
+
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_socials"
+                                data-toggle="collapse">Мы в соцсетях</button>
+                            <div  class="soc_icons_wrapper collapse" id="js_footer_socials">
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                            </div>
+                        </div>
+
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_contact"
+                                data-toggle="collapse">СВЯЗЬ С НАМИ</button>
+                            <div class="soc_icons_wrapper collapse" id="js_footer_contact">
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                                <a class="soc_icon" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 footer_links">
+                        <div class="footer_links_wrapper">
+                            <button class="footer_links_heading" data-target="#js_footer_payments"
+                                data-toggle="collapse">Способы оплаты</button>
+                            <div class="soc_icons_wrapper collapse" id="js_footer_payments">
+                                <a class="payment payment-visa" href="#"></a>
+                                <a class="payment payment-master" href="#"></a>
+                                <a class="payment payment-mir" href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_copy">
+            © 2021 Cop.Copine
+        </div>
+    </footer>
+    <!-- Footer End -->
    
     <!-- partial:partials/_footerLinks.html -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -1033,8 +1197,14 @@
     <script src="./js/svg-injector.min.js"></script>
     <script src="./js/header.js"></script>
     <script>
-        $('.primary--link-item').tooltip({
-            boundary: 'window'
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip({
+                boundary: 'body',
+                trigger : 'hover'
+            });
+            $('[data-toggle="tooltip"]').on('click', function () {
+                $(this).tooltip('hide')
+            })
         })
     </script>
     <script>
@@ -1045,6 +1215,72 @@
         SVGInjector(mySVGsToInject);
     </script>
     <!-- partial -->
+    <script>
+            var inputsOfDOM = document.getElementsByClassName('project--input');
+            var footer_email_wrapper = document.querySelector('.footer_email_container ');
+            var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
+            var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
+            var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
+    
+    
+            var footer_email_input_active =
+    
+                footer_email_input.addEventListener('focus', function () {
+                    focusInput(footer_email_placeholder);
+                });
+            footer_email_input.addEventListener('blur', function () {
+                var value = footer_email_input.value.trim();
+                if (!value) {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+    
+            });
+            footer_email_input.addEventListener('input', function (e) {
+                var value = footer_email_input.value.trim();
+                if (value) {
+                    focusInput(footer_email_placeholder, footer_email_button);
+                } else {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+            });
+
+            for (let input of inputsOfDOM) {
+                input.addEventListener('input', function (e) {
+                    var value = input.value.trim();
+                    if (value) {
+                        keepInputPlaceholder(input);
+                    }else{
+                        preventInputPlaceholder(input);
+                    }
+                });
+            }
+            
+            function keepInputPlaceholder(input) {
+                input.nextElementSibling.style.top = '-5px';
+                input.nextElementSibling.style.transform = 'none';
+                input.nextElementSibling.style.fontSize = '10px';
+            }
+            function preventInputPlaceholder(input) {
+                input.nextElementSibling.style.top = '';
+                input.nextElementSibling.style.transform = '';
+            }
+    
+    
+            function focusInput(placeholder, button) {
+                placeholder.style.top = '-10px';
+                placeholder.style.transform = 'scale(0.7)';
+                button.style.backgroundColor = '#A8977A';
+                button.style.color = '#fff';
+            };
+    
+            function blurInput(placeholder, button) {
+                placeholder.style.top = '';
+                placeholder.style.transform = '';
+                button.style.backgroundColor = '';
+                button.style.color = '';
+            };
+        </script>
+        <!-- partial -->
 </body>
 
 </html>

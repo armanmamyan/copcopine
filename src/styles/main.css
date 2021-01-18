@@ -147,6 +147,9 @@ p {
   font-size: 16px;
 }
 
+.text-inherit{
+  color: inherit;
+}
 .text-dark {
   color: #000 !important;
 }
@@ -181,7 +184,7 @@ p {
 }
 
 .project--header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -189,6 +192,7 @@ p {
   background-color: #fff;
   -webkit-transition: height 0.3s ease, padding 0.3s ease;
   transition: height 0.3s ease, padding 0.3s ease;
+  z-index: 100;
 }
 
 .project--header .project--header-wrapepr {
@@ -272,8 +276,8 @@ p {
 
 .project--header-line {
   border-color: #A8977A;
-  -webkit-margin-after: 8px;
-  margin-block-end: 8px;
+  -webkit-margin-after: 15px;
+  margin-block-end: 15px;
 }
 
 .project--header-secondary .nav-link {
@@ -281,6 +285,8 @@ p {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 0;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .project--header-secondary .nav-link::before {
@@ -386,8 +392,8 @@ p {
 }
 
 .dropdown--content .project--nav-secondary .nav-item {
-  -webkit-margin-after: 10px;
-  margin-block-end: 10px;
+  -webkit-margin-after: 6px;
+  margin-block-end: 6px;
 }
 
 .dropdown--content .nav-item {
@@ -401,6 +407,7 @@ p {
   line-height: 1;
   letter-spacing: 0;
   color: #000;
+  padding-bottom: 4px;
 }
 
 .dropdown--content .nav-sublink::before {
@@ -625,12 +632,14 @@ p {
 .tooltip {
   -webkit-margin-before: 4px;
   margin-block-start: 4px;
+  text-transform: capitalize;
 }
 
 .tooltip-inner {
   background-color: white;
   color: #000;
   border: 1px solid #A8977A;
+  border-radius: 5px;
   letter-spacing: 0;
   font-size: 12px;
   line-height: 17px;
@@ -854,6 +863,7 @@ del {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  object-position: top;
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -868,6 +878,8 @@ del {
   padding: 0;
   -webkit-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .forgot--pasword:hover {
@@ -1147,6 +1159,7 @@ del {
   width: 10px;
   height: 10px;
   font-size: 0;
+  margin-bottom: .5rem;
 }
 
 .project--popup-header .project--popup-close svg {
@@ -1547,6 +1560,10 @@ del {
   transform: translateY(-50%);
 }
 
+.footer_service_wrapper:last-child:after{
+  content: none;
+}
+
 .footer_service_wrapper .service_text_wrapper {
   font-size: 16px;
   line-height: 18px;
@@ -1558,7 +1575,7 @@ del {
   background-image: url("../assets/footer/service_phone.svg");
 }
 
-.service-telephone:hover {
+.footer_service_wrapper a:hover .service-telephone {
   background-image: url("../assets/footer/service_phone_hover.svg");
 }
 
@@ -1568,7 +1585,7 @@ del {
   background-image: url("../assets/footer/service_delivery.svg");
 }
 
-.service-delivery:hover {
+.footer_service_wrapper a:hover .service-delivery {
   background-image: url("../assets/footer/service_delivery_hover.svg");
 }
 
@@ -1578,7 +1595,7 @@ del {
   background-image: url("../assets/footer/service_return.svg");
 }
 
-.service-return:hover {
+.footer_service_wrapper a:hover .service-return {
   background-image: url("../assets/footer/service_return_hover.svg");
 }
 
@@ -1588,7 +1605,7 @@ del {
   background-image: url("../assets/footer/service_secure.svg");
 }
 
-.service-secure:hover {
+.footer_service_wrapper a:hover .service-secure {
   background-image: url("../assets/footer/service_secure_hover.svg");
 }
 
@@ -1819,7 +1836,8 @@ del {
 @media (min-width: 1200px) {
   .footer_links,
   .footer_service_wrapper {
-    padding: 0 30px;
+    padding: 0 15px 0 70px;
+    padding: 0 0px 0 70px;
   }
 }
 
@@ -1827,10 +1845,19 @@ del {
   .project--header-secondary .navbar.navbar-expand-xl {
     position: static !important;
   }
-
-  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li {
-    -webkit-margin-start: 60px;
-    margin-inline-start: 60px;
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:first-child{
+    -webkit-padding-end: 30px;
+    padding-inline-end: 30px;
+  }
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li{
+    -webkit-padding-end: 30px;
+    padding-inline-end: 30px;
+    -webkit-padding-start: 30px;
+    padding-inline-start: 30px;
+  }
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:last-child{
+    -webkit-padding-end: 0px;
+    padding-inline-end: 0px;
   }
 
   .project--header-secondary {
@@ -1922,7 +1949,8 @@ del {
   }
 
   .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav {
-    padding: 12px 0 14px 38px;
+    /* padding: 12px 0 14px 38px; */
+    padding: 10px 35px 20px 38px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -1930,8 +1958,11 @@ del {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    border-top: 1px solid #a8977a;
   }
-
+  .project--header-secondary .nav-link{
+    padding: 10px 0 5px 0;
+  }
   .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav > li + li {
     -webkit-margin-start: 40px;
     margin-inline-start: 40px;
