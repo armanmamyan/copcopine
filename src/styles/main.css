@@ -147,9 +147,6 @@ p {
   font-size: 16px;
 }
 
-.text-inherit{
-  color: inherit;
-}
 .text-dark {
   color: #000 !important;
 }
@@ -192,7 +189,7 @@ p {
   background-color: #fff;
   -webkit-transition: height 0.3s ease, padding 0.3s ease;
   transition: height 0.3s ease, padding 0.3s ease;
-  z-index: 100;
+  z-index: 950;
 }
 
 .project--header .project--header-wrapepr {
@@ -265,6 +262,8 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .project--primary-links .primary--link-item svg {
@@ -407,7 +406,6 @@ p {
   line-height: 1;
   letter-spacing: 0;
   color: #000;
-  padding-bottom: 4px;
 }
 
 .dropdown--content .nav-sublink::before {
@@ -617,6 +615,19 @@ p {
   justify-content: center;
 }
 
+.project--header-secondary .nav-link {
+  padding: 10px 0 5px 0;
+}
+
+.bars {
+  width: 18px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 5px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
 .project--tel {
   letter-spacing: 0;
   font-size: 16px;
@@ -639,9 +650,9 @@ p {
   background-color: white;
   color: #000;
   border: 1px solid #A8977A;
-  border-radius: 5px;
   letter-spacing: 0;
   font-size: 12px;
+  border-radius: 5px;
   line-height: 17px;
   font-weight: bold;
 }
@@ -863,10 +874,15 @@ del {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: top;
   object-position: top;
 }
 
 .navbar-dark .navbar-toggler-icon {
+  -webkit-margin-before: 6px;
+  margin-block-start: 6px;
+  -webkit-margin-after: 6px;
+  margin-block-end: 6px;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
 
@@ -878,12 +894,14 @@ del {
   padding: 0;
   -webkit-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
-  margin-top: 6px;
-  margin-bottom: 6px;
 }
 
 .forgot--pasword:hover {
   border-color: #A8977A;
+}
+
+.text-inherit {
+  color: inherit;
 }
 
 .project--popup-container {
@@ -1159,7 +1177,8 @@ del {
   width: 10px;
   height: 10px;
   font-size: 0;
-  margin-bottom: .5rem;
+  -webkit-margin-after: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 .project--popup-header .project--popup-close svg {
@@ -1560,7 +1579,7 @@ del {
   transform: translateY(-50%);
 }
 
-.footer_service_wrapper:last-child:after{
+.footer_service_wrapper:last-child:after {
   content: none;
 }
 
@@ -1708,12 +1727,15 @@ del {
   height: 25px;
   margin-right: 25px;
   margin-bottom: 25px;
+  background-color: #A8977A;
   border-radius: 5px;
 }
-.soc_icon svg{
+
+.soc_icon svg {
   fill: #A8977A;
 }
-a.soc_icon:hover svg{
+
+.soc_icon:hover svg {
   fill: #897047;
 }
 
@@ -1741,7 +1763,6 @@ a.soc_icon:hover svg{
   background-image: url("../assets/footer/payment_mir.svg");
   width: 49px;
   height: 14px;
-  margin-right: 0;
 }
 
 .footer_copy {
@@ -1842,8 +1863,7 @@ a.soc_icon:hover svg{
 @media (min-width: 1200px) {
   .footer_links,
   .footer_service_wrapper {
-    padding: 0 15px 0 70px;
-    padding: 0 0px 0 70px;
+    padding: 0 0 0 70px;
   }
 }
 
@@ -1851,19 +1871,10 @@ a.soc_icon:hover svg{
   .project--header-secondary .navbar.navbar-expand-xl {
     position: static !important;
   }
-  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:first-child{
-    -webkit-padding-end: 30px;
-    padding-inline-end: 30px;
-  }
-  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li{
-    -webkit-padding-end: 30px;
-    padding-inline-end: 30px;
-    -webkit-padding-start: 30px;
-    padding-inline-start: 30px;
-  }
-  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:last-child{
-    -webkit-padding-end: 0px;
-    padding-inline-end: 0px;
+
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li {
+    -webkit-margin-start: 60px;
+    margin-inline-start: 60px;
   }
 
   .project--header-secondary {
@@ -1872,6 +1883,23 @@ a.soc_icon:hover svg{
 
   .navbar-toggler {
     display: none;
+  }
+
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:first-child {
+    -webkit-padding-end: 30px;
+    padding-inline-end: 30px;
+  }
+
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li {
+    -webkit-padding-end: 30px;
+    padding-inline-end: 30px;
+    -webkit-padding-start: 30px;
+    padding-inline-start: 30px;
+  }
+
+  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li:last-child {
+    -webkit-padding-end: 0px;
+    padding-inline-end: 0px;
   }
 
   .project--product-modal > div:first-child {
@@ -1885,8 +1913,8 @@ a.soc_icon:hover svg{
   }
 
   .project--product-modal > div:last-child:not(:first-child) {
-    -webkit-padding-after: 188px;
-    padding-block-end: 188px;
+    -webkit-padding-after: 200px;
+    padding-block-end: 200px;
   }
 }
 
@@ -1911,18 +1939,7 @@ a.soc_icon:hover svg{
     height: 100%;
   }
 
-  .project--header-primary {
-    position: relative;
-    padding: 0 20px;
-    height: 100%;
-  }
-
-  .project--header-primary .project--tel {
-    -webkit-margin-start: 38px;
-    margin-inline-start: 38px;
-  }
-
-  .navbar-toggler {
+  .project--header .navbar-toggler {
     position: absolute;
     top: 17px;
     left: 20px;
@@ -1932,11 +1949,37 @@ a.soc_icon:hover svg{
     border: none;
   }
 
-  .navbar-toggler .navbar-toggler-icon {
+  .project--header .navbar-toggler .navbar-toggler-icon {
     width: 100%;
     height: 100%;
     vertical-align: top;
     background-size: 150%;
+    margin: 0;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 8px);
+    transform: rotate(-45deg) translate(-4px, 8px);
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] .bar2 {
+    opacity: 0;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] .bar3 {
+    -webkit-transform: rotate(45deg) translate(-2px, -6px);
+    transform: rotate(45deg) translate(-2px, -6px);
+  }
+
+  .project--header-primary {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+  }
+
+  .project--header-primary .project--tel {
+    -webkit-margin-start: 38px;
+    margin-inline-start: 38px;
   }
 
   .project--header-secondary {
@@ -1955,7 +1998,6 @@ a.soc_icon:hover svg{
   }
 
   .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav {
-    /* padding: 12px 0 14px 38px; */
     padding: 10px 35px 20px 38px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1966,9 +2008,7 @@ a.soc_icon:hover svg{
     justify-content: space-between;
     border-top: 1px solid #a8977a;
   }
-  .project--header-secondary .nav-link{
-    padding: 10px 0 5px 0;
-  }
+
   .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav > li + li {
     -webkit-margin-start: 40px;
     margin-inline-start: 40px;
@@ -1977,6 +2017,36 @@ a.soc_icon:hover svg{
   .nav-item .dropdown--content {
     -webkit-padding-start: 40px;
     padding-inline-start: 40px;
+  }
+
+  .header--secondary-nav > .navbar-nav > li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background-image: url("../assets/chevron.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+
+  .header--secondary-nav > .navbar-nav > li.active::before {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+
+  .project--header-secondary .nav-item.active .nav-link::before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 
   .project--popup-container {
@@ -2261,6 +2331,24 @@ a.soc_icon:hover svg{
 }
 
 @media screen and (max-width: 768px) {
+  .project--primary-links {
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+  }
+
+  .project--primary-links > a:nth-child(-n+2) {
+    opacity: 0;
+  }
+
+  .project--primary-links > a:nth-child(3)::before {
+    opacity: 0;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links a,
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links > a:nth-child(3)::before {
+    opacity: 1;
+  }
+
   .header--secondary-nav > .navbar-nav {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
@@ -2272,16 +2360,6 @@ a.soc_icon:hover svg{
 
   .header--secondary-nav > .navbar-nav > li {
     position: relative !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-margin-start: 0 !important;
     margin-inline-start: 0 !important;
     -webkit-padding-start: 24px;
@@ -2290,26 +2368,6 @@ a.soc_icon:hover svg{
 
   .header--secondary-nav > .navbar-nav > li .nav-link {
     display: inline-block;
-  }
-
-  .header--secondary-nav > .navbar-nav > li::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 8px;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    background-image: url("../assets/chevron.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   }
 
   .header--secondary-nav > .navbar-nav > li .dropdown--content {
@@ -2330,11 +2388,6 @@ a.soc_icon:hover svg{
   .header--secondary-nav > .navbar-nav > li .dropdown--content .project--nav-banner-container::before {
     right: auto !important;
     left: -30px !important;
-  }
-
-  .header--secondary-nav > .navbar-nav > li.active::before {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
   }
 
   .header--secondary-nav > .navbar-nav > li.active .dropdown--content {
@@ -2445,9 +2498,12 @@ a.soc_icon:hover svg{
 }
 
 @media screen and (max-width: 576px) {
-  .project--header-primary > a.project--tel,
-  .primary--link-item:not([data-nav-name=cart]) {
+  .project--header-primary > a.project--tel {
     display: none;
+  }
+
+  .primary--link-item:not([data-nav-name=cart]) {
+    opacity: 0;
   }
 
   .nav--banner-wrapper,
@@ -2459,7 +2515,51 @@ a.soc_icon:hover svg{
     width: 198px;
   }
 
-  .navbar-toggler {
+  .project--primary-links {
+    width: 20px;
+    overflow: hidden;
+  }
+
+  .project--primary-links > a:not(:nth-child(4)) {
+    display: none !important;
+  }
+
+  .project--primary-links > a:nth-child(4) {
+    margin: 0;
+  }
+
+  .project--primary-links > a:nth-child(4)::before {
+    content: none;
+  }
+
+  .project--header .navbar-toggler {
     position: static;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--logo {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links {
+    width: auto;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links a {
+    display: block !important;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links > a:nth-child(3)::before {
+    opacity: 1;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links > a:nth-child(4) {
+    -webkit-margin-start: 24px;
+    margin-inline-start: 24px;
+  }
+
+  .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links > a:nth-child(4)::before {
+    content: 0;
   }
 }

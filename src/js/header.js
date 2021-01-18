@@ -172,8 +172,13 @@ loginGoBackBtn &&
   loginCloseButton.forEach(item => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
-      if(e.currentTarget.parentElement.parentElement.id === 'login1'){
+      if(e.currentTarget.parentElement.parentElement.parentElement.id === 'login'){
+        console.log('gandon');
         e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
+        if(e.currentTarget.parentElement.parentElement.id !== 'login1'){
+          e.currentTarget.parentElement.parentElement.classList.remove("active");
+          document.querySelector('#login1')?.classList?.add('active');
+        }
         if(userPopupIsOpen){
           userPopupIsOpen = !userPopupIsOpen;
         }
@@ -207,9 +212,15 @@ loginStep2 &&
       if(dataAttrName === 'login') return;
       const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
       const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
-
       alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
+
+      if(dataAttrName === 'wishlist' || dataAttrName === 'cart'){
+        const getInnerElementChilds = findCurrentAttrModal.children[1];
+        if(getInnerElementChilds?.children.length > 1){
+          getInnerElementChilds.children[0].setAttribute('style', 'padding-block-end: 0');
+        }
+      }
       return;
   }
   }
@@ -233,6 +244,7 @@ loginStep2 &&
     getHeaderLinks.forEach((item) => {
       item.parentElement.addEventListener("click", menuItemOver);
     });
+    getHeaderLinks[0].click();
   }
 
   window.onload = function(){
@@ -248,6 +260,7 @@ loginStep2 &&
     if(window.innerWidth < 1200){
       getHeaderLinks.forEach((item) => {
         item.parentElement.addEventListener("click", menuItemOver);
+        getHeaderLinks[0].click();
       });
     }
   });

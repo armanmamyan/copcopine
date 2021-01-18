@@ -80,7 +80,9 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
+.footer_service_wrapper:last-child:after{
+    content: none;
+  }
 .footer_service_wrapper .service_text_wrapper{
     font-size: 16px;
     line-height: 18px;
@@ -91,7 +93,7 @@
     height: 30px;
     background-image: url('../assets/footer/service_phone.svg');
 }
-.service-telephone:hover{
+.footer_service_wrapper a:hover .service-telephone{
     background-image: url('../assets/footer/service_phone_hover.svg');
 }
 .service-delivery{
@@ -99,7 +101,7 @@
     height: 30px;
     background-image: url('../assets/footer/service_delivery.svg');
 }
-.service-delivery:hover{
+.footer_service_wrapper a:hover .service-delivery{
     background-image: url('../assets/footer/service_delivery_hover.svg');
 }
 .service-return{
@@ -107,7 +109,7 @@
     height: 30px;
     background-image: url('../assets/footer/service_return.svg');
 }
-.service-return:hover{
+.footer_service_wrapper a:hover .service-return{
     background-image: url('../assets/footer/service_return_hover.svg');
 }
 .service-secure{
@@ -115,7 +117,7 @@
     height: 30px;
     background-image: url('../assets/footer/service_secure.svg');
 }
-.service-secure:hover{
+.footer_service_wrapper a:hover .service-secure{
     background-image: url('../assets/footer/service_secure_hover.svg');
 }
 
@@ -207,6 +209,14 @@
     margin-bottom: 25px;
     background-color: #A8977A;
     border-radius: 5px;
+    svg{
+        fill: #A8977A;
+      }
+      &:hover{
+        svg{
+            fill: #897047;
+          }
+      }
 }
 
 .payment{
@@ -302,14 +312,14 @@
 @media (min-width: 992px) {
     .footer_links,
     .footer_service_wrapper{
-        padding: 0 30px;
+        padding: 0 8px 0 34px;;
     }
 }
 
 @media (min-width: 1200px) {
     .footer_links,
     .footer_service_wrapper{
-        padding: 0 30px;
+        padding: 0 0 0 70px;
     }
 }
 
