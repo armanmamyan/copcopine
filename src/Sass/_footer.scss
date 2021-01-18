@@ -207,16 +207,15 @@
     height: 25px;
     margin-right: 25px;
     margin-bottom: 25px;
-    background-color: #A8977A;
     border-radius: 5px;
     svg{
         fill: #A8977A;
       }
-      &:hover{
-        svg{
-            fill: #897047;
-          }
-      }
+    &:hover{
+    svg{
+        fill: #897047;
+        }
+    }
 }
 
 .payment{
