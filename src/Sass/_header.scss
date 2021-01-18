@@ -138,11 +138,6 @@
         .navbar.navbar-expand-xl{
             position: static !important;
         }
-        ul.navbar-nav:not(.project--nav-secondary){
-            & > li + li{
-                margin-inline-start: 60px;
-            }
-        }
     }
 }
 

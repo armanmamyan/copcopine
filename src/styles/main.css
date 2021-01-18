@@ -1872,11 +1872,6 @@ del {
     position: static !important;
   }
 
-  .project--header-secondary ul.navbar-nav:not(.project--nav-secondary) > li + li {
-    -webkit-margin-start: 60px;
-    margin-inline-start: 60px;
-  }
-
   .project--header-secondary {
     position: static !important;
   }
