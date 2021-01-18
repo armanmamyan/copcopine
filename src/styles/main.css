@@ -1708,8 +1708,13 @@ del {
   height: 25px;
   margin-right: 25px;
   margin-bottom: 25px;
-  background-color: #A8977A;
   border-radius: 5px;
+}
+.soc_icon svg{
+  fill: #A8977A;
+}
+a.soc_icon:hover svg{
+  fill: #897047;
 }
 
 .payment {
@@ -1736,6 +1741,7 @@ del {
   background-image: url("../assets/footer/payment_mir.svg");
   width: 49px;
   height: 14px;
+  margin-right: 0;
 }
 
 .footer_copy {
@@ -1829,7 +1835,7 @@ del {
 @media (min-width: 992px) {
   .footer_links,
   .footer_service_wrapper {
-    padding: 0 30px;
+    padding: 0 8px 0 34px;
   }
 }
 
