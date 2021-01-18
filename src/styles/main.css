@@ -269,8 +269,17 @@ p {
 .project--primary-links .primary--link-item svg {
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  fill: transparent;
+  stroke: #000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   width: 20px;
   height: 20px;
+}
+
+.project--primary-links .primary--link-item:hover svg {
+  stroke: transparent;
+  fill: #A8977A;
 }
 
 .project--header-line {
@@ -902,6 +911,11 @@ del {
 
 .text-inherit {
   color: inherit;
+}
+
+.mb-12 {
+  -webkit-margin-after: 12px;
+  margin-block-end: 12px;
 }
 
 .project--popup-container {
@@ -2005,8 +2019,8 @@ del {
   }
 
   .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav > li + li {
-    -webkit-margin-start: 40px;
-    margin-inline-start: 40px;
+    -webkit-margin-start: 30px;
+    margin-inline-start: 30px;
   }
 
   .nav-item .dropdown--content {
@@ -2014,7 +2028,12 @@ del {
     padding-inline-start: 40px;
   }
 
-  .header--secondary-nav > .navbar-nav > li::before {
+  .header--secondary-nav > .navbar-nav > li .nav-link {
+    -webkit-padding-start: 24px !important;
+    padding-inline-start: 24px !important;
+  }
+
+  .header--secondary-nav > .navbar-nav > li .nav-link::after {
     content: "";
     display: block;
     position: absolute;
@@ -2034,7 +2053,11 @@ del {
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   }
 
-  .header--secondary-nav > .navbar-nav > li.active::before {
+  .header--secondary-nav > .navbar-nav > li .nav-link::before {
+    left: 0;
+  }
+
+  .header--secondary-nav > .navbar-nav > li.active .nav-link::after {
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
@@ -2361,8 +2384,34 @@ del {
     padding-inline-start: 24px;
   }
 
+  .header--secondary-nav > .navbar-nav > li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background-image: url("../assets/chevron.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+
   .header--secondary-nav > .navbar-nav > li .nav-link {
     display: inline-block;
+    -webkit-padding-start: 0 !important;
+    padding-inline-start: 0 !important;
+  }
+
+  .header--secondary-nav > .navbar-nav > li .nav-link::after {
+    content: none;
   }
 
   .header--secondary-nav > .navbar-nav > li .dropdown--content {
@@ -2383,6 +2432,11 @@ del {
   .header--secondary-nav > .navbar-nav > li .dropdown--content .project--nav-banner-container::before {
     right: auto !important;
     left: -30px !important;
+  }
+
+  .header--secondary-nav > .navbar-nav > li.active::before {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
   }
 
   .header--secondary-nav > .navbar-nav > li.active .dropdown--content {
@@ -2556,5 +2610,42 @@ del {
 
   .project--header .navbar-toggler[aria-expanded=true] ~ .project--primary-links > a:nth-child(4)::before {
     content: 0;
+  }
+
+  .footer {
+    padding: 0 20px;
+  }
+
+  .footer_heading {
+    height: auto;
+  }
+
+  .footer_email_container {
+    width: 100%;
+  }
+
+  .footer_separator-x.my-40 {
+    width: 100%;
+    -webkit-margin-after: 30px;
+    margin-block-end: 30px;
+  }
+
+  .footer_service_wrapper a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .footer_links_container {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .footer_links_container .row > div.footer_links:nth-child(3) {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
   }
 }

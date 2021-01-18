@@ -323,4 +323,32 @@
     }
 }
 
-
+@media screen and (max-width: 576px){
+    .footer{
+        padding: 0 20px;
+    }
+    .footer_heading{
+        height: auto;
+    }
+    .footer_email_container{
+        width: 100%;
+    }
+    .footer_separator-x.my-40{
+        width: 100%;
+        margin-block-end: 30px;
+    }
+    .footer_service_wrapper{
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .footer_links_container{
+        padding: 10px 20px 20px 20px;
+        .row{
+            & > div.footer_links:nth-child(3){
+                order: -1;
+            }
+        }
+    }
+}

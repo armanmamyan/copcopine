@@ -68,10 +68,18 @@
         transition: opacity .3s ease;
         svg{
             flex-shrink: 0;
+            fill: transparent;
+            stroke: #000;
+            transition: all .3s ease;
             width: 20px;
             height: 20px;
         }
-
+        &:hover{
+            svg{
+                stroke: transparent;
+                fill: #A8977A;
+            }
+        }
     
     }
 }
@@ -434,7 +442,7 @@
                     justify-content: space-between;
                     border-top: 1px solid #a8977a;
                     & > li + li{
-                        margin-inline-start: 40px;
+                        margin-inline-start: 30px;
                     }
                 }
 
@@ -450,7 +458,9 @@
    .header--secondary-nav{
     & > .navbar-nav{
         & > li{
-            &::before{
+           .nav-link{
+               padding-inline-start: 24px !important;
+            &::after{
                 content: '';
                 display: block;
                 position: absolute;
@@ -465,8 +475,12 @@
                 transform: rotate(90deg);
                 transition: transform .3s ease;
             }
+            &::before{
+                left: 0;
+            }
+           }
             &.active{
-                &::before{
+                .nav-link::after{
                     transform: rotate(270deg);
                 }
             }
@@ -509,7 +523,7 @@
             }
         }
     }
-    
+
     .header--secondary-nav{
         & > .navbar-nav{
             flex-direction: column !important;
@@ -518,8 +532,27 @@
                 position: relative !important;
                 margin-inline-start: 0 !important;
                 padding-inline-start: 24px;
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                    width: 14px;
+                    height: 14px;
+                    background-image: url('../assets/chevron.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotate(90deg);
+                    transition: transform .3s ease;
+                }
                 .nav-link{
                     display: inline-block;
+                    padding-inline-start: 0 !important;
+                    &::after{
+                        content: none;
+                    }
                 }
                 .dropdown--content{
                     position: static;
@@ -536,6 +569,9 @@
                     }
                 }
                 &.active{
+                    &::before{
+                        transform: rotate(270deg);
+                    }
                     .dropdown--content{
                         height: auto;
                         padding-block-start: 20px;
