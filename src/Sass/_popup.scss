@@ -20,7 +20,7 @@
       border: none;
       border-radius: 0;
       top: 50px !important;
-      padding: 0 40px 20px;
+      padding: 0 40px 40px;
       &.project--popup-links{
         .project--popup-logout-wrapper{
           width: 100%;
@@ -59,13 +59,15 @@
       }
       #login1 .project--popup-form{
         display: flex;
-        align-items: center;
         justify-content: center;
         width: 100%;
         & > div{
           flex: 0 0 290px;
           button {
             margin-block-end: 0;
+          }
+          p{
+            line-height: 18px;
           }
           &:first-child{
             position: relative;
@@ -80,6 +82,13 @@
               height: 100%;
               background-color: #CDC3B3;
             }
+          }
+        }
+        &> div:last-child{
+          display: flex;
+          flex-direction: column;
+          button{
+            margin-block-start: auto;
           }
         }
       }
@@ -307,8 +316,9 @@
     }
     @media screen and (max-width: 1200px){
         position: absolute;
-        top: 0;
+        top: 50%;
         right: 0;
+        transform: translateY(-50%);
         font-size: 16px;
         width: auto;
         display: flex;
@@ -606,7 +616,8 @@
   svg{
     width: 20px;
     height: 20px;
-    fill: #CDC3B3;
+    fill: transparent;
+    stroke: #CDC3B3;
   }
 
   &:active,&.active{

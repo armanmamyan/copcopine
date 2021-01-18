@@ -914,8 +914,8 @@ del {
 }
 
 .mb-12 {
-  -webkit-margin-after: 12px;
-  margin-block-end: 12px;
+  -webkit-margin-after: 12px !important;
+  margin-block-end: 12px !important;
 }
 
 .project--popup-container {
@@ -1461,7 +1461,8 @@ del {
 .popup-form-search-btn svg {
   width: 20px;
   height: 20px;
-  fill: #CDC3B3;
+  fill: transparent;
+  stroke: #CDC3B3;
 }
 
 .popup-form-search-btn:active,
@@ -1990,6 +1991,12 @@ del {
     margin-inline-start: 38px;
   }
 
+  .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content,
+  .header--secondary-nav > .navbar-nav .secondary--nav-reversed {
+    -webkit-padding-end: 20px;
+    padding-inline-end: 20px;
+  }
+
   .project--header-secondary {
     background-color: #fff;
     max-width: 100%;
@@ -2073,7 +2080,7 @@ del {
     border: none;
     border-radius: 0;
     top: 50px !important;
-    padding: 0 40px 20px;
+    padding: 0 40px 40px;
   }
 
   .project--popup-container.project--popup-links .project--popup-logout-wrapper {
@@ -2132,9 +2139,6 @@ del {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -2152,6 +2156,10 @@ del {
     margin-block-end: 0;
   }
 
+  .project--popup-container #login1 .project--popup-form > div p {
+    line-height: 18px;
+  }
+
   .project--popup-container #login1 .project--popup-form > div:first-child {
     position: relative;
     -webkit-margin-end: 40px;
@@ -2167,6 +2175,21 @@ del {
     width: 1px;
     height: 100%;
     background-color: #CDC3B3;
+  }
+
+  .project--popup-container #login1 .project--popup-form > div:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .project--popup-container #login1 .project--popup-form > div:last-child button {
+    -webkit-margin-before: auto;
+    margin-block-start: auto;
   }
 
   .project--popup-form {
@@ -2199,8 +2222,10 @@ del {
 
   .project--popup-header .project--popup-close {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     font-size: 16px;
     width: auto;
     display: -webkit-box;

@@ -64,6 +64,10 @@ const menuItemOver = (e) => {
 
 const handleMenuClick = e => {
   const target = e.currentTarget;
+  if(target.classList.contains('active')){
+    target.classList.remove('active')
+    return;
+  }
   if(previousElement){
     previousElement.classList.remove('active');
   }
@@ -242,7 +246,7 @@ loginStep2 &&
 
   if(window.innerWidth < 1200){
     getHeaderLinks.forEach((item) => {
-      item.parentElement.addEventListener("click", menuItemOver);
+      item.parentElement.addEventListener("click", handleMenuClick);
     });
     getHeaderLinks[0].click();
   }
@@ -259,7 +263,7 @@ loginStep2 &&
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
     if(window.innerWidth < 1200){
       getHeaderLinks.forEach((item) => {
-        item.parentElement.addEventListener("click", menuItemOver);
+        item.parentElement.addEventListener("click", handleMenuClick);
         getHeaderLinks[0].click();
       });
     }

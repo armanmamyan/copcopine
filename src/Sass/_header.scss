@@ -426,6 +426,13 @@
             margin-inline-start: 38px;
         }
     }
+    .header--secondary-nav{
+        & > .navbar-nav{
+            & > li:last-child .dropdown--content, .secondary--nav-reversed{
+                padding-inline-end: 20px;
+            }
+        }
+    }
    .project--header-secondary{
        background-color: #fff;
        max-width: 100%;
