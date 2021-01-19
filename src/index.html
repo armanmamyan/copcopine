@@ -128,6 +128,7 @@
                                     </button>
                                 </div>
                                 <div>
+                                    <hr class="project--iteration-divider mt-0 ml-0 mr-0 mb-6 d-none d-xl-block" />
                                     <h4 class="text-uppercase">Новый пользователь?</h4>
                                     <p>
                                         Зарегистрируйтесь и получите персонализированный контент,
@@ -160,7 +161,7 @@
                                     <input name="email" type="email" class="project--input" />
                                     <label class="project--input-label" for="email"> Email</label>
                                 </div>
-                                <button type="submit" name="Reset password" class="project--form-btn reset-pass-step-2">
+                                <button type="submit" name="Reset password" class="project--form-btn reset-pass-step-2 mt-15">
                                     Восстановить пароль
                                 </button>
                             </form>
@@ -174,15 +175,15 @@
                             </div>
                             <form action="" class="project--popup-form">
                                 <h4>Narec@hotmail.fr</h4>
+                                <p> Мы отправили вам электронное письмо для изменения пароля. </p>
+                                <p>Чтобы создать новый пароль, нажми на ссылку в электронном письме и введи новый пароль.</p>
                                 <p>
-                                    Мы отправили вам электронное письмо для изменения пароля.
-                                    Чтобы создать новый пароль, нажми на ссылку в электронном
-                                    письме и введи новый пароль. Электронное письмо не пришло?
+                                    Электронное письмо не пришло?
                                     Проверь папку “Спам”, а также другие электронные адреса,
                                     привязанные к личному кабинету CopCopine. Нажми ниже, чтобы
                                     отправить письмо повторно
                                 </p>
-                                <button type="submit" name="reset password" class="project--form-btn">
+                                <button type="submit" name="reset password" class="project--form-btn mb-end-10">
                                     Восстановить пароль
                                 </button>
                                 <a href="/" class="project--form-btn login--btn-step2">Войти</a>
@@ -231,7 +232,7 @@
                                 <img src="./assets/cancel.svg" alt="close" class="converted--image" />
                             </button>
                         </div>
-                        <form action="" class="project--popup-form d-flex align-items-center mb-20">
+                        <form action="" class="project--popup-form d-flex align-items-center mb-10">
                             <div class="project--input-wrapper w-100">
                                 <input type="text" name="search" class="project--input" />
                                 <label class="project--input-label" for="password">Поиск</label>
@@ -243,23 +244,23 @@
                         <div class="project--search-results">
                             <div class="project--search-result-group">
                                 <h4>МЫ НЕ НАШЛИ ТО, что вы ищете</h4>
-                                <h5>Но не стоит сдаваться! Проверь написание или используй менее специфичные термины для поиска.</h5>
-                                <h4 class="search--group-title mb-1">рекомендации</h4>
+                                <p>Но не стоит сдаваться! Проверь написание или используй менее специфичные термины для поиска.</p>
+                                <h4 class="search--group-title mb-1">Рекомендации</h4>
                                 <hr class="project--iteration-divider mt-0 ml-0 mr-0 mb-6" />
                                 <a href="/" class="search--group-item">
-                                    <span class="searched--item-name">красное платье</span>
+                                    <span class="searched--item-name">Красное платье</span>
                                     <span class="searched--item-count">12</span>
                                 </a>
                                 <a href="/" class="search--group-item">
-                                    <span class="searched--item-name">красное платье</span>
+                                    <span class="searched--item-name">Красное платье</span>
                                     <span class="searched--item-count">12</span>
                                 </a>
                                 <a href="/" class="search--group-item">
-                                    <span class="searched--item-name">красное платье</span>
+                                    <span class="searched--item-name">Красное платье</span>
                                     <span class="searched--item-count">12</span>
                                 </a>
                                 <a href="/" class="search--group-item">
-                                    <span class="searched--item-name">красное платье</span>
+                                    <span class="searched--item-name">Красное платье</span>
                                     <span class="searched--item-count">12</span>
                                 </a>
                             </div>
@@ -285,24 +286,69 @@
                                             <span class="color--red font-bold w-100">6 713 ₽</span>
                                         </h5>
                                     </div>
-                                    <div class="product--color-container d-flex align-items-center">
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
-                                            <label class="radio_checker"></label>
+                                    <div class="product-properties-container">
+                                        <div class="product--color-container d-flex align-items-center">
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
+                                                <label class="radio_checker"></label>
+                                            </div>
                                         </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
-                                            <label class="radio_checker"></label>
+                                        <div class="product--size-container d-flex align-items-center">
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
+                                                <label class="size_radio_checker">S</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="product--size-container d-flex align-items-center">
-                                        <div class="size_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
-                                            <label class="size_radio_checker">S</label>
+                                    <div class="product--modal-buttons d-flex align-items-center">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
+                                            <img src="./assets/cancel.svg" alt="" class="converted--image" />
+                                        </button>
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
+                                            <img src="./assets/wishlist.svg" alt="" class="converted--image" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project--product-modal-item mb-3 d-flex">
+                                <img src="https://picsum.photos/150/224" alt="" class="product--modal-image" />
+                                <div class="product--modal-details d-flex flex-column justify-content-between">
+                                    <div class="product--modal-details-top">
+                                        <h3 class="product--modal-title mb-2">Топ - DATTIER А</h3>
+                                        <h5 class="product--modal-price d-flex align-items-center flex-wrap mb-0">
+                                            <del class="product--previous-price">9 590 ₽</del>
+                                            <span class="color--red ml-2 lt-0 font-weight-normal">-30 %</span>
+                                            <span class="color--red font-bold w-100">6 713 ₽</span>
+                                        </h5>
+                                    </div>
+                                    <div class="product-properties-container">
+                                        <div class="product--color-container d-flex align-items-center">
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                        </div>
+                                        <div class="product--size-container d-flex align-items-center">
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
+                                                <label class="size_radio_checker">S</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
@@ -326,24 +372,78 @@
                                             <span class="color--red font-bold w-100">6 713 ₽</span>
                                         </h5>
                                     </div>
-                                    <div class="product--color-container d-flex align-items-center">
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
-                                            <label class="radio_checker"></label>
+                                    <div class="product-properties-container">
+                                        <div class="product--color-container d-flex align-items-center">
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
+                                                <label class="radio_checker"></label>
+                                            </div>
                                         </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
-                                            <label class="radio_checker"></label>
+                                        <div class="product--size-container d-flex align-items-center">
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio5" name="customRadio2" />
+                                                <label class="size_radio_checker">S</label>
+                                            </div>
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio6" name="customRadio2" />
+                                                <label class="size_radio_checker">M</label>
+                                            </div>
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio7" name="customRadio2" />
+                                                <label class="size_radio_checker">L</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="product--size-container d-flex align-items-center">
-                                        <div class="size_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
-                                            <label class="size_radio_checker">S</label>
+
+                                    <div class="product--modal-buttons d-flex align-items-center">
+                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
+                                            <img src="./assets/cancel.svg" alt="" class="converted--image" />
+                                        </button>
+                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
+                                            <img src="./assets/wishlist.svg" alt="" class="converted--image" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project--product-modal-item mb-3 d-flex">
+                                <img src="https://picsum.photos/150/224" alt="" class="product--modal-image" />
+                                <div class="product--modal-details d-flex flex-column justify-content-between">
+                                    <div class="product--modal-details-top">
+                                        <h3 class="product--modal-title mb-2">Топ - DATTIER</h3>
+                                        <h5 class="product--modal-price d-flex align-items-center flex-wrap mb-0">
+                                            <del class="product--previous-price">9 590 ₽</del>
+                                            <span class="color--red ml-2 lt-0 font-weight-normal">-30 %</span>
+                                            <span class="color--red font-bold w-100">6 713 ₽</span>
+                                        </h5>
+                                    </div>
+                                    <div class="product-properties-container">
+                                        <div class="product--color-container d-flex align-items-center">
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                        </div>
+                                        <div class="product--size-container d-flex align-items-center">
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
+                                                <label class="size_radio_checker">S</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
@@ -367,106 +467,26 @@
                                             <span class="color--red font-bold w-100">6 713 ₽</span>
                                         </h5>
                                     </div>
-                                    <div class="product--color-container d-flex align-items-center">
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
-                                            <label class="radio_checker"></label>
+                                    <div class="product-properties-container">
+                                        <div class="product--color-container d-flex align-items-center">
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
+                                                <label class="radio_checker"></label>
+                                            </div>
+                                            <div class="color_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
+                                                <label class="radio_checker"></label>
+                                            </div>
                                         </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                    </div>
-                                    <div class="product--size-container d-flex align-items-center">
-                                        <div class="size_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
-                                            <label class="size_radio_checker">S</label>
-                                        </div>
-                                    </div>
-                                    <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
-                                            <img src="./assets/cancel.svg" alt="" class="converted--image" />
-                                        </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
-                                            <img src="./assets/wishlist.svg" alt="" class="converted--image" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project--product-modal-item mb-3 d-flex">
-                                <img src="https://picsum.photos/150/224" alt="" class="product--modal-image" />
-                                <div class="product--modal-details d-flex flex-column justify-content-between">
-                                    <div class="product--modal-details-top">
-                                        <h3 class="product--modal-title mb-2">Топ - DATTIER</h3>
-                                        <h5 class="product--modal-price d-flex align-items-center flex-wrap mb-0">
-                                            <del class="product--previous-price">9 590 ₽</del>
-                                            <span class="color--red ml-2 lt-0 font-weight-normal">-30 %</span>
-                                            <span class="color--red font-bold w-100">6 713 ₽</span>
-                                        </h5>
-                                    </div>
-                                    <div class="product--color-container d-flex align-items-center">
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                    </div>
-                                    <div class="product--size-container d-flex align-items-center">
-                                        <div class="size_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
-                                            <label class="size_radio_checker">S</label>
-                                        </div>
-                                    </div>
-                                    <div class="product--modal-buttons d-flex align-items-center">
-                                        <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn ml-20" data-toggle="tooltip" data-placement="bottom" title="Убрать">
-                                            <img src="./assets/cancel.svg" alt="" class="converted--image" />
-                                        </button>
-                                        <button name="wishlist" type="button" class="reset-button product--wishlist-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="В избранные">
-                                            <img src="./assets/wishlist.svg" alt="" class="converted--image" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project--product-modal-item mb-3 d-flex">
-                                <img src="https://picsum.photos/150/224" alt="" class="product--modal-image" />
-                                <div class="product--modal-details d-flex flex-column justify-content-between">
-                                    <div class="product--modal-details-top">
-                                        <h3 class="product--modal-title mb-2">Топ - DATTIER</h3>
-                                        <h5 class="product--modal-price d-flex align-items-center flex-wrap mb-0">
-                                            <del class="product--previous-price">9 590 ₽</del>
-                                            <span class="color--red ml-2 lt-0 font-weight-normal">-30 %</span>
-                                            <span class="color--red font-bold w-100">6 713 ₽</span>
-                                        </h5>
-                                    </div>
-                                    <div class="product--color-container d-flex align-items-center">
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                        <div class="color_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
-                                            <label class="radio_checker"></label>
-                                        </div>
-                                    </div>
-                                    <div class="product--size-container d-flex align-items-center">
-                                        <div class="size_radio_btn custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
-                                            <label class="size_radio_checker">S</label>
+                                        <div class="product--size-container d-flex align-items-center">
+                                            <div class="size_radio_btn custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input reset-button size_radio_input" id="customRadio2" name="customRadio2" />
+                                                <label class="size_radio_checker">S</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="product--modal-buttons d-flex align-items-center">
@@ -503,7 +523,7 @@
                             </button>
                         </div>
                         <div class="project--wishlist-modal">
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -530,22 +550,22 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -572,22 +592,22 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -614,22 +634,22 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -656,22 +676,22 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" ƒƒ />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" ƒƒ />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" ƒƒ />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -698,22 +718,22 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project--wishlist-modal-item mb-3">
+                            <div class="project--wishlist-modal-item mb-20">
                                 <div class="wishlist--modal-image-container">
                                     <div class="wishlist--modal-btns">
                                         <button name="delete" type="button" class="reset-button product--delete-btn-modal product-modal-item-btn" data-toggle="tooltip" data-placement="bottom" title="Убрать">
@@ -740,15 +760,15 @@
                                         </div>
                                         <div class="product--color-container m-0 d-flex align-items-center">
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio1" name="customRadio" style="--radio-button-color: #9b060c" data-toggle="tooltip" data-placement="bottom" title="Красый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio3" name="customRadio" style="--radio-button-color: #157734" data-toggle="tooltip" data-placement="bottom" title="Зеленый" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                             <div class="color_radio_btn custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" />
+                                                <input type="radio" class="custom-control-input reset-button color_radio_input" id="customRadio4" name="customRadio" style="--radio-button-color: #000" data-toggle="tooltip" data-placement="bottom" title="Черный" />
                                                 <label class="radio_checker"></label>
                                             </div>
                                         </div>
@@ -838,7 +858,7 @@
                                                 <a href="" class="nav--promo-link">Доставка</a>
                                                 <a href="" class="nav--promo-link">Возврат</a>
                                             </div>
-                                            <hr class="nav--promo-divider"/>
+                                            <hr class="nav--promo-divider" />
                                             <div class="nav--promo-socials soc_icons_wrapper">
                                                 <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                                     <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -866,7 +886,7 @@
                                                     <span class="footer_email_placeholder">Email</span>
                                                     <button class="button_mail">ok</button>
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
@@ -936,7 +956,7 @@
                                                 <a href="" class="nav--promo-link">Доставка</a>
                                                 <a href="" class="nav--promo-link">Возврат</a>
                                             </div>
-                                            <hr class="nav--promo-divider"/>
+                                            <hr class="nav--promo-divider" />
                                             <div class="nav--promo-socials soc_icons_wrapper">
                                                 <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                                     <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -964,7 +984,7 @@
                                                     <span class="footer_email_placeholder">Email</span>
                                                     <button class="button_mail">ok</button>
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
@@ -1012,7 +1032,7 @@
                                                 <a href="" class="nav--promo-link">Доставка</a>
                                                 <a href="" class="nav--promo-link">Возврат</a>
                                             </div>
-                                            <hr class="nav--promo-divider"/>
+                                            <hr class="nav--promo-divider" />
                                             <div class="nav--promo-socials soc_icons_wrapper">
                                                 <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                                     <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -1040,7 +1060,7 @@
                                                     <span class="footer_email_placeholder">Email</span>
                                                     <button class="button_mail">ok</button>
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
@@ -1094,7 +1114,7 @@
                                                 <a href="" class="nav--promo-link">Доставка</a>
                                                 <a href="" class="nav--promo-link">Возврат</a>
                                             </div>
-                                            <hr class="nav--promo-divider"/>
+                                            <hr class="nav--promo-divider" />
                                             <div class="nav--promo-socials soc_icons_wrapper">
                                                 <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                                     <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -1122,7 +1142,7 @@
                                                     <span class="footer_email_placeholder">Email</span>
                                                     <button class="button_mail">ok</button>
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
@@ -1185,7 +1205,7 @@
                                                 <a href="" class="nav--promo-link">Доставка</a>
                                                 <a href="" class="nav--promo-link">Возврат</a>
                                             </div>
-                                            <hr class="nav--promo-divider"/>
+                                            <hr class="nav--promo-divider" />
                                             <div class="nav--promo-socials soc_icons_wrapper">
                                                 <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                                     <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -1213,7 +1233,7 @@
                                                     <span class="footer_email_placeholder">Email</span>
                                                     <button class="button_mail">ok</button>
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
@@ -1224,7 +1244,7 @@
                                         <a href="" class="nav--promo-link">Доставка</a>
                                         <a href="" class="nav--promo-link">Возврат</a>
                                     </div>
-                                    <hr class="nav--promo-divider"/>
+                                    <hr class="nav--promo-divider" />
                                     <div class="nav--promo-socials soc_icons_wrapper">
                                         <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                             <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
@@ -1249,7 +1269,7 @@
                                             <span class="footer_email_placeholder">Email</span>
                                             <button class="button_mail">ok</button>
                                         </div>
-                                
+
                                     </div>
                                 </li>
                             </ul>
