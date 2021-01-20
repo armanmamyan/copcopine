@@ -2900,6 +2900,15 @@ p {
     justify-content: flex-start !important;
   }
 
+  .project--nav-promo-section {
+    height: auto;
+    bottom: -20px;
+  }
+
+  .project--header-secondary .nav-link {
+    font-weight: bold;
+  }
+
   .footer_link {
     text-transform: uppercase;
   }
@@ -3029,6 +3038,9 @@ p {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-padding-start: 24px;
+    padding-inline-start: 24px;
+    font-weight: bold;
   }
 
   .nav--promo-links-container a {

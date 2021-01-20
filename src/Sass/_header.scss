@@ -762,6 +762,13 @@
         align-items: flex-start;
         justify-content: flex-start !important;
     }
+    .project--nav-promo-section{
+        height: auto;
+        bottom: -20px;
+    }
+    .project--header-secondary .nav-link{
+        font-weight: bold;
+    }
 }
 
 @media screen and (max-width: 576px){
@@ -787,6 +794,8 @@
     .nav--promo-links-container{
         display: flex;
         flex-direction: column;
+        padding-inline-start: 24px;
+        font-weight: bold;
         a{
             margin-inline-start: 0 !important;
             margin-inline-end: 0 !important;
