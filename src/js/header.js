@@ -1,7 +1,7 @@
 const getHeaderInitiate = document.querySelector(".project--subheader-bg");
 const getHeaderLinks = document.querySelectorAll(".project--link");
 let getSubheaderContainer = null;
-let previousElement = null;
+let previousElement = document.querySelector(".project--link.active");
 
 function isParent(refNode, otherNode) {
   var parent = otherNode.parentNode;
@@ -40,6 +40,7 @@ const isRowElement = (e) => {
 
 const menuItemOver = (e) => {
   const target = e.currentTarget;
+  console.log(target);
   const targetPaddingLeft = parseInt(window.getComputedStyle(target, null).getPropertyValue('padding-left'), 10);
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
@@ -48,16 +49,17 @@ const menuItemOver = (e) => {
     findPreviousElem.classList.remove('active');
   }
   target.classList.add('active');
-  if(window.innerWidth > 1200){
-    console.log(target.parentElement.lastElementChild.previousElementSibling == target);
+  if(window.innerWidth >= 769){
     if(hoveredElement.dataset.section !== 'brand'){
       if(target.parentElement.lastElementChild.previousElementSibling == target){
-        lastChild?.setAttribute('style',`padding-inline-end: ${window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth - 90}px`);
+        lastChild?.setAttribute('style',`padding-inline-end: ${Math.abs(window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth - 90)}px`);
       }else{
         lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left + targetPaddingLeft}px`);
       }
     }
-    getHeaderLinks.forEach(item => !item.parentElement.classList.contains('active') && item.parentElement.classList.add('hover--opacity'));
+  }
+  if(window.innerWidth > 1200){
+    getHeaderLinks.forEach(item => !item.parentElement.classList.contains('active') && item.classList.add('hover--opacity'));
   }
 };
 
@@ -78,13 +80,13 @@ const menuItemOut = (e) => {
   const target = e.currentTarget;
   const lastChild = target.lastElementChild;
   const lastChildRow = lastChild.querySelector('.container');
-  getHeaderLinks.forEach(item => item.parentElement.classList.remove('hover--opacity'));
+  getHeaderLinks.forEach(item => item.classList.remove('hover--opacity'));
   lastChildRow?.removeAttribute('style');
   e.currentTarget.classList.remove('active');
 };
 
 getHeaderLinks.forEach((item) => {
-  if(window.innerWidth > 1200){
+  if(window.innerWidth > 769){
     item.parentElement.addEventListener("mouseover", menuItemOver);
     item.parentElement.addEventListener("mouseleave", menuItemOut);
   }
@@ -243,27 +245,30 @@ loginStep2 &&
     }
   };
 
-  if(window.innerWidth < 1200){
-    getHeaderLinks.forEach((item) => {
-      item.parentElement.addEventListener("click", handleMenuClick);
-    });
-    getHeaderLinks[0].click();
-  }
-
   window.onload = function(){
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    if(window.innerWidth < 769){
+      $('header .collapse').on('shown.bs.collapse', function () {
+        getHeaderLinks.forEach((item) => {
+          item.parentElement.addEventListener("click", handleMenuClick);
+          getHeaderLinks[0].click();
+        });
+      })
+    }
   }
 
   window.addEventListener('resize', () => {
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
-    if(window.innerWidth < 1200){
-      getHeaderLinks.forEach((item) => {
-        item.parentElement.addEventListener("click", handleMenuClick);
-        getHeaderLinks[0].click();
-      });
+    if(window.innerWidth < 769){
+      $('header .collapse').on('shown.bs.collapse', function () {
+        getHeaderLinks.forEach((item) => {
+          item.parentElement.addEventListener("click", handleMenuClick);
+          getHeaderLinks[0].click();
+        });
+      })
     }
   });

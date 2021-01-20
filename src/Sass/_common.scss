@@ -242,4 +242,7 @@
   &::before{
     content: none !important;
   }
+  & > a::after{
+    content: none !important;
+  }
 }

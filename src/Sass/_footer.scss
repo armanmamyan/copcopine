@@ -44,7 +44,7 @@
 .footer_icon_service_wrapper{
     width: 60px;
     height: 30px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .footer_icon_service{
@@ -188,8 +188,12 @@
     display: block;
     color: currentColor;
     text-decoration: none;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     transition: color 0.314s;
+    a{
+        font-size: 16px;
+        line-height: 18px;
+    }
 }
 
 .footer_link:hover{
@@ -206,7 +210,7 @@
     width: 25px;
     height: 25px;
     margin-right: 25px;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     border-radius: 5px;
     svg{
         fill: #A8977A;
@@ -219,11 +223,18 @@
 }
 
 .payment{
-    width: 49px;
-    height: 14px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 22px;
     background-size: cover;
+}
+
+.payment-group{
+    background-image: url('../assets/paymen_group.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    &:hover{
+        background-image: url('../assets/payment_hover.svg');
+    }
 }
 
 .payment-visa{
@@ -267,9 +278,6 @@
     white-space: nowrap;
 }
 
-@media (min-width: 576px) { 
-}
-
 @media (min-width: 769px) { 
     .footer_links,
     .footer_service_wrapper{
@@ -287,9 +295,6 @@
     }
     .footer_service_wrapper{
         border-bottom: 0
-    }
-    .footer_icon_service_wrapper{
-        margin-bottom: 10px;
     }
     .footer_links_heading{
         margin-bottom: 10px;
@@ -311,7 +316,19 @@
 @media (min-width: 992px) {
     .footer_links,
     .footer_service_wrapper{
-        padding: 0 8px 0 34px;;
+        padding: 0 8px 0 38px;
+    }
+    .footer_icons_container{
+        .row{
+            & > div + div{
+                padding-inline-start: 34px;
+            }
+        }
+    }
+    .footer_links_heading{
+        font-size: 16px;
+        height: auto;
+        line-height: 18px;
     }
 }
 
@@ -322,24 +339,42 @@
     }
 }
 
-@media screen and (max-width: 576px){
-    .footer{
-        padding: 0 20px;
-    }
-    .footer_heading{
-        height: auto;
-    }
-    .footer_email_container{
-        width: 100%;
+@media (max-width: 1200px) {
+    .payment{
+        margin-right: 15px;
     }
     .footer_separator-x.my-40{
         width: 100%;
         margin-block-end: 30px;
     }
-    .footer_service_wrapper{
-        a{
-            display: flex;
-            align-items: center;
+    .footer_email_container + .footer_separator-x.my-40{
+        margin-block-end: 20px;
+        margin-block-start: 30px;
+    }
+    .footer_links{
+        & > div.footer_links_wrapper:first-child:not(:last-child){
+            margin-bottom: 48px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .footer_heading{
+        height: auto;
+    }
+    .footer_links_heading{
+        margin-block-end: 0 !important;
+    }
+    .footer_icons_container,.footer_links_container{
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        .container{
+            padding: 0;
+            max-width: 100% !important;
+        }
+        .row{
+            margin: 0;
         }
     }
     .footer_links_container{
@@ -349,5 +384,57 @@
                 order: -1;
             }
         }
+    }
+    .footer_separator-x.my-40{
+        width: calc(100% - 40px);
+    }
+    .footer_links_heading{
+        position: relative;
+        padding-inline-start: 24px;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            background-image: url('../assets/chevron.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(90deg);
+            transition: transform .3s ease;
+        }
+        &[aria-expanded="true"]::before{
+            transform: rotate(270deg);
+        }
+    }
+    .soc_icons_wrapper, .footer_links_wrapper ul{
+        margin-block-start: 14px;
+        margin-block-end: 20px;
+        padding-inline-start: 24px;
+    }
+    .footer_links > div.footer_links_wrapper:first-child:not(:last-child){
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .footer_service_wrapper{
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .footer_email_container{
+        width: 100%;
+        padding: 0 20px;
+        .footer_email_placeholder{
+            left: 30px;
+        }
+    }
+    .footer_icons_container .row{
+        margin: 0 -2px;
     }
 }
