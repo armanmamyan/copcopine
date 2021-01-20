@@ -122,12 +122,15 @@
                 position: static;
                 transition: opacity .3s ease;
                 &.active{
+                    .nav-link::before{
+                        transform: scale(1);
+                    }
                     .dropdown--content{
                         display: flex;
                     }
                 }
             }
-            & > li:last-child .dropdown--content, .secondary--nav-reversed{
+            & > li:last-child .dropdown--content, .secondary--nav-reversed .dropdown--content{
                     flex-direction: row-reverse;
                     .project--nav-banner-container{
                         position: relative;
@@ -268,6 +271,11 @@
 .nav--banner-link{
     display: block;
     line-height: 0;
+    transition: opacity .3s ease;
+    opacity: .75;
+    &:hover{
+        opacity: 1;
+    }
     img{
         max-width: 100%;
         width: auto;
@@ -372,6 +380,19 @@
         padding-inline-end: 0px;
       }
 }
+
+.project--header-secondary .nav-link{
+    padding: 10px 0 4px 0;
+  }
+
+  .bars {
+    width: 18px;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 5px;
+    transition: .5s ease;
+  }
+
 @media screen and (min-width: 769px){
     .nav-item{
         .nav-link[data-section="brand"] + .dropdown--content .nav--banner-wrapper{
@@ -487,7 +508,8 @@
                 transition: transform .3s ease;
             }
             &::before{
-                left: 0;
+                left: 24px;
+                width: calc(100% - 24px);
             }
            }
             &.active{
@@ -572,17 +594,12 @@
    }
 }
 
-.project--header-secondary .nav-link{
-    padding: 10px 0 5px 0;
-  }
+@media screen and (max-width: 1024px){
+    .project--header-secondary > .row > .navbar .header--secondary-nav > .navbar-nav > li + li{
+        margin-inline-start: 20px;
+    }
+}
 
-  .bars {
-    width: 18px;
-    height: 2px;
-    background-color: #000;
-    margin-bottom: 5px;
-    transition: .5s ease;
-  }
 
 @media screen and (max-width: 768px){
     .dropdown--content .project--nav-promo-section{
@@ -645,7 +662,7 @@
                 }
                 .dropdown--content{
                     position: static;
-                    overflow: hidden;
+                    overflow: auto;
                     padding-inline-start: 0 !important;
                     padding: 0;
                     .project--nav-banner-container{
@@ -693,11 +710,12 @@
     .nav-link[data-section="brand"] + .dropdown--content{
         position: relative !important;
         .nav--banner-wrapper{
-            position: absolute;
+            position: relative;
             display: flex;
             flex-direction: column;
-            left: 25%;
+            left: 0;
             padding-inline-start: 30px;
+            margin-inline-start: 30px;
             &::before{
                 content: '';
                 display: block;

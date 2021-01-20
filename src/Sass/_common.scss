@@ -237,3 +237,9 @@
 .mb-12{
   margin-block-end: 12px !important;
 }
+
+.nav-item-no-arrow{
+  &::before{
+    content: none !important;
+  }
+}
