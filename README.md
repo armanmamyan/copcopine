@@ -1,6 +1,6 @@
 # copcopine
 
-# Be sure to have latest recommended version of node and nmp(yarn)
+# Be sure to have latest recommended version of node and npm(yarn)
   - npm install --global gulp-cli
   - cd project-directory
   - npm install
