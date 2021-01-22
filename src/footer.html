@@ -195,15 +195,12 @@
         SVGInjector(mySVGsToInject);
     </script>
     <script>
-        var inputsOfDOM = document.getElementsByClassName('project--input');
         var footer_email_wrapper = document.querySelector('.footer_email_container ');
         var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
         var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
         var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
 
-
         var footer_email_input_active =
-
             footer_email_input.addEventListener('focus', function() {
                 focusInput(footer_email_placeholder);
             });
@@ -212,7 +209,6 @@
             if (!value) {
                 blurInput(footer_email_placeholder, footer_email_button);
             }
-
         });
         footer_email_input.addEventListener('input', function(e) {
             var value = footer_email_input.value.trim();
@@ -223,29 +219,7 @@
             }
         });
 
-        for (let input of inputsOfDOM) {
-            input.addEventListener('input', function(e) {
-                var value = input.value.trim();
-                if (value) {
-                    keepInputPlaceholder(input);
-                } else {
-                    preventInputPlaceholder(input);
-                }
-            });
-        }
-
-        function keepInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '-5px';
-            input.nextElementSibling.style.transform = 'none';
-            input.nextElementSibling.style.fontSize = '10px';
-        }
-
-        function preventInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '';
-            input.nextElementSibling.style.transform = '';
-        }
-
-
+  
         function focusInput(placeholder, button) {
             placeholder.style.top = '-10px';
             placeholder.style.transform = 'scale(0.7)';

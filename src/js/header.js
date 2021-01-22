@@ -3,10 +3,7 @@ const getHeaderLinks = document.querySelectorAll(".project--link");
 let getSubheaderContainer = null;
 let previousElement = document.querySelector(".project--link.active");
 let inputsOfDOM = document.getElementsByClassName('project--input');
-let footer_email_wrapper = document.querySelector('.footer_email_container ');
-let footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
-let footer_email_input = footer_email_wrapper.querySelector('.input_mail');
-let footer_email_button = footer_email_wrapper.querySelector('.button_mail');
+
 
 function keepInputPlaceholder(input) {
   input.nextElementSibling.style.top = '-5px';
@@ -101,25 +98,6 @@ getHeaderLinks.forEach((item) => {
   }
 });
 
-footer_email_input.addEventListener('focus', function(e) {
-  focusInput(footer_email_placeholder);
-});
-footer_email_input.addEventListener('blur', function() {
-  var value = footer_email_input.value.trim();
-  if (!value) {
-      blurInput(footer_email_placeholder, footer_email_button);
-  }
-
-});
-
-footer_email_input.addEventListener('input', function(e) {
-  var value = footer_email_input.value.trim();
-  if (value) {
-      focusInput(footer_email_placeholder, footer_email_button);
-  } else {
-      blurInput(footer_email_placeholder, footer_email_button);
-  }
-});
 
 for (let input of inputsOfDOM) {
   input.addEventListener('input', function(e) {
@@ -236,11 +214,13 @@ loginGoBackBtn &&
     });
   });
 
-createAccountBtn &&
-  createAccountBtn.addEventListener("click", () => {
-    loginForm.classList.remove("active");
-    createAccModal.classList.add("active");
-  });
+  if(createAccount){
+    createAccountBtn.addEventListener("click", () => {
+      loginForm.classList.remove("active");
+      createAccModal.classList.add("active");
+    });
+  }
+  
 
 loginStep2 &&
   loginStep2.addEventListener("click", (e) => {
@@ -278,11 +258,14 @@ loginStep2 &&
 
 
   const checkWishlist = (wishlistContainer,wishlistContainerElements) => {
-    if(wishlistContainerElements?.length > 3){
-      wishlistContainer.setAttribute('style', 'justify-content: flex-start;');
-    }else{
-      wishlistContainer.removeAttribute('style');
+    if(wishlistContainer){
+      if(wishlistContainerElements?.length > 3){
+        wishlistContainer.setAttribute('style', 'justify-content: flex-start;');
+      }else{
+        wishlistContainer.removeAttribute('style');
+      }
     }
+    
   };
 
   window.onload = function(){
@@ -303,6 +286,7 @@ loginStep2 &&
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    
     if(window.innerWidth < 769){
       $('header .collapse').on('shown.bs.collapse', function () {
         getHeaderLinks.forEach((item) => {
