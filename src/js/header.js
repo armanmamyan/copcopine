@@ -2,18 +2,38 @@ const getHeaderInitiate = document.querySelector(".project--subheader-bg");
 const getHeaderLinks = document.querySelectorAll(".project--link");
 let getSubheaderContainer = null;
 let previousElement = document.querySelector(".project--link.active");
+let inputsOfDOM = document.getElementsByClassName('project--input');
+let footer_email_wrapper = document.querySelector('.footer_email_container ');
+let footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
+let footer_email_input = footer_email_wrapper.querySelector('.input_mail');
+let footer_email_button = footer_email_wrapper.querySelector('.button_mail');
 
-function isParent(refNode, otherNode) {
-  var parent = otherNode.parentNode;
-  do {
-    if (refNode == parent) {
-      return true;
-    } else {
-      parent = parent.parentNode;
-    }
-  } while (parent);
-  return false;
+function keepInputPlaceholder(input) {
+  input.nextElementSibling.style.top = '-5px';
+  input.nextElementSibling.style.transform = 'none';
+  input.nextElementSibling.style.fontSize = '10px';
 }
+
+function preventInputPlaceholder(input) {
+  input.nextElementSibling.style.top = '';
+  input.nextElementSibling.style.transform = '';
+}
+
+
+function focusInput(placeholder, button) {
+  placeholder.style.top = '-10px';
+  placeholder.style.transform = 'scale(0.7)';
+  button.style.backgroundColor = '#A8977A';
+  button.style.color = '#fff';
+};
+
+function blurInput(placeholder, button) {
+  placeholder.style.top = '';
+  placeholder.style.transform = '';
+  button.style.backgroundColor = '';
+  button.style.color = '';
+};
+
 
 function handleOutsideClick() {
   window.addEventListener("click", (e) => {
@@ -28,19 +48,8 @@ function handleOutsideClick() {
   });
 }
 
-const isRowElement = (e) => {
-  if (
-    e.relatedTarget?.classList.contains("row") ||
-    e.relatedTarget?.classList.contains("project--subheader-bg")
-  )
-    return true;
-  return false;
-};
-
-
 const menuItemOver = (e) => {
   const target = e.currentTarget;
-  console.log(target);
   const targetPaddingLeft = parseInt(window.getComputedStyle(target, null).getPropertyValue('padding-left'), 10);
   const hoveredElement = e.target;
   const lastChild = target.lastElementChild;
@@ -91,6 +100,37 @@ getHeaderLinks.forEach((item) => {
     item.parentElement.addEventListener("mouseleave", menuItemOut);
   }
 });
+
+footer_email_input.addEventListener('focus', function(e) {
+  focusInput(footer_email_placeholder);
+});
+footer_email_input.addEventListener('blur', function() {
+  var value = footer_email_input.value.trim();
+  if (!value) {
+      blurInput(footer_email_placeholder, footer_email_button);
+  }
+
+});
+
+footer_email_input.addEventListener('input', function(e) {
+  var value = footer_email_input.value.trim();
+  if (value) {
+      focusInput(footer_email_placeholder, footer_email_button);
+  } else {
+      blurInput(footer_email_placeholder, footer_email_button);
+  }
+});
+
+for (let input of inputsOfDOM) {
+  input.addEventListener('input', function(e) {
+      var value = input.value.trim();
+      if (value) {
+          keepInputPlaceholder(input);
+      } else {
+          preventInputPlaceholder(input);
+      }
+  });
+}
 
 let cartPopupIsOpen = false;
 let userPopupIsOpen = false;
@@ -248,12 +288,12 @@ loginStep2 &&
   window.onload = function(){
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
-    wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
+    wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements);
     if(window.innerWidth < 769){
       $('header .collapse').on('shown.bs.collapse', function () {
         getHeaderLinks.forEach((item) => {
           item.parentElement.addEventListener("click", handleMenuClick);
-          getHeaderLinks[0].click();
+          getHeaderLinks[0].classList.add('active');
         });
       })
     }
@@ -267,7 +307,7 @@ loginStep2 &&
       $('header .collapse').on('shown.bs.collapse', function () {
         getHeaderLinks.forEach((item) => {
           item.parentElement.addEventListener("click", handleMenuClick);
-          getHeaderLinks[0].click();
+          getHeaderLinks[0].classList.add('active');
         });
       })
     }

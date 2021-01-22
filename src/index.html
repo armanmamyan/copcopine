@@ -42,16 +42,16 @@
                     <img src="./assets/Logo.svg" alt="Logo" class="converted--image" />
                 </a>
                 <div class="project--primary-links d-flex align-items-center">
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="login" title="Профиль">
+                    <a href="" class="primary--link-item primary--link-item__login" data-toggle="tooltip" data-placement="bottom" data-nav-name="login" title="Профиль">
                         <img src="./assets/Login.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="search" title="Поиск">
+                    <a href="" class="primary--link-item primary--link-item__search" data-toggle="tooltip" data-placement="bottom" data-nav-name="search" title="Поиск">
                         <img src="./assets/search.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" data-nav-name="wishlist" title="Избранное">
+                    <a href="" class="primary--link-item primary--link-item__wishlist" data-toggle="tooltip" data-placement="bottom" data-nav-name="wishlist" title="Избранное">
                         <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                     </a>
-                    <a href="" class="primary--link-item" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
+                    <a href="" class="primary--link-item primary--link-item__cart" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
                     <div class="project--popup-container project--popup-multistep" id="login">
@@ -789,7 +789,7 @@
                     <nav class="navbar navbar-expand-xl p-0 flex-wrap">
                         <div class="collapse navbar-collapse header--secondary-nav" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link project--link text-uppercase pr-0 pl-0 text-dark" href="#">Осень/Зима 20</a>
                                     <div class="dropdown--content">
                                         <ul class="project--nav-secondary navbar-nav">
@@ -1261,7 +1261,7 @@
             $('[data-toggle="tooltip"]').on('click', function() {
                 $(this).tooltip('hide')
             })
-        });
+        })
     </script>
     <script>
         $('.primary--link-item').tooltip({
@@ -1274,138 +1274,6 @@
 
         // Do the injection
         SVGInjector(mySVGsToInject);
-    </script>
-    <script>
-        var inputsOfDOM = document.getElementsByClassName('project--input');
-        var footer_email_wrapper = document.querySelector('.footer_email_container ');
-        var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
-        var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
-        var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
-
-
-        var footer_email_input_active =
-
-            footer_email_input.addEventListener('focus', function() {
-                focusInput(footer_email_placeholder);
-            });
-        footer_email_input.addEventListener('blur', function() {
-            var value = footer_email_input.value.trim();
-            if (!value) {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-
-        });
-        footer_email_input.addEventListener('input', function(e) {
-            var value = footer_email_input.value.trim();
-            if (value) {
-                focusInput(footer_email_placeholder, footer_email_button);
-            } else {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-
-        for (let input of inputsOfDOM) {
-            input.addEventListener('input', function(e) {
-                var value = input.value.trim();
-                if (value) {
-                    keepInputPlaceholder(input);
-                } else {
-                    preventInputPlaceholder(input);
-                }
-            });
-        }
-
-        function keepInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '-5px';
-            input.nextElementSibling.style.transform = 'none';
-            input.nextElementSibling.style.fontSize = '10px';
-        }
-
-        function preventInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '';
-            input.nextElementSibling.style.transform = '';
-        }
-
-
-        function focusInput(placeholder, button) {
-            placeholder.style.top = '-10px';
-            placeholder.style.transform = 'scale(0.7)';
-            button.style.backgroundColor = '#A8977A';
-            button.style.color = '#fff';
-        };
-
-        function blurInput(placeholder, button) {
-            placeholder.style.top = '';
-            placeholder.style.transform = '';
-            button.style.backgroundColor = '';
-            button.style.color = '';
-        };
-    </script>
-    <!-- partial -->
-    <script>
-        var inputsOfDOM = document.getElementsByClassName('project--input');
-        var footer_email_wrapper = document.querySelector('.footer_email_container ');
-        var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
-        var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
-        var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
-
-        var footer_email_input_active =
-
-            footer_email_input.addEventListener('focus', function() {
-                focusInput(footer_email_placeholder);
-            });
-        footer_email_input.addEventListener('blur', function() {
-            var value = footer_email_input.value.trim();
-            if (!value) {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-
-        });
-        footer_email_input.addEventListener('input', function(e) {
-            var value = footer_email_input.value.trim();
-            if (value) {
-                focusInput(footer_email_placeholder, footer_email_button);
-            } else {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-
-        for (let input of inputsOfDOM) {
-            input.addEventListener('input', function(e) {
-                var value = input.value.trim();
-                if (value) {
-                    keepInputPlaceholder(input);
-                } else {
-                    preventInputPlaceholder(input);
-                }
-            });
-        }
-
-        function keepInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '-5px';
-            input.nextElementSibling.style.transform = 'none';
-            input.nextElementSibling.style.fontSize = '10px';
-        }
-
-        function preventInputPlaceholder(input) {
-            input.nextElementSibling.style.top = '';
-            input.nextElementSibling.style.transform = '';
-        }
-
-
-        function focusInput(placeholder, button) {
-            placeholder.style.top = '-10px';
-            placeholder.style.transform = 'scale(0.7)';
-            button.style.backgroundColor = '#A8977A';
-            button.style.color = '#fff';
-        };
-
-        function blurInput(placeholder, button) {
-            placeholder.style.top = '';
-            placeholder.style.transform = '';
-            button.style.backgroundColor = '';
-            button.style.color = '';
-        };
     </script>
     <!-- partial -->
 </body>

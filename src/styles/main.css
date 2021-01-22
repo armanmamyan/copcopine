@@ -273,24 +273,42 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: 0%;
+  background-position: center;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
+.project--primary-links .primary--link-item__login {
+  background-image: url("../assets/Login _Hover.svg");
+}
+
+.project--primary-links .primary--link-item__search {
+  background-image: url("../assets/Search_Hover.svg");
+}
+
+.project--primary-links .primary--link-item__wishlist {
+  background-image: url("../assets/Wishlist_Hover.svg");
+}
+
+.project--primary-links .primary--link-item__cart {
+  background-image: url("../assets/Cart_Hover.svg");
+}
+
 .project--primary-links .primary--link-item svg {
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  fill: transparent;
-  stroke: #000;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   width: 20px;
   height: 20px;
 }
 
+.project--primary-links .primary--link-item:hover {
+  background-size: contain;
+}
+
 .project--primary-links .primary--link-item:hover svg {
-  stroke: transparent;
-  fill: #A8977A;
+  opacity: 0;
 }
 
 .project--header-line {

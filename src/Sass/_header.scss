@@ -67,22 +67,33 @@
         position: relative;
         display: flex;
         align-items: center;
+        background-repeat: no-repeat;
+        background-size: 0%;
+        background-position: center;
         transition: opacity .3s ease;
+        &__login{
+            background-image: url('../assets/Login\ _Hover.svg');
+        }
+        &__search{
+            background-image: url('../assets/Search_Hover.svg');
+        }
+        &__wishlist{
+            background-image: url('../assets/Wishlist_Hover.svg');
+        }
+        &__cart{
+            background-image: url('../assets/Cart_Hover.svg');
+        }
         svg{
-            flex-shrink: 0;
-            fill: transparent;
-            stroke: #000;
-            transition: all .3s ease;
+            transition: all .1s ease;
             width: 20px;
             height: 20px;
         }
         &:hover{
+            background-size: contain;
             svg{
-                stroke: transparent;
-                fill: #A8977A;
+                opacity: 0;
             }
         }
-    
     }
 }
 
