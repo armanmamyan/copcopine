@@ -13,6 +13,9 @@
   &.project--popup-product {
     padding-block-end: 0;
   }
+  .project--popup-links{
+    width: 100%;
+  }
   @media screen and (max-width: 1200px){
       width: 100%;
       height: auto;
@@ -20,8 +23,9 @@
       border: none;
       border-radius: 0;
       top: 50px !important;
-      padding: 0 40px 40px;
-      &.project--popup-links{
+      padding: 11px 40px 30px 40px;
+      border-top: 1px solid #cdc3b3;
+      .project--popup-links{
         .project--popup-logout-wrapper{
           width: 100%;
         }
@@ -298,6 +302,9 @@
       background-color: #cdc3b3;
     }
   }
+  @media screen and (max-width: 768px){
+    margin-block-end: 10px;
+  }
   h3 {
     margin-block-start: 0;
     line-height: 36px;
@@ -316,13 +323,13 @@
     }
     @media screen and (max-width: 1200px){
         position: absolute;
-        top: 50%;
+        top: 4px;
         right: 0;
-        transform: translateY(-50%);
         font-size: 16px;
         width: auto;
         display: flex;
         align-items: center;
+        margin: 0;
         svg{
           width: 10px;
           height: 10px;
@@ -671,5 +678,57 @@
           transform: translate(-50%,-50%);
       }
     }
+  }
+  #forgotPassword .project--popup-header{
+    justify-content: flex-start;
+    width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .project--popup-container{
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+  }
+  .project--popup-header{
+    justify-content: flex-start;
+    margin-block-end: 15px;
+    &::before{
+      width: 100%;
+    }
+  }
+  .project--popup-container #login1 .project--popup-form{
+    flex-direction: column;
+    & > div{
+      flex: 0 0 auto;
+    }
+    & > div:first-child{
+      margin-inline-end: 0;
+      padding-block-end: 20px;
+      margin-block-end: 15px;
+      border-bottom: 1px solid #CDC3B3;
+      &::before{
+        content: none;
+      }
+    }
+  }
+  #search .project--popup-form,
+  #search .project--search-results{
+    width: 100%;
+  }
+  .project--popup-container .project--popup-links .project--popup-link-wrapper{
+    width: auto;
+  }
+  .project--popup-links .project--popup-link{
+    width: 100% !important;
+    max-width: 160px;
+  }
+}
+
+@media screen and (max-width: 325px){
+  .project--popup-links .project--popup-link{
+    max-width: 130px;
   }
 }

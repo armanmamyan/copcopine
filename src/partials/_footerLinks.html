@@ -39,4 +39,43 @@
     // Do the injection
     SVGInjector(mySVGsToInject);
 </script>
-  
+<script>
+  function focusInput(placeholder, button) {
+      placeholder.style.top = '-10px';
+      placeholder.style.transform = 'scale(0.7)';
+      button.style.backgroundColor = '#A8977A';
+      button.style.color = '#fff';
+  };
+
+  function blurInput(placeholder, button) {
+      placeholder.style.top = '';
+      placeholder.style.transform = '';
+      button.style.backgroundColor = '';
+      button.style.color = '';
+  };
+
+  const footer_email_wrapper = document.querySelectorAll('.footer_email_container ');
+  footer_email_wrapper.forEach(item => {
+      const footer_email_placeholder = item.querySelector('.footer_email_placeholder');
+      const footer_email_input = item.querySelector('.input_mail');
+      const footer_email_button = item.querySelector('.button_mail');
+      footer_email_input.addEventListener('focus', function() {
+      focusInput(footer_email_placeholder);
+  });
+
+  footer_email_input.addEventListener('blur', function() {
+      const value = footer_email_input.value.trim();
+      if (!value) {
+          blurInput(footer_email_placeholder, footer_email_button);
+      }
+  });
+  footer_email_input.addEventListener('input', function(e) {
+      const value = footer_email_input.value.trim();
+      if (value) {
+          focusInput(footer_email_placeholder, footer_email_button);
+      } else {
+          blurInput(footer_email_placeholder, footer_email_button);
+      }
+  });
+  })      
+</script>

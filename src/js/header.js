@@ -16,22 +16,6 @@ function preventInputPlaceholder(input) {
   input.nextElementSibling.style.transform = '';
 }
 
-
-function focusInput(placeholder, button) {
-  placeholder.style.top = '-10px';
-  placeholder.style.transform = 'scale(0.7)';
-  button.style.backgroundColor = '#A8977A';
-  button.style.color = '#fff';
-};
-
-function blurInput(placeholder, button) {
-  placeholder.style.top = '';
-  placeholder.style.transform = '';
-  button.style.backgroundColor = '';
-  button.style.color = '';
-};
-
-
 function handleOutsideClick() {
   window.addEventListener("click", (e) => {
     if (e.target == modalOverlay) {
@@ -60,7 +44,11 @@ const menuItemOver = (e) => {
       if(target.parentElement.lastElementChild.previousElementSibling == target){
         lastChild?.setAttribute('style',`padding-inline-end: ${Math.abs(window.innerWidth - target.getBoundingClientRect().left - target.offsetWidth - 90)}px`);
       }else{
-        lastChild?.setAttribute('style',`padding-inline-start: ${target.getBoundingClientRect().left + targetPaddingLeft}px`);
+        let targetLeft = target.getBoundingClientRect().left;
+        if(window.innerWidth < 1200 && targetLeft === 0){
+          targetLeft = 58
+        }
+        lastChild?.setAttribute('style',`padding-inline-start: ${targetLeft + targetPaddingLeft}px`);
       }
     }
   }
@@ -92,7 +80,7 @@ const menuItemOut = (e) => {
 };
 
 getHeaderLinks.forEach((item) => {
-  if(window.innerWidth > 769){
+  if(window.innerWidth > 1200){
     item.parentElement.addEventListener("mouseover", menuItemOver);
     item.parentElement.addEventListener("mouseleave", menuItemOut);
   }
@@ -112,12 +100,14 @@ for (let input of inputsOfDOM) {
 
 let cartPopupIsOpen = false;
 let userPopupIsOpen = false;
+const logo = document.querySelector('.project--logo');
 const forgotPassword = document.querySelector(".forgot--pasword");
 const loginForm = document.querySelector("#login1");
 const loginStep2 = document.querySelector(".login--btn-step2");
 const resetPassForm = document.querySelector("#forgotPassword");
 const resetPassForm2 = document.querySelector("#forgotPassword2");
 const loginPopupContainer = document.querySelector(".project--popup-multistep");
+const arrow = document.querySelector('.popup-arrow');
 const userIcon = document.querySelector(
   '.primary--link-item[data-nav-name="login"]'
 );
@@ -128,6 +118,7 @@ const loginGoBackBtn = document.querySelectorAll(".project--popup-goback");
 const loginCloseButton = document.querySelectorAll(".project--popup-close");
 const createAccModal = document.querySelector("#createAccount");
 const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
+const navbar = document.querySelector('header .navbar-toggler');
 
 forgotPassword &&
   forgotPassword.addEventListener("click", (e) => {
@@ -139,8 +130,14 @@ forgotPassword &&
 userIcon &&
   userIcon.addEventListener("click", (e) => {
     e.preventDefault();
+    if(window.innerWidth < 1200 && navbar.classList.contains('showing')){
+      navbar.click();
+      e.currentTarget.setAttribute('style', 'opacity: 1; display: block !important;');
+      logo.setAttribute('style', 'overflow: hidden;width: 0;height: 0;');
+    }
     if (userPopupIsOpen) {
       loginPopupContainer.classList.remove("active");
+      arrow.removeAttribute('style');
       modalOverlay?.classList.remove("active");
       userPopupIsOpen = !userPopupIsOpen;
       return;
@@ -155,10 +152,11 @@ userIcon &&
       resetPassForm2.classList.remove("active");
       loginForm.classList.add("active");
     }
-
+   
     if (cartPopupIsOpen) {
-      cartPopup.classList.remove("active");
+      document.querySelector('#cart')?.classList.remove("active");
       cartPopupIsOpen = !cartPopupIsOpen;
+      arrow.removeAttribute('style');
       if (resetPassForm.classList.contains("active")) {
         resetPassForm.classList.remove("active");
         loginForm.classList.add("active");
@@ -171,6 +169,9 @@ userIcon &&
     const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
     alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
     loginPopupContainer.classList.add("active");
+    const userIconLeft = userIcon.getBoundingClientRect().left;
+    arrow?.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${loginPopupContainer.getBoundingClientRect().top - 16}px`);
+
     modalOverlay?.classList.add("active");
     userPopupIsOpen = !userPopupIsOpen;
     handleOutsideClick();
@@ -195,8 +196,16 @@ loginGoBackBtn &&
   loginCloseButton.forEach(item => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
-      if(e.currentTarget.parentElement.parentElement.parentElement.id === 'login'){
-        console.log('gandon');
+      e.currentTarget.setAttribute('style', 'opacity: 1;');
+      const parentID = e.currentTarget.parentElement.parentElement.parentElement.id;
+      const searchId = e.currentTarget.parentElement.parentElement.id;
+      if(window.innerWidth < 1200){
+          const findIcon = document.querySelector(`.primary--link-item[data-nav-name=${parentID || searchId}]`);
+          findIcon && findIcon.removeAttribute('style');
+          logo.removeAttribute('style');
+      }
+
+      if(parentID === 'login'){
         e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
         if(e.currentTarget.parentElement.parentElement.id !== 'login1'){
           e.currentTarget.parentElement.parentElement.classList.remove("active");
@@ -231,15 +240,37 @@ loginStep2 &&
 
 
   const handleNavigationClick = (e) => {
-    if(window.innerWidth > 1200 || e.currentTarget.dataset.navName === 'search'){
+    if(window.innerWidth < 1200 && navbar.classList.contains('showing') && e.currentTarget.dataset.navName === 'search'){
       e.preventDefault();
+      navbar.click();
+      logo.setAttribute('style', 'overflow: hidden;width: 0;height: 0;');
+      e.currentTarget.setAttribute('style', 'opacity: 1; display: block !important;');
       const dataAttrName = e.currentTarget.dataset.navName;
-      if(dataAttrName === 'login') return;
+      userPopupIsOpen = false;
       const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
       const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
       alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
-
+      return;
+    }
+    if(window.innerWidth > 1200 || e.currentTarget.dataset.navName === 'search'){
+      e.preventDefault();
+      const dataAttrName = e.currentTarget.dataset.navName;
+      if(dataAttrName === 'login') return;
+      userPopupIsOpen = false;
+      const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
+      const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
+      const userIconLeft = e.currentTarget.getBoundingClientRect().left;
+      alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
+      findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
+      arrow.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${findCurrentAttrModal.getBoundingClientRect().top - 16}px`);
+      
+      if(dataAttrName === 'cart'){
+        findCurrentAttrModal.setAttribute('style', `right: -20px !important;`);
+        cartPopupIsOpen = true;
+      }else{
+        findCurrentAttrModal.removeAttribute('style');
+      }
       if(dataAttrName === 'wishlist' || dataAttrName === 'cart'){
         const getInnerElementChilds = findCurrentAttrModal.children[1];
         if(getInnerElementChilds?.children.length > 1){
@@ -247,7 +278,8 @@ loginStep2 &&
         }
       }
       return;
-  }
+    }
+    
   }
 
 
@@ -272,13 +304,25 @@ loginStep2 &&
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements);
-    if(window.innerWidth < 769){
-      $('header .collapse').on('shown.bs.collapse', function () {
-        getHeaderLinks.forEach((item) => {
+    if(window.innerWidth < 1200){
+      getHeaderLinks.forEach((item) => {
+        if (window.innerWidth < 769) {
           item.parentElement.addEventListener("click", handleMenuClick);
-          getHeaderLinks[0].classList.add('active');
-        });
-      })
+          return;
+        } 
+        item.parentElement.addEventListener("click", menuItemOver);
+      });
+
+      $('header .collapse').on('show.bs.collapse', function () {
+        getHeaderLinks[0].click();
+        navbar.classList.add('showing');
+        getHeaderLinks[0].classList.add('active');
+
+      });
+      $('header .collapse').on('hidden.bs.collapse', function () {
+        getHeaderLinks[0].click();
+        navbar.classList.remove('showing');
+      });
     }
   }
 
@@ -287,12 +331,32 @@ loginStep2 &&
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
     wishlistContainerElements && checkWishlist(wishlistContainer, wishlistContainerElements); 
     
-    if(window.innerWidth < 769){
-      $('header .collapse').on('shown.bs.collapse', function () {
-        getHeaderLinks.forEach((item) => {
+    if(window.innerWidth < 1200){
+      getHeaderLinks.forEach((item) => {
+        if (window.innerWidth < 769) {
           item.parentElement.addEventListener("click", handleMenuClick);
+          getHeaderLinks[0].click();
           getHeaderLinks[0].classList.add('active');
-        });
-      })
+          return;
+        } 
+        item.parentElement.addEventListener("click", menuItemOver);
+        getHeaderLinks[0].click();                      
+        getHeaderLinks[0].classList.add('active');
+      });
+      $('header .collapse').on('show.bs.collapse', function () {
+        getHeaderLinks[0].click();
+        navbar.classList.add('showing');
+      });
+      $('header .collapse').on('hidden.bs.collapse', function () {
+        getHeaderLinks[0].click();
+        navbar.classList.remove('showing');
+      });
     }
   });
+
+  window.addEventListener('scroll', () => {
+    const activePopup = document.querySelector('.project--popup-container.active');
+    if(activePopup){
+      arrow.style.top = (activePopup.getBoundingClientRect().top - 16) + 'px'
+    }
+  })

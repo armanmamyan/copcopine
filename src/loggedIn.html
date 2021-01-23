@@ -52,149 +52,52 @@
                         <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                     </a>
                     <a href="" class="primary--link-item primary--link-item__cart" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
-                        <span class="icon--counter">1</span>
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
-                    <div class="popup-arrow">
-                    </div>
-                    <div class="project--popup-container project--popup-multistep" id="login">
-                        <div id="login1" class="project--popup-steps active">
-                            <div class="project--popup-header">
-                                <h2>ПРОФИЛЬ</h2>
-                                <button type="button" name="close" class="project--popup-close">
-                                    закрыть
-                                    <img src="./assets/cancel.svg" alt="close" class="converted--image" />
-                                </button>
-                            </div>
-                            <form action="" class="project--popup-form">
-                                <div>
-                                    <h4 class="text-uppercase mt-0 mb-2">АВТОРИЗАЦИЯ</h4>
-                                    <div class="project--input-wrapper">
-                                        <input name="email" type="email" class="project--input" />
-                                        <label class="project--input-label" for="email">Email</label>
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="project--input-wrapper w-100 mb-2">
-                                            <input type="password" name="password" class="project--input" />
-                                            <label class="project--input-label" for="password">Пароль</label>
-                                        </div>
-                                        <button type="button" class="popup-form-search-btn show-hide-password">
-                                            <img src="./assets/search.svg" alt="" class="converted--image" />
-                                        </button>
-                                    </div>
-                                    <button type="button" name="forgot password" class="button-reset text-right text-dark font-weight-normal forgot--pasword mb-12">
-                                        Забыли пароль?
-                                    </button>
-                                    <button type="submit" name="loginSubmit" class="project--form-btn">
-                                        Войти
-                                    </button>
-                                </div>
-                                <div>
-                                    <hr class="project--iteration-divider mt-0 ml-0 mr-0 mb-6 d-none d-xl-block" />
-                                    <h4 class="text-uppercase">Новый пользователь?</h4>
-                                    <p>
-                                        Зарегистрируйтесь и получите персонализированный контент,
-                                        доступ к эксклюзивным событиям и наши частные распродажи.
-                                    </p>
-                                    <button type="button" class="project--form-btn" id="createAccountBtn">
-                                        Создать аккаунт
-                                    </button>
-                                </div>
-                            </form>
+                   <div class="project--popup-multistep project--popup-container" id="login">
+                       <div class="project--popup-links">
+                        <div class="project--popup-header">
+                            <h4>ЗДРАВСТВУЙТЕ NAREC!</h4>
+                            <button type="close" name="close" class="project--popup-close">
+                                закрыть
+                                <img src="./assets/cancel.svg" alt="close" class="converted--image" />
+                            </button>
                         </div>
-                        <div id="forgotPassword" class="project--popup-steps">
-                            <div class="project--popup-header">
-                                <h2>Восстановить пароль</h2>
-                                <button type="close" name="close" class="project--popup-close">
-                                    закрыть
-                                    <img src="./assets/cancel.svg" alt="close" class="converted--image" />
-                                </button>
+                        <div class="d-flex flex-wrap align-items-center justify-content-center project--popup-link-wrapper">
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">Заказы</span>
+                                <img src="./assets/Cart.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">Профиль</span>
+                                <img src="./assets/Login.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">отслеживание</span>
+                                <img src="./assets/Delivery.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">Адресная книга</span>
+                                <img src="./assets/Location.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">Бонусы</span>
+                                <img src="./assets/Gift.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <a href="" class="project--popup-link">
+                                <span class="popup--link-name">Пароль</span>
+                                <img src="./assets/Lock.svg" alt="" class="converted--image popup--link-icon" />
+                            </a>
+                            <div class="project--popup-logout-wrapper">
+                                <a href="/" class="project--popup-logout">Выйти</a>
                             </div>
-                            <form action="" class="project--popup-form">
-                                <button class="project--popup-goback mb-3">
-                                    <img src="./assets/chevron.svg" alt="" class="project--goback-icon converted--image" />
-                                    Назад
-                                </button>
-                                <p>
-                                    Введите в поле адрес электронной почты. Мы отправим вам
-                                    сообщение по электронной почте с инструкциями по созданию
-                                    нового пароля.
-                                </p>
-                                <div class="project--input-wrapper">
-                                    <input name="email" type="email" class="project--input" />
-                                    <label class="project--input-label" for="email"> Email</label>
-                                </div>
-                                <button type="submit" name="Reset password" class="project--form-btn reset-pass-step-2 mt-15">
-                                    Восстановить пароль
-                                </button>
-                            </form>
                         </div>
-                        <div id="forgotPassword2" class="project--popup-steps">
-                            <div class="project--popup-header">
-                                <h2>Восстановить пароль</h2>
-                                <button type="close" name="close" class="project--popup-close">
-                                    закрыть
-                                    <img src="./assets/cancel.svg" alt="close" class="converted--image" />
-                                </button>
-                            </div>
-                            <form action="" class="project--popup-form">
-                                <h4>Narec@hotmail.fr</h4>
-                                <p> Мы отправили вам электронное письмо для изменения пароля. </p>
-                                <p>Чтобы создать новый пароль, нажми на ссылку в электронном письме и введи новый пароль.</p>
-                                <p>
-                                    Электронное письмо не пришло?
-                                    Проверь папку “Спам”, а также другие электронные адреса,
-                                    привязанные к личному кабинету CopCopine. Нажми ниже, чтобы
-                                    отправить письмо повторно
-                                </p>
-                                <button type="submit" name="reset password" class="project--form-btn mb-end-10">
-                                    Восстановить пароль
-                                </button>
-                                <a href="/" class="project--form-btn login--btn-step2">Войти</a>
-                            </form>
-                        </div>
-                        <div id="createAccount" class="project--popup-steps">
-                            <div class="project--popup-header">
-                                <h2>СОЗДАТЬ АККАУНТ</h2>
-                                <button type="close" name="close" class="project--popup-close">
-                                    закрыть
-                                    <img src="./assets/cancel.svg" alt="close" class="converted--image" />
-                                </button>
-                            </div>
-                            <form action="" class="project--popup-form">
-                                <button class="project--popup-goback mb-3">
-                                    <img src="./assets/chevron.svg" alt="" class="project--goback-icon converted--image" />
-                                    Назад
-                                </button>
-                                <div class="project--input-wrapper">
-                                    <input name="email" type="email" class="project--input" />
-                                    <label class="project--input-label" for="email">Email</label>
-                                </div>
-                                <div class="project--input-wrapper">
-                                    <input name="repeat email" type="email" class="project--input" />
-                                    <label class="project--input-label" for="repeat email">Повторите email</label>
-                                </div>
-                                <div class="input-group">
-                                    <div class="project--input-wrapper w-100">
-                                        <input type="password" name="password" class="project--input" />
-                                        <label class="project--input-label" for="password">Пароль</label>
-                                    </div>
-                                    <button type="button" class="popup-form-search-btn show-hide-password">
-                                        <img src="./assets/search.svg" alt="" class="converted--image" />
-                                    </button>
-                                </div>
-
-                                <button type="submit" name="loginSubmit" class="project--form-btn">
-                                    Зарегистрироваться
-                                </button>
-                            </form>
-                        </div>
+                       </div>
                     </div>
                     <div class="project--popup-container" id="search">
                         <div class="project--popup-header">
                             <h2 class="text-uppercase">Поиск</h2>
                             <button type="close" name="close" class="project--popup-close">
-                                закрыть
                                 <img src="./assets/cancel.svg" alt="close" class="converted--image" />
                             </button>
                         </div>
@@ -237,7 +140,6 @@
                             <h2 class="text-uppercase">КОРЗИНА</h2>
                             <h5>1 единица</h5>
                             <button type="close" name="close" class="project--popup-close">
-                                закрыть
                                 <img src="./assets/cancel.svg" alt="close" class="converted--image" />
                             </button>
                         </div>
