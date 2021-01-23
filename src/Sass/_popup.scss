@@ -626,8 +626,22 @@
     fill: transparent;
     stroke: #CDC3B3;
   }
-
-  &:active,&.active{
+  &:focus{
+    border: 1px solid #CDC3B3 !important;
+  }
+  .show-hide-password{
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../assets/Eye_icon.svg');
+    &.active{
+      background-image: url('../assets/Eye_icon_Hover.svg');
+    }
+  }
+  &:not([name="passwordShowHide"]):active,&:not([name="passwordShowHide"]).active{
     background-color: #897047;
     svg{
       fill: #fff;

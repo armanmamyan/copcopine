@@ -205,7 +205,6 @@
         display: inline-block;
         position: relative;
         font-size: 16px;
-        line-height: 1;
         letter-spacing: 0;
         color: #000;
         &::before{
@@ -857,7 +856,6 @@
     }
     .project--primary-links{
         width: auto;
-        overflow: hidden;
         & > a:not(:nth-child(4)){
             display: none !important;
         }

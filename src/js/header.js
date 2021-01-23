@@ -170,7 +170,7 @@ userIcon &&
     alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
     loginPopupContainer.classList.add("active");
     const userIconLeft = userIcon.getBoundingClientRect().left;
-    arrow?.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${loginPopupContainer.getBoundingClientRect().top - 16}px`);
+    arrow?.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${loginPopupContainer.getBoundingClientRect().top - 17}px`);
 
     modalOverlay?.classList.add("active");
     userPopupIsOpen = !userPopupIsOpen;
@@ -263,7 +263,7 @@ loginStep2 &&
       const userIconLeft = e.currentTarget.getBoundingClientRect().left;
       alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
-      arrow.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${findCurrentAttrModal.getBoundingClientRect().top - 16}px`);
+      arrow.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${findCurrentAttrModal.getBoundingClientRect().top - 17}px`);
       
       if(dataAttrName === 'cart'){
         findCurrentAttrModal.setAttribute('style', `right: -20px !important;`);
@@ -300,6 +300,21 @@ loginStep2 &&
     
   };
 
+  // Password Start
+  const passwordInput = document.querySelector('#passwordInput');
+  const passwordBtn = document.querySelector('.popup-form-search-btn[name="passwordShowHide"]');
+  passwordBtn.addEventListener('click', (e) => {
+    const target = e.currentTarget;
+    if(target.firstElementChild.classList.contains('active')){
+      target.firstElementChild.classList.remove('active');
+      passwordInput.type = 'password';
+      return;
+    }
+    target.firstElementChild.classList.add('active');
+    passwordInput.type = 'text';
+  });
+  // Password End
+
   window.onload = function(){
     const wishlistContainer = document.querySelector('.project--wishlist-modal');
     const wishlistContainerElements = document.querySelectorAll('.project--wishlist-modal-item');
@@ -314,6 +329,7 @@ loginStep2 &&
       });
 
       $('header .collapse').on('show.bs.collapse', function () {
+        document.body.setAttribute('style', 'overflow: hidden');
         getHeaderLinks[0].click();
         navbar.classList.add('showing');
         getHeaderLinks[0].classList.add('active');
@@ -322,6 +338,7 @@ loginStep2 &&
       $('header .collapse').on('hidden.bs.collapse', function () {
         getHeaderLinks[0].click();
         navbar.classList.remove('showing');
+        document.body.removeAttribute('style');
       });
     }
   }
@@ -357,6 +374,8 @@ loginStep2 &&
   window.addEventListener('scroll', () => {
     const activePopup = document.querySelector('.project--popup-container.active');
     if(activePopup){
-      arrow.style.top = (activePopup.getBoundingClientRect().top - 16) + 'px'
+      arrow.style.top = (activePopup.getBoundingClientRect().top - 17) + 'px'
     }
-  })
+  });
+
+
