@@ -54,45 +54,45 @@
                     <a href="" class="primary--link-item primary--link-item__cart" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
-                   <div class="project--popup-multistep project--popup-container" id="login">
-                       <div class="project--popup-links">
-                        <div class="project--popup-header">
-                            <h4>ЗДРАВСТВУЙТЕ NAREC!</h4>
-                            <button type="close" name="close" class="project--popup-close">
-                                закрыть
-                                <img src="./assets/cancel.svg" alt="close" class="converted--image" />
-                            </button>
-                        </div>
-                        <div class="d-flex flex-wrap align-items-center justify-content-center project--popup-link-wrapper">
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">Заказы</span>
-                                <img src="./assets/Cart.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">Профиль</span>
-                                <img src="./assets/Login.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">отслеживание</span>
-                                <img src="./assets/Delivery.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">Адресная книга</span>
-                                <img src="./assets/Location.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">Бонусы</span>
-                                <img src="./assets/Gift.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <a href="" class="project--popup-link">
-                                <span class="popup--link-name">Пароль</span>
-                                <img src="./assets/Lock.svg" alt="" class="converted--image popup--link-icon" />
-                            </a>
-                            <div class="project--popup-logout-wrapper">
-                                <a href="/" class="project--popup-logout">Выйти</a>
+                    <div class="project--popup-multistep project--popup-container" id="login">
+                        <div class="project--popup-links">
+                            <div class="project--popup-header">
+                                <h4>ЗДРАВСТВУЙТЕ NAREC!</h4>
+                                <button type="close" name="close" class="project--popup-close">
+                                    закрыть
+                                    <img src="./assets/cancel.svg" alt="close" class="converted--image" />
+                                </button>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center justify-content-center project--popup-link-wrapper">
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">Заказы</span>
+                                    <img src="./assets/Cart.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">Профиль</span>
+                                    <img src="./assets/Login.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">отслеживание</span>
+                                    <img src="./assets/Delivery.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">Адресная книга</span>
+                                    <img src="./assets/Location.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">Бонусы</span>
+                                    <img src="./assets/Gift.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <a href="" class="project--popup-link">
+                                    <span class="popup--link-name">Пароль</span>
+                                    <img src="./assets/Lock.svg" alt="" class="converted--image popup--link-icon" />
+                                </a>
+                                <div class="project--popup-logout-wrapper">
+                                    <a href="/" class="project--popup-logout">Выйти</a>
+                                </div>
                             </div>
                         </div>
-                       </div>
                     </div>
                     <div class="project--popup-container" id="search">
                         <div class="project--popup-header">
@@ -1113,6 +1113,7 @@
     <!-- Footer End -->
 
     <!-- partial:partials/_footerLinks.html -->
+    <div class="modalOverlay"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -1165,24 +1166,24 @@
             const footer_email_input = item.querySelector('.input_mail');
             const footer_email_button = item.querySelector('.button_mail');
             footer_email_input.addEventListener('focus', function() {
-            focusInput(footer_email_placeholder);
-        });
+                focusInput(footer_email_placeholder);
+            });
 
-        footer_email_input.addEventListener('blur', function() {
-            const value = footer_email_input.value.trim();
-            if (!value) {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-        footer_email_input.addEventListener('input', function(e) {
-            const value = footer_email_input.value.trim();
-            if (value) {
-                focusInput(footer_email_placeholder, footer_email_button);
-            } else {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-        })      
+            footer_email_input.addEventListener('blur', function() {
+                const value = footer_email_input.value.trim();
+                if (!value) {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+            });
+            footer_email_input.addEventListener('input', function(e) {
+                const value = footer_email_input.value.trim();
+                if (value) {
+                    focusInput(footer_email_placeholder, footer_email_button);
+                } else {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+            });
+        })
     </script>
     <!-- partial -->
 </body>

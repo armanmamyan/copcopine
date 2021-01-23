@@ -223,7 +223,7 @@ p {
   top: 43px;
   right: 10px;
   overflow: hidden;
-  z-index: 100;
+  z-index: 1060;
 }
 
 .project--header .project--popup-container.active {
@@ -1010,6 +1010,20 @@ del {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 18px solid white;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  display: none;
+}
+
+.modalOverlay.active {
+  display: block;
 }
 
 .project--popup-container {

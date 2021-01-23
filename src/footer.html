@@ -163,6 +163,7 @@
 
 
     <!-- partial:partials/_footerLinks.html -->
+    <div class="modalOverlay"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -195,31 +196,6 @@
         SVGInjector(mySVGsToInject);
     </script>
     <script>
-        var footer_email_wrapper = document.querySelector('.footer_email_container ');
-        var footer_email_placeholder = footer_email_wrapper.querySelector('.footer_email_placeholder');
-        var footer_email_input = footer_email_wrapper.querySelector('.input_mail');
-        var footer_email_button = footer_email_wrapper.querySelector('.button_mail');
-
-        var footer_email_input_active =
-            footer_email_input.addEventListener('focus', function() {
-                focusInput(footer_email_placeholder);
-            });
-        footer_email_input.addEventListener('blur', function() {
-            var value = footer_email_input.value.trim();
-            if (!value) {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-        footer_email_input.addEventListener('input', function(e) {
-            var value = footer_email_input.value.trim();
-            if (value) {
-                focusInput(footer_email_placeholder, footer_email_button);
-            } else {
-                blurInput(footer_email_placeholder, footer_email_button);
-            }
-        });
-
-
         function focusInput(placeholder, button) {
             placeholder.style.top = '-10px';
             placeholder.style.transform = 'scale(0.7)';
@@ -233,6 +209,31 @@
             button.style.backgroundColor = '';
             button.style.color = '';
         };
+
+        const footer_email_wrapper = document.querySelectorAll('.footer_email_container ');
+        footer_email_wrapper.forEach(item => {
+            const footer_email_placeholder = item.querySelector('.footer_email_placeholder');
+            const footer_email_input = item.querySelector('.input_mail');
+            const footer_email_button = item.querySelector('.button_mail');
+            footer_email_input.addEventListener('focus', function() {
+                focusInput(footer_email_placeholder);
+            });
+
+            footer_email_input.addEventListener('blur', function() {
+                const value = footer_email_input.value.trim();
+                if (!value) {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+            });
+            footer_email_input.addEventListener('input', function(e) {
+                const value = footer_email_input.value.trim();
+                if (value) {
+                    focusInput(footer_email_placeholder, footer_email_button);
+                } else {
+                    blurInput(footer_email_placeholder, footer_email_button);
+                }
+            });
+        })
     </script>
     <!-- partial -->
 </body>

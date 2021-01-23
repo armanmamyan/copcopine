@@ -3,7 +3,27 @@ const getHeaderLinks = document.querySelectorAll(".project--link");
 let getSubheaderContainer = null;
 let previousElement = document.querySelector(".project--link.active");
 let inputsOfDOM = document.getElementsByClassName('project--input');
-
+const modalOverlay = document.querySelector('.modalOverlay');
+let cartPopupIsOpen = false;
+let userPopupIsOpen = false;
+const logo = document.querySelector('.project--logo');
+const forgotPassword = document.querySelector(".forgot--pasword");
+const loginForm = document.querySelector("#login1");
+const loginStep2 = document.querySelector(".login--btn-step2");
+const resetPassForm = document.querySelector("#forgotPassword");
+const resetPassForm2 = document.querySelector("#forgotPassword2");
+const loginPopupContainer = document.querySelector(".project--popup-multistep");
+const arrow = document.querySelector('.popup-arrow');
+const userIcon = document.querySelector(
+  '.primary--link-item[data-nav-name="login"]'
+);
+const navigationIcons = document.querySelectorAll('.primary--link-item');
+const createAccount = document.querySelector("#createAccountBtn");
+const loginGoBackBtn = document.querySelectorAll(".project--popup-goback");
+const loginCloseButton = document.querySelectorAll(".project--popup-close");
+const createAccModal = document.querySelector("#createAccount");
+const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
+const navbar = document.querySelector('header .navbar-toggler');
 
 function keepInputPlaceholder(input) {
   input.nextElementSibling.style.top = '-5px';
@@ -18,11 +38,13 @@ function preventInputPlaceholder(input) {
 
 function handleOutsideClick() {
   window.addEventListener("click", (e) => {
+    const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
     if (e.target == modalOverlay) {
-      getPopup.classList.contains("active") &&
-        getPopup.classList.remove("active");
-      getPopup2.classList.contains("active") &&
-        getPopup2.classList.remove("active");
+      arrow.removeAttribute('style');
+      userPopupIsOpen= false;
+      cartPopupIsOpen = false;
+      alreadyOpenedModal?.classList.contains("active") &&
+      alreadyOpenedModal?.classList.remove("active");
       modalOverlay.classList.remove("active");
       return;
     }
@@ -97,28 +119,6 @@ for (let input of inputsOfDOM) {
       }
   });
 }
-
-let cartPopupIsOpen = false;
-let userPopupIsOpen = false;
-const logo = document.querySelector('.project--logo');
-const forgotPassword = document.querySelector(".forgot--pasword");
-const loginForm = document.querySelector("#login1");
-const loginStep2 = document.querySelector(".login--btn-step2");
-const resetPassForm = document.querySelector("#forgotPassword");
-const resetPassForm2 = document.querySelector("#forgotPassword2");
-const loginPopupContainer = document.querySelector(".project--popup-multistep");
-const arrow = document.querySelector('.popup-arrow');
-const userIcon = document.querySelector(
-  '.primary--link-item[data-nav-name="login"]'
-);
-const navigationIcons = document.querySelectorAll('.primary--link-item');
-const createAccount = document.querySelector("#createAccountBtn");
-const modalOverlay = document.querySelector(".modalOverlay");
-const loginGoBackBtn = document.querySelectorAll(".project--popup-goback");
-const loginCloseButton = document.querySelectorAll(".project--popup-close");
-const createAccModal = document.querySelector("#createAccount");
-const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
-const navbar = document.querySelector('header .navbar-toggler');
 
 forgotPassword &&
   forgotPassword.addEventListener("click", (e) => {
@@ -253,13 +253,23 @@ loginStep2 &&
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
       return;
     }
+
     if(window.innerWidth > 1200 || e.currentTarget.dataset.navName === 'search'){
       e.preventDefault();
       const dataAttrName = e.currentTarget.dataset.navName;
       if(dataAttrName === 'login') return;
+
       userPopupIsOpen = false;
       const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
       const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
+
+      if(alreadyOpenedModal && alreadyOpenedModal === findCurrentAttrModal){
+        alreadyOpenedModal.classList.remove('active');
+        arrow.removeAttribute('style');
+        modalOverlay?.classList.remove("active");
+        return;
+      }
+      modalOverlay?.classList.add("active");
       const userIconLeft = e.currentTarget.getBoundingClientRect().left;
       alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
