@@ -109,6 +109,7 @@
         letter-spacing: 0;
         padding-bottom: 4px;
         margin-bottom: 4px;
+        flex-shrink: 0;
         &::before{
             content: '';
             display: block;
@@ -122,6 +123,7 @@
             transition: transform .5s ease;
         }
         &:hover{
+            font-weight: bold;
             &::before{
                 transform: scale(1);
             }
@@ -220,6 +222,7 @@
             background-color: #A8977A;
         }
         &:hover{
+            font-weight: bold;
             &::before{
                 transform: scale(1);
             }
@@ -803,6 +806,14 @@
     .project--header-primary > a.project--tel{
         display: none;
     }
+    header .nav--promo-links-container{
+        display: inline-flex;
+        .nav--promo-link{
+            display: inline-block;
+            position: relative;
+            align-self: flex-start
+        }
+    }
     .nav--promo-socials > a:not(:last-child){
         margin-right: 15px;
     }
@@ -818,6 +829,7 @@
         padding-block-end: 0 !important;
     }
     li.project--nav-promo-section{
+        display: block !important;
         position: static;
         padding-block-start: 15px;
         padding-left: 0 !important;

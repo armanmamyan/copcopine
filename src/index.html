@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/fjc5xnu.css"> -->
     <link rel="stylesheet" href="./styles/main.css" />
     <style>
         @font-face {
@@ -49,10 +50,11 @@
                         <img src="./assets/search.svg" alt="" class="converted--image" />
                     </a>
                     <a href="" class="primary--link-item primary--link-item__wishlist" data-toggle="tooltip" data-placement="bottom" data-nav-name="wishlist" title="Избранное">
+                            <span class="icon--counter">29</span>
                         <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                     </a>
                     <a href="" class="primary--link-item primary--link-item__cart" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
-                        <span class="icon--counter">1</span>
+                        <span class="icon--counter">9</span>
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
                     <div class="popup-arrow">
@@ -75,7 +77,7 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="project--input-wrapper w-100 mb-2">
-                                            <input id="passwordInput" type="password" name="password" class="project--input" />
+                                            <input id="passwordInput" type="password" name="password" class="project--input passwordInput" />
                                             <label class="project--input-label" for="password">Пароль</label>
                                         </div>
                                         <button type="button" class="popup-form-search-btn" name="passwordShowHide">
@@ -96,7 +98,7 @@
                                         Зарегистрируйтесь и получите персонализированный контент,
                                         доступ к эксклюзивным событиям и наши частные распродажи.
                                     </p>
-                                    <button type="button" class="project--form-btn" id="createAccountBtn">
+                                    <button type="button" class="project--form-btn mb-0" id="createAccountBtn">
                                         Создать аккаунт
                                     </button>
                                 </div>
@@ -175,12 +177,12 @@
                                     <label class="project--input-label" for="repeat email">Повторите email</label>
                                 </div>
                                 <div class="input-group">
-                                    <div class="project--input-wrapper w-100">
-                                        <input type="password" name="password" class="project--input" />
+                                    <div class="project--input-wrapper w-100 mb-2">
+                                        <input id="passwordInput" type="password" name="password" class="project--input passwordInput" />
                                         <label class="project--input-label" for="password">Пароль</label>
                                     </div>
-                                    <button type="button" class="popup-form-search-btn show-hide-password">
-                                        <img src="./assets/search.svg" alt="" class="converted--image" />
+                                    <button type="button" class="popup-form-search-btn" name="passwordShowHide">
+                                        <span class="show-hide-password"></span>
                                     </button>
                                 </div>
 
@@ -1078,11 +1080,11 @@
             <button class="button_mail">ok</button>
         </div>
 
-        <div class="footer_separator-x my-40"></div>
+        <div class="footer_separator-x my-40 mb-20-important"></div>
 
         <div class="container footer_icons_container">
             <div class="row mb-20">
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-telephone"></i>
@@ -1093,7 +1095,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-delivery"></i>
@@ -1104,7 +1106,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-return"></i>
@@ -1115,7 +1117,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-secure"></i>

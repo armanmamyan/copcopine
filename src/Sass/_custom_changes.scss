@@ -6,9 +6,6 @@ p{
 .project--header .project--popup-container{
     right: 0 !important;
 }
-.project--iteration-divider{
-    border: 1px solid #CDC3B3;
-}
 .project--popup-container{
     padding: 20px 20px 30px;
 }
@@ -33,6 +30,7 @@ p{
     height: 14px;
     -webkit-margin-after: 0.7rem;
     margin-block-end: 0.7rem;
+    line-height: 1;
 }
 .radio_checker{
     border: 1px solid transparent;
