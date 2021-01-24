@@ -1945,6 +1945,10 @@ p {
   padding: 0;
 }
 
+.footer_links_wrapper ul {
+  padding: 0;
+}
+
 .footer_links span {
   display: block;
   text-transform: uppercase;
@@ -2807,11 +2811,6 @@ p {
 
   .footer_links > div.footer_links_wrapper:first-child:not(:last-child) {
     margin-bottom: 48px;
-  }
-
-  .footer_icons_container .row > div + div {
-    -webkit-padding-start: 34px;
-    padding-inline-start: 34px;
   }
 }
 

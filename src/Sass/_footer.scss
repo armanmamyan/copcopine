@@ -178,6 +178,10 @@
     padding: 0;
 }
 
+.footer_links_wrapper ul{
+    padding: 0;
+}
+
 .footer_links span{
     display: block;
     text-transform: uppercase;
@@ -367,13 +371,13 @@
             margin-bottom: 48px;
         }
     }
-    .footer_icons_container{
-        .row{
-            & > div + div{
-                padding-inline-start: 34px;
-            }
-        }
-    }
+    // .footer_icons_container{
+    //     .row{
+    //         & > div + div{
+    //             padding-inline-start: 34px;
+    //         }
+    //     }
+    // }
 }
 
 @media screen and (max-width: 768px){
