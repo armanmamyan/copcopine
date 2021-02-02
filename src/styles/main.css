@@ -1135,30 +1135,40 @@ del {
 
 .project--input-wrapper {
   position: relative;
-  height: 35px;
   border-radius: 10px;
-  border: 1px solid #cdc3b3;
   -webkit-margin-after: 10px;
   margin-block-end: 10px;
 }
 
-.project--input-wrapper:focus-within {
-  border-color: #a8977a;
+.project--input-wrapper .project--input {
+  border: 1px solid #CDC3B3;
+  height: 35px;
 }
 
-.project--input-wrapper.invalid--message {
+.project--input-wrapper .project--input:focus {
+  border: 1px solid #CDC3B3 !important;
+}
+
+.project--input-wrapper .project--input:focus + label {
+  top: 5px;
+}
+
+.project--input-wrapper.has-error {
+  color: #d3311c;
+}
+
+.project--input-wrapper.has-error .project--input {
   border-color: #d3311c;
 }
 
-.project--input-wrapper.invalid--message .invalid--mesage-text {
-  color: #d3311c;
+.project--input-wrapper.has-error .project--input ~ button.popup-form-search-btn {
+  border: none;
+  border-left: 1px solid #d3311c;
 }
 
 .project--input-label {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 12px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   left: 10px;
@@ -2687,6 +2697,11 @@ p {
   width: 290px;
   position: relative;
   margin-bottom: 20px;
+}
+
+.footer_email_container .button_mail {
+  position: absolute;
+  top: 0;
 }
 
 .footer_icon_service_wrapper {
