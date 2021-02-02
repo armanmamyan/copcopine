@@ -34,7 +34,7 @@ const sassCompiler = () => {
 };
 
 const watchFiles = () => {
-  livereload.listen(5500);
+  livereload.listen(5501);
   watch("src/sass/*.scss", sassCompiler);
   watch("src/styles/main.css", livereload());
   watch("src/*.html", livereload());

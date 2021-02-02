@@ -1,4 +1,3 @@
-
 .footer{
     width: 100%;
     background-color: #fff;
@@ -39,6 +38,10 @@
     width: 290px;
     position: relative;
     margin-bottom: 20px;
+    .button_mail{
+        position: absolute;
+        top: 0;
+    }
 }
 
 .footer_icon_service_wrapper{
@@ -178,6 +181,10 @@
     padding: 0;
 }
 
+.footer_links_wrapper ul{
+    padding: 0;
+}
+
 .footer_links span{
     display: block;
     text-transform: uppercase;
@@ -191,6 +198,7 @@
     margin-bottom: 5px;
     transition: color 0.314s;
     a{
+        position: relative;
         font-size: 16px;
         line-height: 18px;
         &::before{
@@ -330,7 +338,7 @@
 @media (min-width: 992px) {
     .footer_links,
     .footer_service_wrapper{
-        padding: 0 8px 0 38px;
+        padding: 0 8px 0 34px;
     }
     
     .footer_links_heading{
@@ -342,6 +350,13 @@
 
 @media (min-width: 1201px) {
     .footer_icons_container{
+        .row{
+            & > div + div{
+                padding-inline-start: 70px;
+            }
+        }
+    }
+    .footer_links_container{
         .row{
             & > div + div{
                 padding-inline-start: 70px;
@@ -367,13 +382,13 @@
             margin-bottom: 48px;
         }
     }
-    .footer_icons_container{
-        .row{
-            & > div + div{
-                padding-inline-start: 34px;
-            }
-        }
-    }
+    // .footer_icons_container{
+    //     .row{
+    //         & > div + div{
+    //             padding-inline-start: 34px;
+    //         }
+    //     }
+    // }
 }
 
 @media screen and (max-width: 768px){
@@ -389,6 +404,15 @@
     }
     .footer_service_wrapper{
         border-bottom: 0;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+    .footer_icons_container{
+       .row {
+           & > div:first-child{
+               padding-left: 0;
+           }
+       }
     }
     .footer_icons_container,.footer_links_container{
         max-width: 100%;
@@ -447,6 +471,7 @@
         margin-bottom: 0;
     }
 }
+
 
 @media screen and (max-width: 576px){
     .footer_service_wrapper{

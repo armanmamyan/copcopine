@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/fjc5xnu.css"> -->
     <link rel="stylesheet" href="./styles/main.css" />
     <style>
         @font-face {
@@ -49,10 +50,11 @@
                         <img src="./assets/search.svg" alt="" class="converted--image" />
                     </a>
                     <a href="" class="primary--link-item primary--link-item__wishlist" data-toggle="tooltip" data-placement="bottom" data-nav-name="wishlist" title="Избранное">
+                            <span class="icon--counter">29</span>
                         <img src="./assets/wishlist.svg" alt="" class="converted--image" />
                     </a>
                     <a href="" class="primary--link-item primary--link-item__cart" data-toggle="tooltip" data-placement="bottom" title="корзина" data-nav-name="cart">
-                        <span class="icon--counter">1</span>
+                        <span class="icon--counter">9</span>
                         <img src="./assets/Cart.svg" alt="" class="converted--image" />
                     </a>
                     <div class="popup-arrow">
@@ -75,7 +77,7 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="project--input-wrapper w-100 mb-2">
-                                            <input id="passwordInput" type="password" name="password" class="project--input" />
+                                            <input id="passwordInput" type="password" name="password" class="project--input passwordInput" />
                                             <label class="project--input-label" for="password">Пароль</label>
                                         </div>
                                         <button type="button" class="popup-form-search-btn" name="passwordShowHide">
@@ -96,7 +98,7 @@
                                         Зарегистрируйтесь и получите персонализированный контент,
                                         доступ к эксклюзивным событиям и наши частные распродажи.
                                     </p>
-                                    <button type="button" class="project--form-btn" id="createAccountBtn">
+                                    <button type="button" class="project--form-btn mb-0" id="createAccountBtn">
                                         Создать аккаунт
                                     </button>
                                 </div>
@@ -175,12 +177,12 @@
                                     <label class="project--input-label" for="repeat email">Повторите email</label>
                                 </div>
                                 <div class="input-group">
-                                    <div class="project--input-wrapper w-100">
-                                        <input type="password" name="password" class="project--input" />
+                                    <div class="project--input-wrapper w-100 mb-2">
+                                        <input id="passwordInput" type="password" name="password" class="project--input passwordInput" />
                                         <label class="project--input-label" for="password">Пароль</label>
                                     </div>
-                                    <button type="button" class="popup-form-search-btn show-hide-password">
-                                        <img src="./assets/search.svg" alt="" class="converted--image" />
+                                    <button type="button" class="popup-form-search-btn" name="passwordShowHide">
+                                        <span class="show-hide-password"></span>
                                     </button>
                                 </div>
 
@@ -1078,11 +1080,11 @@
             <button class="button_mail">ok</button>
         </div>
 
-        <div class="footer_separator-x my-40"></div>
+        <div class="footer_separator-x my-40 mb-20-important"></div>
 
         <div class="container footer_icons_container">
             <div class="row mb-20">
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-telephone"></i>
@@ -1093,7 +1095,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-delivery"></i>
@@ -1104,7 +1106,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-return"></i>
@@ -1115,7 +1117,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-3 footer_service_wrapper">
+                <div class="col-xs-12 col-sm-3 footer_service_wrapper">
                     <a href="#" class="text-inherit">
                         <div class="footer_icon_service_wrapper">
                             <i class="footer_icon_service service-secure"></i>
@@ -1135,67 +1137,78 @@
                     <div class="col-xs-12 col-lg-3 footer_links">
                         <div class="footer_links_wrapper">
                             <button class="footer_links_heading" data-target="#js_footer_buyers" data-toggle="collapse">Покупателям</button>
-                            <ul class="collapse p-0" id="js_footer_buyers">
-                                <li class="footer_link"><a href="#" class="text-inherit">Доставка</a> </li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Возврат</a> </li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Бонусная программа</a> </li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Способы оплаты</a> </li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Как создать заказ</a> </li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Карта сайта</a> </li>
-                            </ul>
+                            <div class="collapse p-0" id="js_footer_buyers">
+                                <ul>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Доставка</a> </li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Возврат</a> </li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Бонусная программа</a> </li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Способы оплаты</a> </li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Как создать заказ</a> </li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Карта сайта</a> </li>
+                                </ul>
+                            </div>
+                            
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-lg-3 footer_links">
                         <div class="footer_links_wrapper">
                             <button class="footer_links_heading" data-target="#js_footer_company" data-toggle="collapse">Компания</button>
-                            <ul class="collapse p-0" id="js_footer_company">
-                                <li class="footer_link"><a href="#" class="text-inherit">О бранде</a></li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Контакты</a></li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Магазины</a></li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Работа у нас</a></li>
-                                <li class="footer_link"><a href="#" class="text-inherit">Франчайзинг</a></li>
-                            </ul>
+                            <div class="collapse p-0" id="js_footer_company">
+                                <ul>
+                                    <li class="footer_link"><a href="#" class="text-inherit">О бранде</a></li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Контакты</a></li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Магазины</a></li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Работа у нас</a></li>
+                                    <li class="footer_link"><a href="#" class="text-inherit">Франчайзинг</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-lg-3 footer_links">
                         <div class="footer_links_wrapper">
                             <button class="footer_links_heading mb-14" data-target="#js_footer_socials" data-toggle="collapse">Мы в соцсетях</button>
-                            <div class="soc_icons_wrapper collapse" id="js_footer_socials">
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
-                                    <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
-                                </a>
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook">
-                                    <img src="./assets/Facebook_Icon.svg" class="converted--image" alt="Facebook">
-                                </a>
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="ВКонтакте">
-                                    <img src="./assets/VK_Icon.svg" class="converted--image" alt="ВКонтакте">
-                                </a>
+                            <div class="collapse" id="js_footer_socials">
+                                <div class="soc_icons_wrapper">
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram">
+                                        <img src="./assets/Instagram_Icon.svg" class="converted--image" alt="Instagram">
+                                    </a>
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook">
+                                        <img src="./assets/Facebook_Icon.svg" class="converted--image" alt="Facebook">
+                                    </a>
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="ВКонтакте">
+                                        <img src="./assets/VK_Icon.svg" class="converted--image" alt="ВКонтакте">
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <div class="footer_links_wrapper">
                             <button class="footer_links_heading mb-14" data-target="#js_footer_contact" data-toggle="collapse">СВЯЗЬ С НАМИ</button>
-                            <div class="soc_icons_wrapper collapse" id="js_footer_contact">
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Whatsapp">
-                                    <img src="./assets/Whatsapp_Icon.svg" class="converted--image" alt="Whatsapp">
-                                </a>
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Telegram">
-                                    <img src="./assets/Telegram_Icon.svg" class="converted--image" alt="Telegram">
-                                </a>
-                                <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Mail">
-                                    <img src="./assets/Mail.svg" class="converted--image" alt="Whatsapp">
-                                </a>
+                            <div class="collapse" id="js_footer_contact">
+                                <div class="soc_icons_wrapper">
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Whatsapp">
+                                        <img src="./assets/Whatsapp_Icon.svg" class="converted--image" alt="Whatsapp">
+                                    </a>
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Telegram">
+                                        <img src="./assets/Telegram_Icon.svg" class="converted--image" alt="Telegram">
+                                    </a>
+                                    <a class="soc_icon" href="#" data-toggle="tooltip" data-placement="bottom" title="Mail">
+                                        <img src="./assets/Mail.svg" class="converted--image" alt="Whatsapp">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-lg-3 footer_links">
                         <div class="footer_links_wrapper">
                             <button class="footer_links_heading mb-14" data-target="#js_footer_payments" data-toggle="collapse">Способы оплаты</button>
-                            <div class="soc_icons_wrapper collapse" id="js_footer_payments">
-                                <a class="payment payment-group" href="#">
-                                </a>
+                            <div class="collapse" id="js_footer_payments">
+                                <div class="soc_icons_wrapper">
+                                    <a class="payment payment-group" href="#">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

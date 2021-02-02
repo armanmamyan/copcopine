@@ -170,9 +170,9 @@ userIcon &&
     alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
     loginPopupContainer.classList.add("active");
     const userIconLeft = userIcon.getBoundingClientRect().left;
-    arrow?.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${loginPopupContainer.getBoundingClientRect().top - 17}px`);
+    arrow?.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${loginPopupContainer.getBoundingClientRect().top - 10}px`);
 
-    modalOverlay?.classList.add("active");
+    // modalOverlay?.classList.add("active");
     userPopupIsOpen = !userPopupIsOpen;
     handleOutsideClick();
   });
@@ -203,10 +203,12 @@ loginGoBackBtn &&
           const findIcon = document.querySelector(`.primary--link-item[data-nav-name=${parentID || searchId}]`);
           findIcon && findIcon.removeAttribute('style');
           logo.removeAttribute('style');
+          arrow?.removeAttribute('style');
       }
 
       if(parentID === 'login'){
         e.currentTarget.parentElement.parentElement.parentElement?.classList.remove("active");
+        arrow?.removeAttribute('style');
         if(e.currentTarget.parentElement.parentElement.id !== 'login1'){
           e.currentTarget.parentElement.parentElement.classList.remove("active");
           document.querySelector('#login1')?.classList?.add('active');
@@ -217,6 +219,7 @@ loginGoBackBtn &&
         return;
       }
       e.currentTarget.parentElement.parentElement?.classList.remove("active");
+      arrow?.removeAttribute('style');
       if(userPopupIsOpen){
         userPopupIsOpen = !userPopupIsOpen;
       }
@@ -262,18 +265,18 @@ loginStep2 &&
       userPopupIsOpen = false;
       const findCurrentAttrModal = document.querySelector(`#${dataAttrName}`);
       const alreadyOpenedModal = document.querySelector('.project--popup-container.active');
-
+      
       if(alreadyOpenedModal && alreadyOpenedModal === findCurrentAttrModal){
         alreadyOpenedModal.classList.remove('active');
-        arrow.removeAttribute('style');
-        modalOverlay?.classList.remove("active");
+        arrow?.removeAttribute('style');
+        modalOverlay.classList.remove("active");
         return;
       }
-      modalOverlay?.classList.add("active");
+      // modalOverlay?.classList.add("active");
       const userIconLeft = e.currentTarget.getBoundingClientRect().left;
       alreadyOpenedModal && alreadyOpenedModal.classList.remove('active');
       findCurrentAttrModal && findCurrentAttrModal.classList.add('active');
-      arrow.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${findCurrentAttrModal.getBoundingClientRect().top - 17}px`);
+      arrow.setAttribute('style', `display:block; left: ${userIconLeft}px; top: ${findCurrentAttrModal.getBoundingClientRect().top - 13}px`);
       
       if(dataAttrName === 'cart'){
         findCurrentAttrModal.setAttribute('style', `right: -20px !important;`);
@@ -311,18 +314,20 @@ loginStep2 &&
   };
 
   // Password Start
-  const passwordInput = document.querySelector('#passwordInput');
-  const passwordBtn = document.querySelector('.popup-form-search-btn[name="passwordShowHide"]');
-  passwordBtn.addEventListener('click', (e) => {
-    const target = e.currentTarget;
-    if(target.firstElementChild.classList.contains('active')){
-      target.firstElementChild.classList.remove('active');
-      passwordInput.type = 'password';
-      return;
-    }
-    target.firstElementChild.classList.add('active');
-    passwordInput.type = 'text';
-  });
+  const passwordBtn = document.querySelectorAll('.popup-form-search-btn[name="passwordShowHide"]');
+  passwordBtn.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const target = e.currentTarget;
+      const siblingInput = target.parentElement.querySelector('input.passwordInput');
+      if(target.firstElementChild.classList.contains('active')){
+        target.firstElementChild.classList.remove('active');
+        siblingInput.type = 'password';
+        return;
+      }
+      target.firstElementChild.classList.add('active');
+      siblingInput.type = 'text';
+    });
+  })
   // Password End
 
   window.onload = function(){
@@ -382,9 +387,11 @@ loginStep2 &&
   });
 
   window.addEventListener('scroll', () => {
-    const activePopup = document.querySelector('.project--popup-container.active');
-    if(activePopup){
-      arrow.style.top = (activePopup.getBoundingClientRect().top - 17) + 'px'
+    if(window.innerWidth > 768){
+      const activePopup = document.querySelector('.project--popup-container.active');
+      if(activePopup){
+        arrow.style.top = (activePopup.getBoundingClientRect().top - 17) + 'px'
+      }
     }
   });
 
