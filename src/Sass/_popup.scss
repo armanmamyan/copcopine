@@ -167,25 +167,35 @@
 
 .project--input-wrapper {
   position: relative;
-  height: 35px;
   border-radius: 10px;
-  border: 1px solid #cdc3b3;
   margin-block-end: 10px;
-  &:focus-within {
-    border-color: #a8977a;
-  }
-  &.invalid--message {
-    border-color: #d3311c;
-    .invalid--mesage-text {
-      color: #d3311c;
+  .project--input{
+      border: 1px solid #CDC3B3;
+      height: 35px;
+       &:focus{
+         border: 1px solid #CDC3B3 !important;
+        & + label {
+         top: 5px;
+        }
+       }
+     
     }
-  }
+    &.has-error{
+      color: #d3311c;
+      .project--input{
+        border-color: #d3311c;
+         & ~ button.popup-form-search-btn {
+            border: none;
+            border-left: 1px solid #d3311c;
+         }
+      }
+    }
 }
-
+ 
+  
 .project--input-label {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 12px;
   transition: all 0.3s ease;
   left: 10px;
   font-size: 16px;
