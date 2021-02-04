@@ -36,7 +36,8 @@ section,
 audio,
 video,
 details,
-summary {
+summary,
+{
   margin: 0;
   padding: 0;
   border: 0;
@@ -44,6 +45,11 @@ summary {
   font-weight: normal;
   vertical-align: baseline;
   background: transparent;
+  line-height: normal;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+  line-height: normal;
 }
 
 article,

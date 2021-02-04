@@ -31,6 +31,9 @@
             display: block;
         }
     }
+    h2{
+        margin-bottom: 3px;
+    }
 }
 
 .project--logo{
@@ -105,10 +108,12 @@
     .nav-link{
         position: relative;
         font-size: 16px;
-        line-height: 16px;
+        // line-height: 16px;
         letter-spacing: 0;
-        padding-bottom: 4px;
-        margin-bottom: 4px;
+        // padding-bottom: 4px;
+        padding-bottom: 0;
+        padding-top: 0;
+        // margin-bottom: 4px;
         flex-shrink: 0;
         &::before{
             content: '';
@@ -175,7 +180,7 @@
     display: none;
     width: 100%;
     height: auto;
-    padding: 30px 0;
+    padding: 40px 0 50px;
     overflow: hidden;
     background-color: #fff;
     &:empty{
@@ -196,7 +201,7 @@
             margin-block-end: 0;
         }
         .nav-item{
-            margin-block-end: 6px;
+            margin-block-end: 10px;
         }
     }
     .nav-item{
@@ -301,7 +306,7 @@
 
 .nav--item-heading{
     font-size: 16px;
-    line-height: 16px;
+    // line-height: 16px;
     color: #000;
     letter-spacing: 0;
     font-weight: bold;
@@ -397,16 +402,16 @@
 }
 
 .project--header-secondary .nav-link{
-    padding: 10px 0 4px 0;
-  }
+    // padding: 10px 0 4px 0; 
+}
 
-  .bars {
-    width: 18px;
-    height: 1px;
-    background-color: #000;
-    margin-bottom: 5px;
-    transition: .5s ease;
-  }
+.bars {
+width: 18px;
+height: 1px;
+background-color: #000;
+margin-bottom: 5px;
+transition: .5s ease;
+}
 
 @media screen and (min-width: 769px){
     .nav-item{
@@ -430,8 +435,8 @@
         }
         .navbar-toggler{
             position: absolute;
-            top: 17px;
-            left: 20px;
+            // top: 17px;
+            // left: 20px;
             width: 18px;
             height: 18px;
             padding: 0;
@@ -462,7 +467,7 @@
     
     .project--header-primary{
         position: relative;
-        padding: 0 20px;
+        padding: 9px 20px;
         height: 100%;
         .project--tel{
             margin-inline-start: 38px;
@@ -471,7 +476,7 @@
     .header--secondary-nav{
         & > .navbar-nav{
             & > li:last-child .dropdown--content, .secondary--nav-reversed{
-                padding-inline-end: 20px;
+                // padding-inline-end: 20px;
             }
         }
     }
@@ -488,7 +493,7 @@
             position: static;
             .header--secondary-nav{
                 & > .navbar-nav{
-                    padding: 10px 35px 20px 38px;
+                    padding: 20px 32px;
                     flex-direction: row;
                     justify-content: space-between;
                     border-top: 1px solid #a8977a;
@@ -503,10 +508,13 @@
    }
    .nav-item{
        .dropdown--content{
-           height: calc(100vh - 95px);
+        //    height: calc(100vh - 95px);
+           height: calc(100vh - 302px);
            flex-wrap: wrap;
-           padding-inline-start: 60px;
-           padding-block-end: 10px;
+        //    padding-inline-start: 60px;
+            padding-top:30px;
+            padding-block-end: 10px;
+            overflow-y:auto;
        }
    }
    .header--secondary-nav{
@@ -518,7 +526,7 @@
                 content: '';
                 display: block;
                 position: absolute;
-                top: 8px;
+                top: 3px;
                 left: 0;
                 width: 14px;
                 height: 14px;
@@ -546,10 +554,11 @@
     transform: scale(1);
    }
    .project--nav-promo-section{
+       background: #fff;
        width: 100%;
        display: none;
        position: fixed;
-       bottom: 10px;
+       bottom: 0px;
        left: 0;
        z-index: 85;
        flex-direction: column;
@@ -558,7 +567,7 @@
        padding-inline-start: 20px;
        padding-inline-end: 20px;
        margin: 0 !important;
-       height: 195px;
+    //    height: 195px;
        &::after{
            content: '';
            display: block;
@@ -623,6 +632,13 @@
        justify-content: center;
        align-items: center;
    }
+   .project--header-secondary .nav-item > .dropdown--content > .project--nav-secondary{
+        padding-left: 24px;
+    }
+    .project--header-secondary .nav-item.secondary--nav-reversed.active > .dropdown--content{
+        padding-inline-end: 52px !important;
+    }
+    
 }
 
 @media screen and (max-width: 1024px){
@@ -633,6 +649,27 @@
 
 
 @media screen and (max-width: 768px){
+    .project--popup-container #login1 .project--popup-form > div h4{
+        text-align: left;
+    }
+    .project--header .project--popup-container.active{
+        padding-top: 48px;
+        .project--tel{
+            display: block !important;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+    }
+    .project--popup-form{
+        width:100%;
+    }
+    .project--popup-container{
+        padding-top: 15px;
+    }
+    .project--popup-container#login .project--popup-form .project--popup-goback{
+        position: inherit;
+    }
     .dropdown--content .project--nav-promo-section{
         display: none;
     }
@@ -671,11 +708,12 @@
             & > li{
                 margin-inline-start: 0 !important;
                 padding-inline-start: 24px;
+                margin-bottom: 15px;
                 &::before{
                     content: '';
                     display: block;
                     position: absolute;
-                    top: 8px;
+                    top: 4px;
                     left: 0;
                     width: 14px;
                     height: 14px;
@@ -782,6 +820,7 @@
         align-items: flex-start;
         justify-content: flex-start !important;
         padding-bottom: 330px !important;
+        padding: 40px 32px 40px 0!important;
     }
     .project--nav-promo-section{
         height: auto;
@@ -799,6 +838,9 @@
     .project--header-secondary .header--secondary-nav > .navbar-nav > li:last-child .dropdown--content, 
     .project--header-secondary .header--secondary-nav > .navbar-nav .secondary--nav-reversed .dropdown--content{
         flex-direction: row;
+    }
+    .project--header-secondary .nav-item.secondary--nav-reversed.active > .dropdown--content{
+        padding-inline-end: 0px !important;
     }
 }
 

@@ -34,6 +34,7 @@ function keepInputPlaceholder(input) {
 function preventInputPlaceholder(input) {
   input.nextElementSibling.style.top = '';
   input.nextElementSibling.style.transform = '';
+  input.nextElementSibling.style.fontSize = '';
 }
 
 function handleOutsideClick() {
@@ -319,12 +320,12 @@ loginStep2 &&
     item.addEventListener('click', (e) => {
       const target = e.currentTarget;
       const siblingInput = target.parentElement.querySelector('input.passwordInput');
-      if(target.firstElementChild.classList.contains('active')){
-        target.firstElementChild.classList.remove('active');
+      if(target.classList.contains('active')){
+        target.classList.remove('active');
         siblingInput.type = 'password';
         return;
       }
-      target.firstElementChild.classList.add('active');
+      target.classList.add('active');
       siblingInput.type = 'text';
     });
   })

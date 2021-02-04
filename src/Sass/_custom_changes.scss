@@ -6,9 +6,9 @@ p{
 .project--header .project--popup-container{
     right: 0 !important;
 }
-.project--popup-container{
-    padding: 20px 20px 30px;
-}
+// .project--popup-container{
+//     padding: 20px 20px 30px;
+// }
 .project--form-btn{
     margin-top: 5px;
 }
@@ -24,13 +24,6 @@ p{
 .search--group-item{
     -webkit-margin-after: 5px;
     margin-block-end: 5px;
-}
-.project--popup-header .project--popup-close{
-    width: 14px;
-    height: 14px;
-    -webkit-margin-after: 0.7rem;
-    margin-block-end: 0.7rem;
-    line-height: 1;
 }
 .radio_checker{
     border: 1px solid transparent;
@@ -61,12 +54,7 @@ p{
     border-bottom: 1px solid #CDC3B3;
     padding-bottom: 1rem !important;
 }
-.project--wishlist-product {
-    max-height: 85vh;
-}
-.project--product-modal, .project--wishlist-modal{
-    max-height: calc(100vh * 70 / 100);
-}
+
 .project--popup-container.project--popup-product{
     max-width: 360px;
 }

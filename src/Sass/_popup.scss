@@ -2,8 +2,8 @@
   position: relative;
   width: 330px;
   min-height: 220px;
-  max-height: 472px;
-  padding: 20px 20px 40px;
+  // max-height: 472px;
+  padding: 13px 20px 30px;
   background: #fff;
   border: 1px solid #a8977a;
   border-bottom-left-radius: 18px;
@@ -61,6 +61,14 @@
         display: none;
         padding-block-end: 20px;
       }
+      &#login .project--popup-form{
+        position: inherit;
+        .project--popup-goback{
+          position: absolute;
+          left: 0;
+          top: 4px
+        }
+      }
       #login1 .project--popup-form{
         display: flex;
         justify-content: center;
@@ -72,6 +80,9 @@
           }
           p{
             line-height: 18px;
+          }
+          h4{
+            text-align: center;
           }
           &:first-child{
             position: relative;
@@ -127,7 +138,11 @@
   background-color: #a8977a;
   transition: background-color 0.3s ease;
   &:disabled {
-    opacity: 0.75;
+    // opacity: 0.75;
+    background-color: #CDC3B3;
+    &:hover{
+      background-color: #CDC3B3;
+    }
   }
   &:hover,
   &:active {
@@ -136,7 +151,9 @@
     background-color: #897047;
   }
 }
-
+.form-control.is-invalid, .was-validated .form-control:invalid{
+  background: none;
+}
 .project--input {
   width: 100%;
   height: 100%;
@@ -153,11 +170,58 @@
 
   &:focus {
     & + .project--input-label {
-      top: -5px;
+      top: -3px;
       font-size: 10px;
       transform: none;
     }
   }
+}
+.input-group .popup-form-search-btn{
+  &:hover{
+    background-color: #A8977A;
+    span{
+      background-image: url(../assets/Eye_icon_white.svg);
+    }
+  }
+  &.active{
+    background-color: #897047;
+    span{
+      background-image: url(../assets/Eye_icon_Hover.svg);
+    }
+  }
+}
+button[type="submit"].popup-form-search-btn{
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  background-image: url(../assets/search_brown.svg);
+  &:hover, &:focus, &:active{
+    background-color: #A8977A;
+    background-image: url(../assets/search_white.svg);
+  }
+  &:focus, &:active{
+    background-color: #897047;
+  }
+}
+.form-group.has-error{
+  input.form-control{
+    background: none;
+    border-color: #D3311C !important;
+    & + span.help-block.error-help-block{
+      color: #D3311C !important;
+      font-size: 14px !important;
+      line-height: 16px !important;
+      padding-left: 10px;
+      margin-top: 2px;
+      display: block;
+    }
+  }
+}
+.form-group.has-error + .popup-form-search-btn{
+  border-color: #D3311C !important;
+}
+.form-group.has-error .project--input-label{
+  color: #D3311C !important;
 }
 
 .project--form-divider {
@@ -175,7 +239,7 @@
        &:focus{
          border: 1px solid #CDC3B3 !important;
         & + label {
-         top: 5px;
+        //  top: 5px;
         }
        }
      
@@ -195,7 +259,7 @@
   
 .project--input-label {
   position: absolute;
-  top: 12px;
+  top: 10px;
   transition: all 0.3s ease;
   left: 10px;
   font-size: 16px;
@@ -299,7 +363,7 @@
     position: relative;
     justify-content: center;
     border-bottom: 0;
-    margin-block-end: 20px;
+    margin-block-end: 15px;
     &::before{
       content: '';
       display: block;
@@ -322,8 +386,8 @@
   }
   .project--popup-close {
     padding: 0;
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     font-size: 0;
     margin-block-end: .5rem;
     svg {
@@ -333,7 +397,7 @@
     }
     @media screen and (max-width: 1200px){
         position: absolute;
-        top: 4px;
+        bottom: 12px;
         right: 0;
         font-size: 16px;
         width: auto;
@@ -341,8 +405,8 @@
         align-items: center;
         margin: 0;
         svg{
-          width: 10px;
-          height: 10px;
+          width: 14px;
+          height: 14px;
           margin-inline-start: 10px;
         }
     }
@@ -542,13 +606,14 @@
   }
   &:hover{
     svg{
-        fill: #A8977A;
+          fill: #A8977A;
     }
-}
+  }
 }
 
 .project--wishlist-product{
-    max-height: 587px;
+    // max-height: 587px;
+    max-height: 70vh;
     @media screen and (max-width: 1200px){
       max-height: 634px;
       padding-block-start: 0;
@@ -630,12 +695,12 @@
   height: 35px;
   border: 1px solid #CDC3B3;
   border-radius: 0px 10px 10px 10px;
-  svg{
-    width: 20px;
-    height: 20px;
-    fill: transparent;
-    stroke: #CDC3B3;
-  }
+  // svg{
+  //   width: 20px;
+  //   height: 20px;
+  //   fill: transparent;
+  //   stroke: #CDC3B3;
+  // }
   &:focus{
     border: 1px solid #CDC3B3 !important;
   }
@@ -704,14 +769,17 @@
     }
   }
   #forgotPassword .project--popup-header{
-    justify-content: flex-start;
-    width: 290px;
-    margin-left: auto;
-    margin-right: auto;
+    // justify-content: flex-start;
+    // width: 290px;
+    // margin-left: auto;
+    // margin-right: auto;
   }
 }
 
 @media screen and (max-width: 576px){
+  .project--popup-header .project--popup-close{
+    font-size: 0;
+  }
   .project--popup-container{
     padding-inline-start: 20px;
     padding-inline-end: 20px;
