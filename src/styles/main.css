@@ -2121,6 +2121,7 @@ button[type=submit].popup-form-search-btn:active {
   font-weight: bold;
   text-transform: uppercase;
   z-index: 100;
+  padding: 0 14px;
 }
 
 .shop_main_product_status_ribbon-sold {
