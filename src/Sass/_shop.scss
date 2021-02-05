@@ -306,15 +306,17 @@
 .shop_main_product_favorite{
     height: 20px;
     width: 20px;
-    background-color: teal;
+    background-image: url(../assets/icons/fav.svg);
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 100;
 }
 
-.shop_main_product_favorite-active{
 
+.shop_main_product_favorite:hover,
+.shop_main_product_favorite-active{
+    background-image: url(../assets/icons/fav_hover.svg);
 }
 
 .shop_main_product_status_ribbon{
@@ -897,6 +899,9 @@
         line-height: 18px;
         font-size: 12px;
     }
+    .shop_main_product_status_ribbon{
+        width: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -926,6 +931,9 @@
         height: 16px;
         line-height: 16px;
         font-size: 10px;
+    }
+    .shop_main_product_status_ribbon{
+        width: auto;
     }
 
     .no_banner_wrapper{
