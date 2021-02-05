@@ -66,6 +66,37 @@ p{
   font: normal normal normal 14px/20px Circe;
   letter-spacing: 1.05px;
 }
+.form-control:focus,
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+    box-shadow: none !important;
+}
+.form-group.has-error{
+    input.form-control{
+        background: none;
+        border-color: #D3311C !important;
+    }
+    span.help-block.error-help-block{
+        color: #D3311C !important;
+        font-size: 14px !important;
+        line-height: 16px !important;
+        padding-left: 10px;
+        margin-top: 2px;
+        display: block;
+    }
+}
+.form-group.has-error + .popup-form-search-btn,
+.form-group.has-error .inline-submit-btn
+{
+    border-color: #D3311C !important;
+}
+.form-group.has-error .project--input-label{
+    color: #D3311C !important;
+}
+.form-group.filled .inline-submit-btn{
+    background-color: #A8977A;
+    color:#fff;
+}
+
 @media  screen and (min-width: 769px){
     .footer_links_wrapper{
         margin-bottom: 16px;

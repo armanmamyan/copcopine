@@ -178,7 +178,7 @@
 }
 .input-group .popup-form-search-btn{
   &:hover{
-    background-color: #A8977A;
+    background-color: #897047;
     span{
       background-image: url(../assets/Eye_icon_white.svg);
     }
@@ -196,34 +196,13 @@ button[type="submit"].popup-form-search-btn{
   background-position: center;
   background-image: url(../assets/search_brown.svg);
   &:hover, &:focus, &:active{
-    background-color: #A8977A;
+    background-color: #897047;
     background-image: url(../assets/search_white.svg);
   }
   &:focus, &:active{
     background-color: #897047;
   }
 }
-.form-group.has-error{
-  input.form-control{
-    background: none;
-    border-color: #D3311C !important;
-    & + span.help-block.error-help-block{
-      color: #D3311C !important;
-      font-size: 14px !important;
-      line-height: 16px !important;
-      padding-left: 10px;
-      margin-top: 2px;
-      display: block;
-    }
-  }
-}
-.form-group.has-error + .popup-form-search-btn{
-  border-color: #D3311C !important;
-}
-.form-group.has-error .project--input-label{
-  color: #D3311C !important;
-}
-
 .project--form-divider {
   margin-block-end: 10px;
   border-color: #cdc3b3;
@@ -439,7 +418,8 @@ button[type="submit"].popup-form-search-btn{
     }
   
     & > div:last-child:not(:first-child) {
-      padding-block-end: 200px;
+      // padding-block-end: 200px;
+      margin-bottom:  138px !important;
     }
   }
 }

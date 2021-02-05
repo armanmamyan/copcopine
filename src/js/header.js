@@ -26,15 +26,23 @@ const resetPassStep2Btn = document.querySelector(".reset-pass-step-2");
 const navbar = document.querySelector('header .navbar-toggler');
 
 function keepInputPlaceholder(input) {
-  input.nextElementSibling.style.top = '-5px';
-  input.nextElementSibling.style.transform = 'none';
-  input.nextElementSibling.style.fontSize = '10px';
+  let inputFormGroup = $(input).closest('.form-group');
+  let inputLatebl = inputFormGroup.find('.project--input-label');
+  inputLatebl.css({
+    'top' : '-3px',
+    'transform' : 'none',
+    'font-size' : '10px'
+  });
 }
 
 function preventInputPlaceholder(input) {
-  input.nextElementSibling.style.top = '';
-  input.nextElementSibling.style.transform = '';
-  input.nextElementSibling.style.fontSize = '';
+  let inputFormGroup = $(input).closest('.form-group');
+  let inputLatebl = inputFormGroup.find('.project--input-label');
+  inputLatebl.css({
+    'top' : '',
+    'transform' : '',
+    'font-size' : ''
+  });
 }
 
 function handleOutsideClick() {
@@ -115,7 +123,8 @@ for (let input of inputsOfDOM) {
       var value = input.value.trim();
       if (value) {
           keepInputPlaceholder(input);
-      } else {
+      } else if(!value && input !== document.activeElement) {
+          console.log(input !== document.activeElement)
           preventInputPlaceholder(input);
       }
   });

@@ -1150,7 +1150,7 @@ del {
 }
 
 .input-group .popup-form-search-btn:hover {
-  background-color: #A8977A;
+  background-color: #897047;
 }
 
 .input-group .popup-form-search-btn:hover span {
@@ -1175,35 +1175,13 @@ button[type=submit].popup-form-search-btn {
 button[type=submit].popup-form-search-btn:hover,
 button[type=submit].popup-form-search-btn:focus,
 button[type=submit].popup-form-search-btn:active {
-  background-color: #A8977A;
+  background-color: #897047;
   background-image: url(../assets/search_white.svg);
 }
 
 button[type=submit].popup-form-search-btn:focus,
 button[type=submit].popup-form-search-btn:active {
   background-color: #897047;
-}
-
-.form-group.has-error input.form-control {
-  background: none;
-  border-color: #D3311C !important;
-}
-
-.form-group.has-error input.form-control + span.help-block.error-help-block {
-  color: #D3311C !important;
-  font-size: 14px !important;
-  line-height: 16px !important;
-  padding-left: 10px;
-  margin-top: 2px;
-  display: block;
-}
-
-.form-group.has-error + .popup-form-search-btn {
-  border-color: #D3311C !important;
-}
-
-.form-group.has-error .project--input-label {
-  color: #D3311C !important;
 }
 
 .project--form-divider {
@@ -2809,6 +2787,41 @@ p {
   letter-spacing: 1.05px;
 }
 
+.form-control:focus,
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.form-group.has-error input.form-control {
+  background: none;
+  border-color: #D3311C !important;
+}
+
+.form-group.has-error span.help-block.error-help-block {
+  color: #D3311C !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  padding-left: 10px;
+  margin-top: 2px;
+  display: block;
+}
+
+.form-group.has-error + .popup-form-search-btn,
+.form-group.has-error .inline-submit-btn {
+  border-color: #D3311C !important;
+}
+
+.form-group.has-error .project--input-label {
+  color: #D3311C !important;
+}
+
+.form-group.filled .inline-submit-btn {
+  background-color: #A8977A;
+  color: #fff;
+}
+
 .footer {
   width: 100%;
   background-color: #fff;
@@ -3267,8 +3280,7 @@ p {
   }
 
   .project--product-modal > div:last-child:not(:first-child) {
-    -webkit-padding-after: 200px;
-    padding-block-end: 200px;
+    margin-bottom: 138px !important;
   }
 }
 
