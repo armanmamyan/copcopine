@@ -1776,7 +1776,6 @@
 
         const handleGridButtonClick = (e) => {
             const target = e.currentTarget;
-            
             if(!!mobile.length && window.innerWidth <= 1024){
                 mobile.forEach(item => {
                     item.destroy(true,true);
@@ -1838,13 +1837,15 @@
                 })
             })
         }
-        if(window.innerWidth >1024){
+        
+        if(window.innerWidth > 1024){
             products.forEach(product => {
                 product.addEventListener('mouseenter', handleMouseEnter);
                 product.addEventListener('mouseleave', handleMouseLeave);
             })
         }
 
+      
         window.addEventListener('resize', () => {
             if(window.innerWidth <= 1024){
                 initSlider();
@@ -1859,7 +1860,19 @@
 
         gridButtons.forEach(btn => {
             btn.addEventListener('click', handleGridButtonClick);
-        })
+        });
+
+        if(window.innerWidth >= 1320){
+            gridButtons[0].click();
+        }
+
+        if(window.innerWidth >= 1140 && window.innerWidth < 1320){
+            gridButtons[1].click();
+        }
+
+        if(window.innerWidth <= 576){
+            gridButtons[2].click();
+        }
         
 
     </script>
