@@ -4068,7 +4068,7 @@ p {
   }
 
   .swiper-pagination {
-    display: block;
+    display: block !important;
   }
 
   .shop_side {
