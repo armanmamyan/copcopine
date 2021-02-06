@@ -1797,24 +1797,18 @@
                 switch (takeViewCountNumberFromID) {
                     case 1:
                         product.classList.add('col-12', 'shop_main_product_wrapper');
-                        // product.firstElementChild.setAttribute('style', 'height: 510px');
                         window.innerWidth <= 1024 && initSlider();
                         return;
                     case 2:
                         product.classList.add('col-6', 'shop_main_product_wrapper')
-                        // window.innerWidth <= 1140 && window.innerWidth > 1024 &&  product.firstElementChild.setAttribute('style', 'height: 645px');
-                        // window.innerWidth <= 1024 && window.innerWidth > 768 && product.firstElementChild.setAttribute('style', 'height: 728px');
-                        // window.innerWidth <= 768 && window.innerWidth > 576 && product.firstElementChild.setAttribute('style', 'height: 538px');
                         window.innerWidth <= 1024 && initSlider();
                         return;
                     case 3:
                         product.classList.add('col-4', 'shop_main_product_wrapper');
-                        // product.firstElementChild.removeAttribute('style', 'height: 554px');
                         window.innerWidth <= 1024 && initSlider();
                         return;
                     case 4:
                         product.classList.add('col-3', 'shop_main_product_wrapper')
-                        // product.firstElementChild.removeAttribute('style', 'height: 554px');
                         return;
                     default:
                         break;
@@ -1873,8 +1867,6 @@
         if(window.innerWidth <= 576){
             gridButtons[2].click();
         }
-        
-
     </script>
 
     <script>
