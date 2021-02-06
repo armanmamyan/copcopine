@@ -1407,7 +1407,7 @@ button[type=submit].popup-form-search-btn:active {
 .project--product-modal,
 .project--wishlist-modal {
   position: relative;
-  max-height: 472px;
+  max-height: 72vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -1421,11 +1421,6 @@ button[type=submit].popup-form-search-btn:active {
   width: 0;
 }
 
-.project--wishlist-modal > div:first-child {
-  -webkit-padding-after: 40px;
-  padding-block-end: 40px;
-}
-
 .project--wishlist-modal > div:last-child:not(:first-child):first-child {
   -webkit-padding-after: 0;
   padding-block-end: 0;
@@ -1434,6 +1429,7 @@ button[type=submit].popup-form-search-btn:active {
 .project--wishlist-modal > div:last-child:not(:first-child) {
   -webkit-padding-after: 10px;
   padding-block-end: 10px;
+  padding-bottom: 73px;
 }
 
 .project--product-modal-iterations {
@@ -1441,7 +1437,7 @@ button[type=submit].popup-form-search-btn:active {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0 20px 12px;
+  padding: 0 20px 30px;
   background-color: #fff;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
@@ -1533,10 +1529,6 @@ button[type=submit].popup-form-search-btn:active {
 
 .product--wishlist-btn-modal:hover svg {
   fill: #A8977A;
-}
-
-.project--wishlist-product {
-  max-height: 70vh;
 }
 
 .wishlist--modal-details-bottom .size_radio_btn {
@@ -2808,6 +2800,10 @@ p {
   max-width: 360px;
 }
 
+.project--popup-container.project--popup-product .project--product-modal-iterations {
+  padding-bottom: 12px;
+}
+
 .project--input-label {
   padding: 0 4px;
 }
@@ -3920,7 +3916,6 @@ p {
   }
 
   .project--wishlist-product {
-    max-height: 634px;
     -webkit-padding-before: 0;
     padding-block-start: 0;
     -webkit-padding-after: 20px;
